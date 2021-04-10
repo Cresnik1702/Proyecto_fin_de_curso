@@ -2,7 +2,7 @@
 // SubProceso y FinSubProceso
 
 
-SubProceso Saber_y_Ganar () 
+SubProceso saber_y_ganar () 
 	
 	// Aqui vamos a declarar todas las variables del primer juego.	
 	
@@ -1414,7 +1414,7 @@ SubProceso Saber_y_Ganar ()
 		
 		// Ahora lo que aremos sera volver a llamar al SubProceso para que reinicie el juego y asi volvamos al menu de inicio del juego
 		
-		Saber_y_Ganar;
+		saber_y_ganar;
 		
 	FinSi
 	
@@ -1443,7 +1443,7 @@ SubProceso Saber_y_Ganar ()
 		
 		Esperar Tecla;
 		
-		Saber_y_Ganar;
+		saber_y_ganar;
 		
 	FinSi
 	
@@ -1470,7 +1470,7 @@ SubProceso Saber_y_Ganar ()
 		
 		Si (opcion = "n" o opcion = "N") Entonces
 			
-			Saber_y_Ganar;
+			saber_y_ganar;
 			
 		FinSi
 		
@@ -1505,6 +1505,156 @@ SubProceso creditos
 	Escribir "Para continuar presione cualquier tecla";
 	Esperar Tecla;
 	
+	saber_y_ganar;
+	
+FinSubProceso
+
+SubProceso simon_dice
+	
+		Definir numdado Como Entero;
+		Definir resusuario Como Entero;
+		Definir score Como Entero;
+		Definir opcionsimon Como Entero;
+		Definir opcion Como Caracter;
+		
+		Borrar Pantalla;
+		
+		Escribir " __^__                                      __^__";
+		Escribir "( ___ )------------------------------------( ___ )";
+		Escribir " | / |                                      | \ |";
+		Escribir " | / |                                      | \ |";
+		Escribir " | / |          ¡¡¡ SIMON DICE !!!          | \ |";
+		Escribir " | / |                                      | \ |";
+		Escribir " |___|                                      |___|";
+		Escribir "(_____)------------------------------------(_____) ";
+		Esperar 2 Segundos;
+		Borrar Pantalla;
+		
+		
+		Escribir " __^__                                      __^__";
+		Escribir "( ___ )------------------------------------( ___ )";
+		Escribir " | / |                                      | \ |";
+		Escribir " | / |               1) Jugar               | \ |";
+		Escribir " | / |               2) Ayuda               | \ |";
+		Escribir " | / |               3) Salir               | \ |";
+		Escribir " |___|                                      |___|";
+		Escribir "(_____)------------------------------------(_____) ";
+		Escribir "";
+		Escribir "        -- Elige la opción que prefieras --  ";
+		Leer opcionsimon;
+		
+		
+		Segun opcionsimon Hacer
+			1:
+				Repetir
+					
+					Esperar 1 Segundos;
+					Borrar Pantalla;
+					
+					numdado<-numdado+Aleatorio(1,25);
+					Escribir " __^__                                      __^__";
+					Escribir "( ___ )------------------------------------( ___ )";
+					Escribir " | / |                                      | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir "             Simon dice:", numdado;
+					Escribir " | / |                                      | \ |";
+					Escribir " |___|                                      |___|";
+					Escribir "(_____)------------------------------------(_____) ";
+					Esperar 1 Segundos;
+					Borrar Pantalla;
+					
+					Escribir " __^__                                      __^__";
+					Escribir "( ___ )------------------------------------( ___ )";
+					Escribir " | / |                                      | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir " | / |       Repite la secuencia dada       | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir " |___|                                      |___|";
+					Escribir "(_____)------------------------------------(_____) ";
+					Leer resusuario;
+					
+					Si resusuario=numdado Entonces
+						
+						Borrar Pantalla;
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |    As acertado simon esta contento   | \ |";
+						score<-score + 4;
+						Escribir " | / |         Tu puntuacion es de:         | \ |";
+						Escribir "                ", score, " PUNTOS";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						Esperar 2 Segundos;
+						
+					SiNo
+						
+						Escribir "@---------------------------------------------------------@";
+						Escribir "|                                                         |";
+						Escribir "|                  Lo siento as perdido                   |";
+						Escribir "|                      ¡ GAME OVER !                      |";
+						Escribir "|                                                         |";
+						Escribir "      - Tu puntuación Final a sido de; ", score, " PUNTOS  ";
+						Escribir "|                                                         |";
+						Escribir "|            *Presione un tecla para continuar*           |";
+						Escribir "|                                                         |";
+						Escribir "@---------------------------------------------------------@";
+						
+						Esperar Tecla;
+						
+						simon_dice;
+						
+					FinSi
+					
+					
+				Hasta Que resusuario <> numdado
+				
+			2:
+				Borrar Pantalla;
+				Escribir  "***********************************************************************";
+				Escribir  "*                                                                     *";
+				Escribir  "*                          << Simon Dice >>                           *";
+				Escribir  "*                                                                     *";
+				Escribir  "*     Este juego consites en que el ordenador te ira dando una        *";
+				Escribir  "*     serie de números los cuales iran en orden creciente y todo      *";
+				Escribir  "*     trata de ir memorizando el numero que sale y darlo en           *";
+				Escribir  "*     contestación a Simon, si haciertas sigues jugando pero si       *";
+				Escribir  "*     fallas se acaba la partida por cada acierto sumaras puntos      *";
+				Escribir  "*                                                                     *";
+				Escribir  "*     ¿A cuantos puntas llegaras?                                     *";
+				Escribir  "*                                                                     *";
+				Escribir  "*                                                       DIVIERTETE    *";
+				Escribir  "*                                                                     *";
+				Escribir  "***********************************************************************";
+				
+				Escribir "Presione cualquier tecla para volver al menu";
+				Esperar Tecla;
+				
+				simon_dice;
+				
+			3:
+				Borrar Pantalla;
+				
+				Escribir "¿De verdad quiere salir del juego?";
+				Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+				Leer opcion;
+				
+				Si (opcion="s" O opcion ="S") Entonces
+					
+					Escribir "Gracias por jugar a Saimon Dice.";
+					Escribir "Para continuar presione cualquier tecla";
+					Esperar Tecla;
+				FinSi
+				
+				Si (opcion = "n" o opcion = "N") Entonces
+					
+					simon_dice;
+					
+				FinSi
+			
+		FinSegun
+		
 FinSubProceso
 
 // Como ya hemos terminado de definir los SubProceso vamos a pasar a definir el Proceso principal que es donde se van a llamar a todos los SubProceso anteriormente programados
@@ -1531,7 +1681,7 @@ Proceso Juegos_Reunidos
 		Escribir  "*              Selecione el juego al que desea jugar                  *";
 		Escribir  "*                                                                     *";
 		Escribir  "*                       1) Saber y Ganar.                             *";
-		Escribir  "*                                                                     *";
+		Escribir  "*                       2) Simon Dice.                                *";
 		Escribir  "*                                                                     *";
 		Escribir  "*                                                                     *";
 		Escribir  "*                       5) Cresditos                                  *";
@@ -1544,6 +1694,9 @@ Proceso Juegos_Reunidos
 		Segun men Hacer
 			1:
 				Saber_y_Ganar;
+				
+			2:
+				simon_dice;
 			5:
 				creditos;
 		FinSegun
