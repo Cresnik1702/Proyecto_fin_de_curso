@@ -1479,36 +1479,6 @@ SubProceso saber_y_ganar ()
 	
 FinSubProceso
 
-
-SubProceso creditos
-	
-	Borrar Pantalla;
-	
-	Escribir  "***********************************************************************";
-	Escribir  "*                                                                     *";
-	Escribir  "*                  ---------  Creditos  ---------                     *";
-	Escribir  "*                                                                     *";
-	Escribir  "***********************************************************************";
-	Escribir  "*                                                                     *";
-	Escribir  "*        Software creado por: Alvaro Gómez Tejada.                    *";
-	Escribir  "*        Software utilizado: PSeint.                                  *";
-	Escribir  "*                                                                     *";
-	Escribir  "*      Agradecimiento:                                                *";
-	Escribir  "*      Me gustaria expresar mi agradecimiento amis profesores:        *";
-	Escribir  "*      Alberto Núñez por dejarme meter mas codigo y con el que        *";
-	Escribir  "*      me he reido y aprendido lo genial que es programar y           *";
-	Escribir  "*      a Alejandro Moran el cual me inspiro para decidirme a llevar   *";
-	Escribir  "*      ha cavo esta gran aventura en la programación.                 *";
-	Escribir  "*                                                                     *";
-	Escribir  "***********************************************************************";
-	Escribir "";
-	Escribir "Para continuar presione cualquier tecla";
-	Esperar Tecla;
-	
-	saber_y_ganar;
-	
-FinSubProceso
-
 SubProceso simon_dice
 	
 		Definir numdado Como Entero;
@@ -1622,7 +1592,7 @@ SubProceso simon_dice
 				Escribir  "*     contestación a Simon, si haciertas sigues jugando pero si       *";
 				Escribir  "*     fallas se acaba la partida por cada acierto sumaras puntos      *";
 				Escribir  "*                                                                     *";
-				Escribir  "*     ¿A cuantos puntas llegaras?                                     *";
+				Escribir  "*     ¿A cuantos puntos llegaras?                                     *";
 				Escribir  "*                                                                     *";
 				Escribir  "*                                                       DIVIERTETE    *";
 				Escribir  "*                                                                     *";
@@ -1652,10 +1622,278 @@ SubProceso simon_dice
 					simon_dice;
 					
 				FinSi
+				
+			De Otro Modo:
+				
+				Escribir "La opcion marcada no es valida seleccione de nuevo";
+				simon_dice;
 			
 		FinSegun
 		
 FinSubProceso
+
+SubProceso piedra_papel_tijeras
+	
+	Borrar Pantalla;
+	
+	Definir jugador1 Como Entero;
+	Definir jugador2 Como Entero;
+	Definir puntos1 Como Entero;
+	Definir puntos2 Como Entero;
+	Definir nombre Como Caracter;
+	Definir ganador Como Caracter;
+	Definir letra1 Como Caracter;
+	Definir letra2 Como Caracter;
+	Definir opcionppt Como Entero;
+	Definir opcion Como Caracter;
+	
+	puntos1<-0;
+	puntos2<-0;
+	
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |             Bienvenido a             | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |         Piedra, Papel o Tijera       | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Esperar 2 Segundos;
+	Borrar Pantalla;
+	
+	
+	Escribir "¿Que nómbre usaras para jugar?";
+	Leer nombre;
+	
+	Borrar Pantalla;
+	
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |               1) Jugar               | \ |";
+	Escribir " | / |               2) Ayuda               | \ |";
+	Escribir " | / |               3) Salir               | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Escribir "";
+	Escribir "        -- Elige la opción que prefieras --  ";
+	Leer opcionppt;
+	
+	
+	Segun opcionppt Hacer
+		1:
+			Repetir
+				
+				Escribir "";
+				Escribir "";
+				Escribir "                            (0 0)"; 
+				Escribir "  @--------------------oOO-- (_) ----oOO--------------------@";
+				Escribir "  |                                                         |";
+				Escribir "  |                        Marcador                         |";
+				Escribir "  |                                                         |";
+				Escribir "      - ",nombre, " actualmete tiene ",puntos1," puntos.";
+				Escribir "  |                                                         |";
+				Escribir "      - CPU actualmente tiene ",puntos2," puntos";
+				Escribir "  |                                                         |";
+				Escribir "  |          * Presinona una tecla para continuar *         |";
+				Escribir "  |                                                         |";
+				Escribir "  @---------------------------------------------------------@";
+				Escribir "                           |__| |__|"; 
+				Escribir "                             || ||";
+				Escribir "                            ooO Ooo"; 
+				Esperar Tecla;
+				Borrar Pantalla;
+				
+				
+				Escribir " __^__                                      __^__";
+				Escribir "( ___ )------------------------------------( ___ )";
+				Escribir " | / |                                      | \ |";
+				Escribir " | / |               1) Piedra              | \ |";
+				Escribir " | / |               2) Papel               | \ |";
+				Escribir " | / |               3) Tijeras             | \ |";
+				Escribir " |___|                                      |___|";
+				Escribir "(_____)------------------------------------(_____) ";
+				Escribir "";
+				Escribir "        -- Elige la opción que prefieras --  ";
+				Leer jugador1;
+				
+				Si jugador1=1 Entonces
+					letra1<-"Piedra";
+					
+					Si jugador1=2 Entonces
+						letra1<-"Papel";
+						
+					FinSi
+				SiNo
+					letra1<-"Tijeras";
+					
+				FinSi
+				
+				Si jugador2=1 Entonces
+					letra2<-"Piedra";
+					
+					Si jugador2=2 Entonces
+						letra2<-"Papel";
+						
+					FinSi
+				SiNo
+					letra2<-"Tijeras";
+					
+				FinSi
+				
+				jugador2<-Aleatorio(1,3);
+				
+				Si (jugador1<>jugador2) Entonces
+					Si ( jugador1==1 y jugador2==3 ) o ( jugador1==2 y jugador2==1 ) o ( jugador1==3 y jugador2==2 ) Entonces
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |       El Ganador de la ronda es:     | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir "                     ",nombre;
+						Escribir " | / |                                      | \ |";
+						Escribir "        Porque ",letra1," gana a ",letra2;
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						Escribir "";
+						
+						puntos1<-puntos1+1;
+					SiNo
+						Si ( jugador2==1 y jugador1==3 ) o ( jugador2==2 y jugador1==1 ) o ( jugador2==3 y jugador1==2 ) Entonces
+							Escribir " __^__                                      __^__";
+							Escribir "( ___ )------------------------------------( ___ )";
+							Escribir " | / |       El Ganador de la ronda es:     | \ |";
+							Escribir " | / |                                      | \ |";
+							Escribir "                     La CPU";
+							Escribir " | / |                                      | \ |";
+							Escribir "        Porque ",letra2," gana a ",letra1;
+							Escribir " |___|                                      |___|";
+							Escribir "(_____)------------------------------------(_____) ";
+							Escribir "";
+							
+							puntos2<-puntos2+1; 
+						FinSi
+					FinSi
+				SiNo
+					Escribir " __^__                                      __^__";
+					Escribir "( ___ )------------------------------------( ___ )";
+					Escribir " | / |                                      | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir " | / |            ¡¡¡ Empate !!!            | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir " |___|                                      |___|";
+					Escribir "(_____)------------------------------------(_____) ";
+					Escribir "";
+					
+				FinSi
+			Hasta Que (puntos1==10 o puntos2==10)
+			
+			Si (puntos1==10) Entonces
+				ganador<-nombre;
+			SiNo
+				ganador<-"La CPU";
+			FinSi
+			
+			Borrar Pantalla;
+			Escribir "";
+			Escribir " __^__                                      __^__";
+			Escribir "( ___ )------------------------------------( ___ )";
+			Escribir " | / |                                      | \ |";
+			Escribir " | / |     El Ganador del Simon Dice es:    | \ |";
+			Escribir " | / |                                      | \ |";
+			Escribir "                    ",ganador;
+			Escribir " | / |                                      | \ |";
+			Escribir " | / | * Presiona una tecla para terminar * | \ |";
+			Escribir " |___|                                      |___|";
+			Escribir "(_____)------------------------------------(_____) ";
+			Escribir "";
+			Esperar Tecla;
+			
+		2:
+			
+			Borrar Pantalla;
+			Escribir  "***********************************************************************";
+			Escribir  "*                                                                     *";
+			Escribir  "*                    << Piedra, Papel, Tijeras >>                     *";
+			Escribir  "*                                                                     *";
+			Escribir  "*     Este juego consites en el clasico juego de que una opcion       *";
+			Escribir  "*     gana sobre las otras, el juego consistira en 10 rondas y        *";
+			Escribir  "*     el que antes acumele 10 puntos gana la partida.                 *";
+			Escribir  "*                                                                     *";
+			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                                     *";
+			Escribir  "***********************************************************************";
+			
+			Escribir "Presione cualquier tecla para volver al menu";
+			Esperar Tecla;
+			
+			piedra_papel_tijeras;
+			
+		3:
+			
+			Borrar Pantalla;
+			
+			Escribir "¿De verdad quiere salir del juego?";
+			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Leer opcion;
+			
+			Si (opcion="s" O opcion ="S") Entonces
+				
+				Escribir "Gracias por jugar a Piedra, Papel, Tijeras.";
+				Escribir "Para continuar presione cualquier tecla";
+				Esperar Tecla;
+			FinSi
+			
+			Si (opcion = "n" o opcion = "N") Entonces
+				
+				piedra_papel_tijeras;
+				
+			FinSi
+			
+		De Otro Modo:
+			
+			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Esperar 1 Segundos;
+			piedra_papel_tijeras;
+			
+	FinSegun
+	
+FinSubProceso
+
+SubProceso creditos
+	
+	Borrar Pantalla;
+	
+	Escribir  "***********************************************************************";
+	Escribir  "*                                                                     *";
+	Escribir  "*                  ---------  Creditos  ---------                     *";
+	Escribir  "*                                                                     *";
+	Escribir  "***********************************************************************";
+	Escribir  "*                                                                     *";
+	Escribir  "*        Software creado por: Alvaro Gómez Tejada.                    *";
+	Escribir  "*                                       (Cresnik).                    *";
+	Escribir  "*        Software utilizado: PSeint.                                  *";
+	Escribir  "*                                                                     *";
+	Escribir  "*      Agradecimiento:                                                *";
+	Escribir  "*      Me gustaria expresar mi agradecimiento amis profesores:        *";
+	Escribir  "*      Alberto Núñez por dejarme meter mas codigo y con el que        *";
+	Escribir  "*      me he reido y aprendido lo genial que es programar y           *";
+	Escribir  "*      a Alejandro Moran el cual me inspiro para decidirme a llevar   *";
+	Escribir  "*      ha cavo esta gran aventura en la programación.                 *";
+	Escribir  "*                                                                     *";
+	Escribir  "*                                                                     *";
+	Escribir  "*                                                                     *";
+	Escribir  "*                                                   \|||/             *";
+	Escribir  "*                                                   (o o)             *";
+	Escribir "*************************************************-ooO-(_)-Ooo-**********";
+	Escribir "";
+	Escribir "Para continuar presione cualquier tecla";
+	Esperar Tecla;
+	
+	
+FinSubProceso
+
 
 // Como ya hemos terminado de definir los SubProceso vamos a pasar a definir el Proceso principal que es donde se van a llamar a todos los SubProceso anteriormente programados
 
@@ -1682,7 +1920,7 @@ Proceso Juegos_Reunidos
 		Escribir  "*                                                                     *";
 		Escribir  "*                       1) Saber y Ganar.                             *";
 		Escribir  "*                       2) Simon Dice.                                *";
-		Escribir  "*                                                                     *";
+		Escribir  "*                       3) Piedra Papel o Tijeras                     *";
 		Escribir  "*                                                                     *";
 		Escribir  "*                       5) Cresditos                                  *";
 		Escribir  "***********************************************************************";
@@ -1697,6 +1935,9 @@ Proceso Juegos_Reunidos
 				
 			2:
 				simon_dice;
+				
+			3:
+				piedra_papel_tijeras;
 			5:
 				creditos;
 		FinSegun
