@@ -1861,6 +1861,392 @@ SubProceso piedra_papel_tijeras
 	
 FinSubProceso
 
+SubProceso convinacion_perdida
+	
+	Definir opcioncp Como Entero;	
+	
+	Borrar Pantalla;
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |             Bienvenido a             | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |         Convinación Perdida          | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Esperar 2 Segundos;
+	Borrar Pantalla;
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |               1) Jugar               | \ |";
+	Escribir " | / |               2) Ayuda               | \ |";
+	Escribir " | / |               3) Salir               | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Escribir "";
+	Escribir "        -- Elige la opción que prefieras --  ";
+	Leer opcioncp;
+	
+	
+	Segun opcioncp Hacer
+		1:
+				Definir p0 Como Entero;
+				Definir CO Como Caracter;
+				Definir contador Como Entero;
+				Definir error Como Logico;
+				Definir c1 Como Caracter;
+				Definir c2 Como Caracter;
+				Definir c3 Como Caracter;
+				Definir c4 Como Caracter;
+				Definir p1 Como Caracter;
+				Definir p2 Como Caracter;
+				Definir p3 Como Caracter;
+				Definir p4 Como Caracter;
+				Definir aciertos Como Entero;
+				Definir casiaciertos Como Entero;
+				Definir posi1 Como Caracter;
+				Definir posi2 Como Caracter;
+				Definir posi3 Como Caracter;
+				Definir posi4 Como Caracter;
+				Definir position1 Como Logico;
+				Definir position2 Como Logico;
+				Definir position3 Como Logico;
+				Definir position4 Como Logico;
+				Definir seguirjugando Como Caracter;
+				Definir confirmacioncolor Como Caracter;
+				Definir cvueltas Como Entero;
+				
+				cvueltas<-0;
+				
+				Para contador<-1 Hasta 4 Con Paso 1 Hacer
+				
+				p0<-Aleatorio(1,6);
+				
+					Segun p0 hacer
+						1:
+							CO<-"am";
+							
+						2:
+							CO<-"ro";
+							
+						3:
+							CO<-"ve";
+							
+						4:
+							CO<-"az";
+							
+						5:	
+							CO<-"ne";
+							
+						6:
+							CO<-"bl";
+					FinSegun
+					
+					Segun contador Hacer
+						
+						1:
+							p1<-CO;
+							
+						2:
+							p2<-CO;
+							
+						3:
+							p3<-CO;
+							
+						4:
+							p4<-CO;
+						
+					FinSegun
+				FinPara
+				
+				
+				Repetir
+					
+					cvueltas<- cvueltas + 1;
+					
+					Borrar Pantalla;
+					
+					Repetir
+						
+						Escribir " __^__                                         __^__";
+						Escribir "( ___ )---------------------------------------( ___ )";
+						Escribir " | / |                                         | \ |";
+						Escribir " | / |   Introduce tu combinacion de colores   | \ |";
+						Escribir " | / |                                         | \ |";
+						Escribir " | / |              am = Amarillo              | \ |";
+						Escribir " | / |              ro = Rojo                  | \ |";
+						Escribir " | / |              ve = Verde                 | \ |";
+						Escribir " | / |              az = Azul                  | \ |";
+						Escribir " | / |              ne = Negro                 | \ |";
+						Escribir " | / |              bl = Blanco                | \ |";
+						Escribir " |___|                                         |___|";
+						Escribir "(_____)---------------------------------------(_____) ";
+						Escribir "";
+						
+						Para contador<- 1 Hasta 4 Con Paso 1 Hacer
+							
+							Repetir
+								Segun contador Hacer
+									
+									1:
+										Escribir "Primer color";
+										
+									2:
+										Escribir "Segundo color";
+										
+									3:
+										Escribir "Tercer color";
+										
+									4:
+										Escribir "Cuarto color";
+									
+								FinSegun
+								
+								Leer CO;
+								Error<-Falso;
+								
+							Si CO <> "am" Entonces
+								Si CO <> "ro" Entonces
+									Si CO <> "ve" Entonces
+										Si CO <> "az" Entonces
+											Si CO <> "ne" Entonces
+												Si CO <> "bl" Entonces
+													Error<-Verdadero;
+														Escribir "Color erroneo";
+													FinSi
+												FinSi
+											FinSi
+										FinSi
+									FinSi
+								FinSi
+							Hasta Que error== Falso
+								
+							Segun contador Hacer
+								
+								1:
+									c1<-CO;
+									
+								2:
+									c2<-CO;
+									
+								3:
+									c3<-CO;
+									
+								4:
+									c4<-CO;
+							FinSegun
+							
+						FinPara
+							
+					Borrar Pantalla;	
+						
+					Escribir " __^__                                        __^__";
+					Escribir "( ___ )--------------------------------------( ___ )";
+					Escribir " | / |                                        | \ |";
+					Escribir " | / |   Combinacion de colores establecida   | \ |";
+					Escribir " | / |                                        | \ |";
+					Escribir " | / |            1º color = ",c1,"               | \ |";
+					Escribir " | / |            2º color = ",c2,"               | \ |";
+					Escribir " | / |            3º color = ",c3,"               | \ |";
+					Escribir " | / |            4º color = ",c4,"               | \ |";
+					Escribir " |___|                                        |___|";
+					Escribir "(_____)--------------------------------------(_____) ";
+					Escribir "";
+						
+					Escribir "Esta bien la convinacion de colores (Si / No)";
+					Leer confirmacioncolor;
+					
+				Hasta Que (confirmacioncolor = "si") o (confirmacioncolor = "SI") o (confirmacioncolor = "Si") o (confirmacioncolor = "sI") o (confirmacioncolor = "s") o (confirmacioncolor = "S") o (confirmacioncolor = "n") o (confirmacioncolor = "N")
+					
+					aciertos<-0;
+					casiaciertos<-0;
+					
+					position1<-Verdadero;
+					position2<-Verdadero;
+					position3<-Verdadero;
+					position4<-Verdadero;
+					
+					si (posi1 = c1) Entonces
+						aciertos<- aciertos + 1;
+						position1<-Falso;
+					FinSi
+					
+					Si (posi2 = c2) Entonces
+						aciertos<- aciertos +1;
+						position2<-Falso;
+					FinSi
+					
+					si (posi3 = c3) Entonces
+						aciertos<- aciertos + 1;
+						position3<-Falso;
+					FinSi
+					
+					Si (posi4 = c4) Entonces
+						aciertos<- aciertos +1;
+						position4<-Falso;
+					FinSi
+					
+					Si (position1 = Verdadero) Entonces
+						
+						Si (p1 = c2) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position1<- Falso;
+						FinSi
+						
+						Si (p1 = c3) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position1<- Falso;
+						FinSi
+						
+						Si (p1 = c4) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position1<- Falso;
+						FinSi
+					FinSi
+					
+					Si (position2 = Verdadero) Entonces
+						
+						Si (p2 = c1) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position2<- Falso;
+							
+						SiNo
+							
+							Si (p2 = c3) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position2<- Falso;
+							SiNo
+								Si (p2 = c4) Entonces
+									casiaciertos<-casiaciertos + 1;
+									position2<- Falso;
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+					
+					Si (position3 = Verdadero) Entonces
+						
+						Si (p1 = c1) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position3<- Falso;
+						SiNo
+							Si (p1 = c3) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position3<- Falso;
+							SiNo
+								Si (p1 = c4) Entonces
+									casiaciertos<-casiaciertos + 1;
+									position3<- Falso;
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+					
+					Si (position4 = Verdadero) Entonces
+						
+						Si (p4 = c1) Entonces
+							casiaciertos<-casiaciertos + 1;
+							position4<- Falso;
+						SiNo
+							Si (p4 = c2) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position4<- Falso;
+							SiNo
+								Si (p4 = c3) Entonces
+									casiaciertos<-casiaciertos + 1;
+									position4<- Falso;
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+					
+					seguirjugando<-"Si";	
+					
+					Si aciertos = 4 Entonces
+						
+						Borrar Pantalla;
+						Escribir "           @-------------------------------@";
+						Escribir "   ________|        << Enorabuena >>       |_______";
+						Escribir "   \       |                               |       /";
+						Escribir "    \      |  Descifrastes la convinación  |      /";
+						Escribir "    /      @_______________________________@      \";
+						Escribir "   /__________)                         (__________\";
+						
+					SiNo
+						
+						
+						Escribir " __^__                                                __^__";
+						Escribir "( ___ )----------------------------------------------( ___ )";
+						Escribir " | / |                                                | \ |";
+						Escribir " | / |  Has tenido ",aciertos, " En color y posicion.             | \ |";
+						Escribir " | / |                                                | \ |";
+						Escribir " | / |  Has tenido ",casiaciertos," Solo color                       | \ |";
+						Escribir " | / |                                                | \ |";
+						Escribir " | / |  LLevas ",cvueltas," intentos.                            | \ |";
+						Escribir " |___|                                                |___|";
+						Escribir "(_____)----------------------------------------------(_____) ";
+						Escribir "";
+						Escribir "             ¿Quieres seguir jugando? (S/N)";
+						Leer seguirjugando;
+					FinSi
+				Hasta Que (Aciertos = 4) o (seguirjugando="no");
+			
+		
+		2:
+		
+			Borrar Pantalla;
+			Escribir  "***********************************************************************";
+			Escribir  "*                                                                     *";
+			Escribir  "*                    << Convinación Perdida >>                        *";
+			Escribir  "*                                                                     *";
+			Escribir  "*     Este juego consites en que el ordenador generar una             *";
+			Escribir  "*     convinación de colores y tu deberas de intentar de descubir     *";
+			Escribir  "*     la convinación perdida.                                         *";
+			Escribir  "*                                                                     *";
+			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                                     *";
+			Escribir  "***********************************************************************";
+			
+			Escribir "Presione cualquier tecla para volver al menu";
+			Esperar Tecla;
+			
+			convinacion_perdida;
+			
+		3:
+			Borrar Pantalla;
+			
+			Escribir "¿De verdad quiere salir del juego?";
+			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Leer opcion;
+			
+			Si (opcion="s" O opcion ="S") Entonces
+				
+				Escribir "Gracias por jugar a Convinacion Perdida.";
+				Escribir "Para continuar presione cualquier tecla";
+				Esperar Tecla;
+			FinSi
+			
+			Si (opcion = "n" o opcion = "N") Entonces
+				
+				convinacion_perdida;
+				
+			FinSi
+			
+	De Otro Modo:
+			
+			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Esperar 1 Segundos;
+			convinacion_perdida;
+				
+	FinSegun
+	
+FinSubProceso
+
+
+
 SubProceso creditos
 	
 	Borrar Pantalla;
@@ -1894,6 +2280,28 @@ SubProceso creditos
 	
 FinSubProceso
 
+SubProceso salir
+	
+	Definir opcion Como Caracter;
+	
+	Escribir "¿De verdad quiere salir del juego?";
+	Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+	Leer opcion;
+	
+	Si (opcion="s" O opcion ="S") Entonces
+		
+		Esperar 1 Segundos;
+		
+	FinSi
+	
+	Si (opcion = "n" o opcion = "N") Entonces
+		
+		Escribir "Regresando al menu.";
+		Esperar 1 Segundos;
+		
+	FinSi
+	
+FinSubProceso
 
 // Como ya hemos terminado de definir los SubProceso vamos a pasar a definir el Proceso principal que es donde se van a llamar a todos los SubProceso anteriormente programados
 
@@ -1921,8 +2329,10 @@ Proceso Juegos_Reunidos
 		Escribir  "*                       1) Saber y Ganar.                             *";
 		Escribir  "*                       2) Simon Dice.                                *";
 		Escribir  "*                       3) Piedra Papel o Tijeras                     *";
+		Escribir  "*                       4) Convinación Perdida                        *";
+		Escribir  "*                       6) Cresditos                                  *";
+		Escribir  "*                       7) Salir                                      *";
 		Escribir  "*                                                                     *";
-		Escribir  "*                       5) Cresditos                                  *";
 		Escribir  "***********************************************************************";
 		
 		// Aqui lo que hacemos con este "leer" es que nos deje seleccionar el juego que queramos 
@@ -1938,17 +2348,29 @@ Proceso Juegos_Reunidos
 				
 			3:
 				piedra_papel_tijeras;
-			5:
+				
+			4:
+				convinacion_perdida;
+				
+			6:
 				creditos;
+				
+			7:
+				salir;
+				
+			De Otro Modo:
+				
+				Escribir "La opcion marcada no es valida";
+				Esperar 1 Segundos;
+				
 		FinSegun
 		
 		Borrar Pantalla;
 		
-		Escribir "¿Quiere volver a jugar o elegir otro juego?";
-		Escribir " Teclé < s > para seguir o < n > para abandonar";
+		Escribir "¿Quiere elegir otro juego o abandonar el programa?";
+		Escribir " Teclé < s > para elegir otro juego o < n > para abandonar";
 		Leer decision;
 		
 	Hasta Que decision = "n";
 	
-FinProceso
-	
+FinProceso	
