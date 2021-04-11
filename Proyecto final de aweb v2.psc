@@ -1864,6 +1864,8 @@ FinSubProceso
 SubProceso convinacion_perdida
 	
 	Definir opcioncp Como Entero;	
+	Definir dificultad Como Entero;
+	Definir opdificultad Como Entero;
 	
 	Borrar Pantalla;
 	
@@ -1889,6 +1891,48 @@ SubProceso convinacion_perdida
 	Escribir "";
 	Escribir "        -- Elige la opción que prefieras --  ";
 	Leer opcioncp;
+	
+	Borrar Pantalla;
+	
+	Escribir " __^__                                       __^__";
+	Escribir "( ___ )-------------------------------------( ___ )";
+	Escribir " | / |   ¿En que dificultad quieres jugar?   | \ |";
+	Escribir " | / |                                       | \ |";
+	Escribir " | / |              1) Muy Facil             | \ |";
+	Escribir " | / |              2) Facil                 | \ |";
+	Escribir " | / |              3) Media                 | \ |";
+	Escribir " | / |              4) Dificil               | \ |";
+	Escribir " | / |              5) Pesadilla             | \ |";
+	Escribir " |___|                                       |___|";
+	Escribir "(_____)-------------------------------------(_____) ";
+	Escribir "";
+	Escribir "        -- Elige la opción que prefieras --  ";
+	Leer dificultad;
+	
+	Segun dificultad Hacer
+		1:
+			opdificultad<-1000;
+			
+		2:
+			opdificultad<-50;
+			
+		3:
+			opdificultad<-25;
+			
+		4:
+			opdificultad<-10;
+			
+		5:  
+			opdificultad<-5;
+			
+		De Otro Modo:
+			
+			Escribir "La opcion es incorrecta";
+			
+			convinacion_perdida;
+			
+	FinSegun
+	
 	
 	
 	Segun opcioncp Hacer
@@ -1961,242 +2005,266 @@ SubProceso convinacion_perdida
 						
 					FinSegun
 				FinPara
-				
-				
-				Repetir
-					
-					cvueltas<- cvueltas + 1;
-					
-					Borrar Pantalla;
 					
 					Repetir
 						
-						Escribir " __^__                                         __^__";
-						Escribir "( ___ )---------------------------------------( ___ )";
-						Escribir " | / |                                         | \ |";
-						Escribir " | / |   Introduce tu combinacion de colores   | \ |";
-						Escribir " | / |                                         | \ |";
-						Escribir " | / |              am = Amarillo              | \ |";
-						Escribir " | / |              ro = Rojo                  | \ |";
-						Escribir " | / |              ve = Verde                 | \ |";
-						Escribir " | / |              az = Azul                  | \ |";
-						Escribir " | / |              ne = Negro                 | \ |";
-						Escribir " | / |              bl = Blanco                | \ |";
-						Escribir " |___|                                         |___|";
-						Escribir "(_____)---------------------------------------(_____) ";
-						Escribir "";
+						cvueltas<- cvueltas + 1;
 						
-						Para contador<- 1 Hasta 4 Con Paso 1 Hacer
+						Borrar Pantalla;
+						
+						Repetir
 							
-							Repetir
-								Segun contador Hacer
-									
-									1:
-										Escribir "Primer color";
-										
-									2:
-										Escribir "Segundo color";
-										
-									3:
-										Escribir "Tercer color";
-										
-									4:
-										Escribir "Cuarto color";
-									
-								FinSegun
+							Escribir " __^__                                         __^__";
+							Escribir "( ___ )---------------------------------------( ___ )";
+							Escribir " | / |                                         | \ |";
+							Escribir " | / |   Introduce tu combinacion de colores   | \ |";
+							Escribir " | / |                                         | \ |";
+							Escribir " | / |              am = Amarillo              | \ |";
+							Escribir " | / |              ro = Rojo                  | \ |";
+							Escribir " | / |              ve = Verde                 | \ |";
+							Escribir " | / |              az = Azul                  | \ |";
+							Escribir " | / |              ne = Negro                 | \ |";
+							Escribir " | / |              bl = Blanco                | \ |";
+							Escribir " |___|                                         |___|";
+							Escribir "(_____)---------------------------------------(_____) ";
+							Escribir "";
+							
+							Para contador<- 1 Hasta 4 Con Paso 1 Hacer
 								
-								Leer CO;
-								Error<-Falso;
-								
-							Si CO <> "am" Entonces
-								Si CO <> "ro" Entonces
-									Si CO <> "ve" Entonces
-										Si CO <> "az" Entonces
-											Si CO <> "ne" Entonces
-												Si CO <> "bl" Entonces
-													Error<-Verdadero;
-														Escribir "Color erroneo";
+								Repetir
+									Segun contador Hacer
+										
+										1:
+											Escribir "Primer color";
+											
+										2:
+											Escribir "Segundo color";
+											
+										3:
+											Escribir "Tercer color";
+											
+										4:
+											Escribir "Cuarto color";
+										
+									FinSegun
+									
+									Leer CO;
+									Error<-Falso;
+									
+								Si CO <> "am" Entonces
+									Si CO <> "ro" Entonces
+										Si CO <> "ve" Entonces
+											Si CO <> "az" Entonces
+												Si CO <> "ne" Entonces
+													Si CO <> "bl" Entonces
+														Error<-Verdadero;
+															Escribir "Color erroneo";
+														FinSi
 													FinSi
 												FinSi
 											FinSi
 										FinSi
 									FinSi
-								FinSi
-							Hasta Que error== Falso
+								Hasta Que error== Falso
+									
+								Segun contador Hacer
+									
+									1:
+										c1<-CO;
+										
+									2:
+										c2<-CO;
+										
+									3:
+										c3<-CO;
+										
+									4:
+										c4<-CO;
+										
+								FinSegun
 								
-							Segun contador Hacer
+							FinPara
 								
-								1:
-									c1<-CO;
-									
-								2:
-									c2<-CO;
-									
-								3:
-									c3<-CO;
-									
-								4:
-									c4<-CO;
-							FinSegun
-							
-						FinPara
-							
-					Borrar Pantalla;	
+						Borrar Pantalla;	
 						
-					Escribir " __^__                                        __^__";
-					Escribir "( ___ )--------------------------------------( ___ )";
-					Escribir " | / |                                        | \ |";
-					Escribir " | / |   Combinacion de colores establecida   | \ |";
-					Escribir " | / |                                        | \ |";
-					Escribir " | / |            1º color = ",c1,"               | \ |";
-					Escribir " | / |            2º color = ",c2,"               | \ |";
-					Escribir " | / |            3º color = ",c3,"               | \ |";
-					Escribir " | / |            4º color = ",c4,"               | \ |";
-					Escribir " |___|                                        |___|";
-					Escribir "(_____)--------------------------------------(_____) ";
-					Escribir "";
+						Escribir " __^__                                        __^__";
+						Escribir "( ___ )--------------------------------------( ___ )";
+						Escribir " | / |                                        | \ |";
+						Escribir " | / |   Combinacion de colores establecida   | \ |";
+						Escribir " | / |                                        | \ |";
+						Escribir " | / |            1º color = ",c1,"               | \ |";
+						Escribir " | / |            2º color = ",c2,"               | \ |";
+						Escribir " | / |            3º color = ",c3,"               | \ |";
+						Escribir " | / |            4º color = ",c4,"               | \ |";
+						Escribir " |___|                                        |___|";
+						Escribir "(_____)--------------------------------------(_____) ";
+						Escribir "";
 						
-					Escribir "Esta bien la convinacion de colores (Si / No)";
-					Leer confirmacioncolor;
-					
-				Hasta Que (confirmacioncolor = "si") o (confirmacioncolor = "SI") o (confirmacioncolor = "Si") o (confirmacioncolor = "sI") o (confirmacioncolor = "s") o (confirmacioncolor = "S") o (confirmacioncolor = "n") o (confirmacioncolor = "N")
-					
-					aciertos<-0;
-					casiaciertos<-0;
-					
-					position1<-Verdadero;
-					position2<-Verdadero;
-					position3<-Verdadero;
-					position4<-Verdadero;
-					
-					si (posi1 = c1) Entonces
-						aciertos<- aciertos + 1;
-						position1<-Falso;
-					FinSi
-					
-					Si (posi2 = c2) Entonces
-						aciertos<- aciertos +1;
-						position2<-Falso;
-					FinSi
-					
-					si (posi3 = c3) Entonces
-						aciertos<- aciertos + 1;
-						position3<-Falso;
-					FinSi
-					
-					Si (posi4 = c4) Entonces
-						aciertos<- aciertos +1;
-						position4<-Falso;
-					FinSi
-					
-					Si (position1 = Verdadero) Entonces
+						Escribir "Esta bien la convinacion de colores (Si / No)";
+						Leer confirmacioncolor;
 						
-						Si (p1 = c2) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position1<- Falso;
+					Hasta Que (confirmacioncolor = "si") o (confirmacioncolor = "SI") o (confirmacioncolor = "Si") o (confirmacioncolor = "sI") o (confirmacioncolor = "s") o (confirmacioncolor = "S") o (confirmacioncolor = "n") o (confirmacioncolor = "N")
+						
+						aciertos<-0;
+						casiaciertos<-0;
+						
+						position1<-Verdadero;
+						position2<-Verdadero;
+						position3<-Verdadero;
+						position4<-Verdadero;
+						
+						si (posi1 = c1) Entonces
+							aciertos<- aciertos + 1;
+							position1<-Falso;
 						FinSi
 						
-						Si (p1 = c3) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position1<- Falso;
+						Si (posi2 = c2) Entonces
+							aciertos<- aciertos +1;
+							position2<-Falso;
 						FinSi
 						
-						Si (p1 = c4) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position1<- Falso;
+						si (posi3 = c3) Entonces
+							aciertos<- aciertos + 1;
+							position3<-Falso;
 						FinSi
-					FinSi
-					
-					Si (position2 = Verdadero) Entonces
 						
-						Si (p2 = c1) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position2<- Falso;
+						Si (posi4 = c4) Entonces
+							aciertos<- aciertos +1;
+							position4<-Falso;
+						FinSi
+						
+						Si (position1 = Verdadero) Entonces
 							
-						SiNo
+							Si (p1 = c2) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position1<- Falso;
+							FinSi
 							
-							Si (p2 = c3) Entonces
+							Si (p1 = c3) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position1<- Falso;
+							FinSi
+							
+							Si (p1 = c4) Entonces
+								casiaciertos<-casiaciertos + 1;
+								position1<- Falso;
+							FinSi
+						FinSi
+						
+						Si (position2 = Verdadero) Entonces
+							
+							Si (p2 = c1) Entonces
 								casiaciertos<-casiaciertos + 1;
 								position2<- Falso;
+								
 							SiNo
-								Si (p2 = c4) Entonces
+								
+								Si (p2 = c3) Entonces
 									casiaciertos<-casiaciertos + 1;
 									position2<- Falso;
+								SiNo
+									Si (p2 = c4) Entonces
+										casiaciertos<-casiaciertos + 1;
+										position2<- Falso;
+									FinSi
 								FinSi
 							FinSi
 						FinSi
-					FinSi
-					
-					Si (position3 = Verdadero) Entonces
 						
-						Si (p1 = c1) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position3<- Falso;
-						SiNo
-							Si (p1 = c3) Entonces
+						Si (position3 = Verdadero) Entonces
+							
+							Si (p1 = c1) Entonces
 								casiaciertos<-casiaciertos + 1;
 								position3<- Falso;
 							SiNo
-								Si (p1 = c4) Entonces
+								Si (p1 = c3) Entonces
 									casiaciertos<-casiaciertos + 1;
 									position3<- Falso;
+								SiNo
+									Si (p1 = c4) Entonces
+										casiaciertos<-casiaciertos + 1;
+										position3<- Falso;
+									FinSi
 								FinSi
 							FinSi
 						FinSi
-					FinSi
-					
-					Si (position4 = Verdadero) Entonces
 						
-						Si (p4 = c1) Entonces
-							casiaciertos<-casiaciertos + 1;
-							position4<- Falso;
-						SiNo
-							Si (p4 = c2) Entonces
+						Si (position4 = Verdadero) Entonces
+							
+							Si (p4 = c1) Entonces
 								casiaciertos<-casiaciertos + 1;
 								position4<- Falso;
 							SiNo
-								Si (p4 = c3) Entonces
+								Si (p4 = c2) Entonces
 									casiaciertos<-casiaciertos + 1;
 									position4<- Falso;
+								SiNo
+									Si (p4 = c3) Entonces
+										casiaciertos<-casiaciertos + 1;
+										position4<- Falso;
+									FinSi
 								FinSi
 							FinSi
 						FinSi
-					FinSi
-					
-					seguirjugando<-"Si";	
-					
-					Si aciertos = 4 Entonces
 						
-						Borrar Pantalla;
-						Escribir "           @-------------------------------@";
-						Escribir "   ________|        << Enorabuena >>       |_______";
-						Escribir "   \       |                               |       /";
-						Escribir "    \      |  Descifrastes la convinación  |      /";
-						Escribir "    /      @_______________________________@      \";
-						Escribir "   /__________)                         (__________\";
+						seguirjugando<-"Si";	
 						
-					SiNo
+						Si aciertos = 4 Entonces
+							
+							Borrar Pantalla;
+							Escribir "           @-------------------------------@";
+							Escribir "   ________|        << Enorabuena >>       |_______";
+							Escribir "   \       |                               |       /";
+							Escribir "    \      |  Descifrastes la convinación  |      /";
+							Escribir "    /      @_______________________________@      \";
+							Escribir "   /__________)                         (__________\";
+							
+						SiNo
+							
+							
+							Escribir " __^__                                                __^__";
+							Escribir "( ___ )----------------------------------------------( ___ )";
+							Escribir " | / |                                                | \ |";
+							Escribir " | / |  Has tenido ",aciertos, " En color y posicion.             | \ |";
+							Escribir " | / |                                                | \ |";
+							Escribir " | / |  Has tenido ",casiaciertos," Solo color                       | \ |";
+							Escribir " | / |                                                | \ |";
+							Escribir " | / |  LLevas ",cvueltas," intentos.                            | \ |";
+							Escribir " |___|                                                |___|";
+							Escribir "(_____)----------------------------------------------(_____) ";
+							Escribir "";
+							Esperar 1 Segundos;
+						FinSi
 						
-						
-						Escribir " __^__                                                __^__";
-						Escribir "( ___ )----------------------------------------------( ___ )";
-						Escribir " | / |                                                | \ |";
-						Escribir " | / |  Has tenido ",aciertos, " En color y posicion.             | \ |";
-						Escribir " | / |                                                | \ |";
-						Escribir " | / |  Has tenido ",casiaciertos," Solo color                       | \ |";
-						Escribir " | / |                                                | \ |";
-						Escribir " | / |  LLevas ",cvueltas," intentos.                            | \ |";
-						Escribir " |___|                                                |___|";
-						Escribir "(_____)----------------------------------------------(_____) ";
-						Escribir "";
-						Escribir "             ¿Quieres seguir jugando? (S/N)";
-						Leer seguirjugando;
-					FinSi
-				Hasta Que (Aciertos = 4) o (seguirjugando="no");
+						Si (opdificultad == cvueltas) Entonces
+								
+								Escribir " __^__                                        __^__";
+								Escribir "( ___ )--------------------------------------( ___ )";
+								Escribir " | / |                                        | \ |";
+								Escribir " | / |               GAME OVER                | \ |";
+								Escribir " | / |                                        | \ |";
+								Escribir " | / |      La combinación correcta era:      | \ |";
+								Escribir " | / |                                        | \ |";
+								Escribir " | / |            1º color = ",p1,"               | \ |";
+								Escribir " | / |            2º color = ",p2,"               | \ |";
+								Escribir " | / |            3º color = ",p3,"               | \ |";
+								Escribir " | / |            4º color = ",p4,"               | \ |";
+								Escribir " |___|                                        |___|";
+								Escribir "(_____)--------------------------------------(_____) ";
+								Escribir "";
+								Escribir "           Pulsa una tecla para continuar";
+								Esperar Tecla;
+								
+								convinacion_perdida;
+								
+						FinSi
+							Escribir "             ¿Quieres seguir jugando? (S/N)";
+							Leer seguirjugando;
+							
+						Hasta Que (Aciertos = 4) o (seguirjugando="no");
 			
-		
 		2:
-		
+			
 			Borrar Pantalla;
 			Escribir  "***********************************************************************";
 			Escribir  "*                                                                     *";
@@ -2245,7 +2313,294 @@ SubProceso convinacion_perdida
 	
 FinSubProceso
 
-
+SubProceso semidados
+	
+	Definir resultado Como Entero;
+	Definir puntoprincipal Como Entero;
+	Definir punto Como Entero;
+	Definir i Como Entero;
+	Definir opcion Como Entero;
+	
+	Borrar Pantalla;
+	
+	Escribir "";
+	Escribir "                         ____";
+	Escribir " __^__                 _(____)_                __^__";
+	Escribir "( ___ )____________ooO_(_o__o_)_Ooo___________( ___ )";
+	Escribir " | / |                                         | \ |";
+	Escribir " | / |         Bienvenidos a Semidados         | \ |";
+	Escribir " |___|                                         |___|";
+	Escribir "(_____)---------------------------------------(_____) ";
+	Escribir "";
+	Esperar 1 Segundos;
+	
+	
+	Borrar Pantalla;
+	Escribir "";
+	Escribir "                         ____";
+	Escribir " __^__                 _(____)_                __^__";
+	Escribir "( ___ )____________ooO_(_o__o_)_Ooo___________( ___ )";
+	Escribir " | / |                                         | \ |";
+	Escribir " | / |                 1) Jugar                | \ |";
+	Escribir " | / |                 2) Ayuda                | \ |";
+	Escribir " | / |                 3) Salir                | \ |";
+	Escribir " |___|                                         |___|";
+	Escribir "(_____)---------------------------------------(_____) ";
+	Escribir "";
+	Escribir "        -- Elige la opción que prefieras --  ";
+	Leer opcion;
+	
+	Segun opcion Hacer
+		1:
+			i<-0;
+			
+			resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
+			
+			Borrar Pantalla;
+			
+			Escribir "                      ____";
+			Escribir "                    _(____)_";
+			Escribir "             ___ooO_(_o__o_)_Ooo___";
+			Escribir " - Pulsa cualquier tecla para tirar los dados -";
+			Esperar Tecla;
+			
+			Escribir "@-----------------------------------------------@";
+			Escribir "|       La tirada se esta llevado a cabo        |";
+			Escribir "@-----------------------------------------------@";
+			
+			Para i<-0 Hasta 24 Con Paso 1 Hacer
+				
+				Escribir "-","*" Sin Saltar;
+				Esperar 100 Milisegundos;
+			FinPara
+			
+			Escribir "";
+			Escribir "@-----------------------------------------------@";
+			Escribir "|    El resultado de la tirada es; ",resultado,"            |";
+			Escribir "@-----------------------------------------------@";
+			Esperar 2 Segundos;
+			
+			Si (resultado = 7) o (resultado = 11) Entonces
+				
+				Borrar Pantalla;
+				Escribir "                   \||/";
+				Escribir "                   (@ @)";
+				Escribir "           @----ooO-(_)-Ooo----------------@";
+				Escribir "   ________|        << Enorabuena >>       |_______";
+				Escribir "   \       |                               |       /";
+				Escribir "    \      |           Has Ganado          |      /";
+				Escribir "    /      @_______________________________@      \";
+				Escribir "   /__________)                         (__________\";
+				Escribir "";
+				Escribir "          Presina una tecla para continuar";
+				Esperar Tecla;
+				semidados;
+				
+			SiNo
+				Si (resultado = 2) o (resultado = 3) o (resultado = 12) Entonces
+					
+					Borrar Pantalla;
+					Escribir "                                 ( ( ( ";
+					Escribir "                                  ) ) )";
+					Escribir "                                 ( ( ( ";
+					Escribir "                                : ___ :";
+					Escribir "                               : (> <) :";
+					Escribir "           @------------------ooO-(_)-Ooo--@";
+					Escribir "   ________|        << GAME OVER >>        |_______";
+					Escribir "   \       |                               |       /";
+					Escribir "    \      |          Has Perdidio         |      /";
+					Escribir "    /      @_______________________________@      \";
+					Escribir "   /__________)                         (__________\";
+					Escribir "";
+					Escribir "          Presina una tecla para continuar";
+					Esperar Tecla;
+					semidados;
+					
+				SiNo
+					Escribir "@-----------------------------------------------@";
+					Escribir "|    Se establece el punto en: ",resultado,"                |";
+					Escribir "@-----------------------------------------------@";
+					
+					puntoprincipal<-resultado;
+					
+				FinSi
+			FinSi
+			
+			//segunda tirada
+			
+			
+			resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
+			
+			Borrar Pantalla;
+			
+			Escribir "                        ____";
+			Escribir "                      _(____)_";
+			Escribir "   _______________ooO_(_o__o_)_Ooo_______________";
+			Escribir " /                                                \";
+			Escribir "|  - Pulsa cualquier tecla para tirar los dados -  |";
+			Escribir "|                                                  |";
+			Escribir "|   El punto esta establecido en: ",puntoprincipal,"                |";
+			Escribir " \________________________________________________/";
+			Esperar Tecla;
+			
+			Escribir "@-----------------------------------------------@";
+			Escribir "|       La tirada se esta llevado a cabo        |";
+			Escribir "@-----------------------------------------------@";
+			
+			Para i<-0 Hasta 24 Con Paso 1 Hacer
+				
+				Escribir "-","*" Sin Saltar;
+				Esperar 100 Milisegundos;
+			FinPara
+			
+			Escribir "";
+			Escribir "@-----------------------------------------------@";
+			Escribir "|    El resultado de la tirada es; ",resultado,"            |";
+			Escribir "@-----------------------------------------------@";
+			Esperar 2 Segundos;
+			
+			Segun resultado Hacer
+				punto:
+					Borrar Pantalla;
+					Escribir "                   \||/";
+					Escribir "                   (@ @)";
+					Escribir "           @----ooO-(_)-Ooo----------------@";
+					Escribir "   ________|        << Enorabuena >>       |_______";
+					Escribir "   \       |                               |       /";
+					Escribir "    \      |           Has Ganado          |      /";
+					Escribir "    /      @_______________________________@      \";
+					Escribir "   /__________)                         (__________\";
+					Escribir "";
+					Escribir "          Presina una tecla para continuar";
+					Esperar Tecla;
+					semidados;
+				7:
+					Borrar Pantalla;
+					Escribir "                                 ( ( ( ";
+					Escribir "                                  ) ) )";
+					Escribir "                                 ( ( ( ";
+					Escribir "                                : ___ :";
+					Escribir "                               : (> <) :";
+					Escribir "           @------------------ooO-(_)-Ooo--@";
+					Escribir "   ________|        << GAME OVER >>        |_______";
+					Escribir "   \       |                               |       /";
+					Escribir "    \      |          Has Perdidio         |      /";
+					Escribir "    /      @_______________________________@      \";
+					Escribir "   /__________)                         (__________\";
+					Escribir "";
+					Escribir "          Presina una tecla para continuar";
+					Esperar Tecla;
+					semidados;
+					
+				De Otro Modo:
+					Repetir
+						resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
+						
+						Borrar Pantalla;
+						
+						Escribir "                        ____";
+						Escribir "                      _(____)_";
+						Escribir "   _______________ooO_(_o__o_)_Ooo_______________";
+						Escribir " /                                                \";
+						Escribir "|  - Pulsa cualquier tecla para tirar los dados -  |";
+						Escribir "|                                                  |";
+						Escribir "|   El punto esta establecido en: ",puntoprincipal,"                |";
+						Escribir " \________________________________________________/";
+						Esperar Tecla;
+						
+						Escribir "@-----------------------------------------------@";
+						Escribir "|       La tirada se esta llevado a cabo        |";
+						Escribir "@-----------------------------------------------@";
+						
+						Para i<-0 Hasta 24 Con Paso 1 Hacer
+							
+							Escribir "-","*" Sin Saltar;
+							Esperar 100 Milisegundos;
+						FinPara
+						
+						Escribir "";
+						Escribir "@-----------------------------------------------@";
+						Escribir "|    El resultado de la tirada es; ",resultado,"            |";
+						Escribir "@-----------------------------------------------@";
+						Esperar 2 Segundos;
+						
+					Hasta Que (resultado = puntoprincipal) o (resultado = 7);
+					
+					Si resultado = punto Entonces
+						
+						Borrar Pantalla;
+						Escribir "                   \||/";
+						Escribir "                   (@ @)";
+						Escribir "           @----ooO-(_)-Ooo----------------@";
+						Escribir "   ________|        << Enorabuena >>       |_______";
+						Escribir "   \       |                               |       /";
+						Escribir "    \      |           Has Ganado          |      /";
+						Escribir "    /      @_______________________________@      \";
+						Escribir "   /__________)                         (__________\";
+						Escribir "";
+						Escribir "          Presina una tecla para continuar";
+						Esperar Tecla;
+						semidados;
+						
+					SiNo
+						
+						Borrar Pantalla;
+						Escribir "                                 ( ( ( ";
+						Escribir "                                  ) ) )";
+						Escribir "                                 ( ( ( ";
+						Escribir "                                : ___ :";
+						Escribir "                               : (> <) :";
+						Escribir "           @------------------ooO-(_)-Ooo--@";
+						Escribir "   ________|        << GAME OVER >>        |_______";
+						Escribir "   \       |                               |       /";
+						Escribir "    \      |          Has Perdidio         |      /";
+						Escribir "    /      @_______________________________@      \";
+						Escribir "   /__________)                         (__________\";
+						Escribir "";
+						Escribir "          Presina una tecla para continuar";
+						Esperar Tecla;
+						semidados;
+						
+					FinSi
+		2:
+			Borrar Pantalla;
+			Escribir  "***********************************************************************";
+			Escribir  "*                                                                     *";
+			Escribir  "*                         << Semi Dados >>                            *";
+			Escribir  "*                                                                     *";
+			Escribir  "*    En este juego de doados como lo de los casinos per mas           *";
+			Escribir  "*    simplificado dado a la conplegidad del juego en la realidad,     *";
+			Escribir  "*    el juego consiste en que si en la primera tirada se saca un 7    *";
+			Escribir  "*    o un 11 ganas directamente si por el contrario sacas un 2 un 3   *";
+			Escribir  "*    o un 12 pierdes, en el caso de sacar un número distinto a los    *";
+			Escribir  "*    anteriores, se guardara para las siguiente tirada y en ese       *";
+			Escribir  "*    caso solo ganaras si sacas el mismo número, en el caso de que    *";
+			Escribir  "*    se sacara un 7 se pierde, se seguiran con tiradas sucesivas      *";
+			Escribir  "*    hasta que una de las dos circustancias se de primero o sacar     *";
+			Escribir  "*    el número acumulado o sacar un 7.                                *";
+			Escribir  "*                                                                     *";
+			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                                     *";
+			Escribir  "***********************************************************************";
+			
+			Escribir "Presione cualquier tecla para volver al menu";
+			Esperar Tecla;
+			
+			semidados;
+		3:
+			Escribir "Aqui ira salir";
+			Esperar Tecla;
+		De Otro Modo:
+			
+			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Esperar 1 Segundos;
+			semidados;
+			
+	FinSegun
+	
+	FinSegun
+	
+FinSubProceso
 
 SubProceso creditos
 	
@@ -2330,6 +2685,7 @@ Proceso Juegos_Reunidos
 		Escribir  "*                       2) Simon Dice.                                *";
 		Escribir  "*                       3) Piedra Papel o Tijeras                     *";
 		Escribir  "*                       4) Convinación Perdida                        *";
+		Escribir  "*                       5) Semidados                                  *";
 		Escribir  "*                       6) Cresditos                                  *";
 		Escribir  "*                       7) Salir                                      *";
 		Escribir  "*                                                                     *";
@@ -2351,6 +2707,9 @@ Proceso Juegos_Reunidos
 				
 			4:
 				convinacion_perdida;
+				
+			5:
+				semidados;
 				
 			6:
 				creditos;
