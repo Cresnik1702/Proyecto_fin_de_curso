@@ -28,20 +28,36 @@ SubProceso saber_y_ganar ()
 	
 	Borrar Pantalla;  // con Borrar Pantalla lo que vamos a conseguir es dejar la pantalla en blanco para que tolo lo que tiene que ver con el menú no apradca dentro del juego.
 	
+	// aquí vamos a poner la pantalla de inicio del juego que hara de intro.
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |            Saber y Ganar             | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	
+	// con el comando Esperar lo que hacemos es que el codigo se detenga durante el tiempo asignado en este caso 2 segundos.
+	
+	Esperar 2 Segundos;
+	
+	// de nuevo borramos la pantalla para que simule una nueva pantalla
+	
+	Borrar Pantalla;
 	
 	// Ahora lo que aremos sera el menu de inicio del jugo Saber y ganar el cual constara de 3 indices de los cuales el usuario eligira uno por teclado
 	
-	Escribir  "***********************************************************************";
-	Escribir  "*                                                                     *";
-	Escribir  "*                         << Saber y Ganar >>                         *";
-	Escribir  "*                                                                     *";
-	Escribir  "*                              1) Jugar                               *";
-	Escribir  "*                                                                     *";
-	Escribir  "*                              2) Ayuda                               *";
-	Escribir  "*                                                                     *";
-	Escribir  "*                              3) Salir                               *";
-	Escribir  "*                                                                     *";
-	Escribir  "***********************************************************************";
+	Escribir "  __^__                                      __^__";
+	Escribir " ( ___ )------------------------------------( ___ )";
+	Escribir "  | / |                                      | \ |";
+	Escribir "  | / |               1) Jugar               | \ |";
+	Escribir "  | / |               2) Ayuda               | \ |";
+	Escribir "  | / |               3) Salir               | \ |";
+	Escribir "  |___|                                      |___|";
+	Escribir " (_____)------------------------------------(_____) ";
+	Escribir "";
+	Escribir "         -- Elige la opción que prefieras --  ";
 	
 	// Este leer lo que hara sera guardar el número que marco el usuario, y el programa por medio de comparaciones sabra a que parte del codigo tiene que ir.
 	
@@ -58,10 +74,10 @@ SubProceso saber_y_ganar ()
 		
 		Borrar Pantalla; // Borramos la pantalla para que se vea limpia la pantalla y ara el efecto de cambio de pantalla, y pondremos el titulo de la sección
 		
-		Escribir "********************************";
-		Escribir "*   Primera Pregunta           *";
-		Escribir "*      - Categoria Geografía   *";
-		Escribir "********************************";
+		Escribir " ********************************";
+		Escribir " *   Primera Pregunta           *";
+		Escribir " *      - Categoria Geografía   *";
+		Escribir " ********************************";
 		
 		// Con la variable "resp" lo que aremos sera conseguir un número al azar para ver cuales de las 10 preguntas de la primera tanda tocara.
 		
@@ -74,17 +90,17 @@ SubProceso saber_y_ganar ()
 			// Ahora le mostramos por pantalla al usuario la pregunta con las posibles soluciones 
 			
 			Escribir "";
-			Escribir "-------------------------------";
-			Escribir "¿Cuál es la capital de Turquía?";
-			Escribir "-------------------------------";
+			Escribir " @---------------------------------@";
+			Escribir " | ¿Cuál es la capital de Turquía? |";
+			Escribir " @---------------------------------@";
 			Escribir "";
-			Escribir "1.- Ankara";
+			Escribir " 1.- Ankara";
 			Escribir "";
-			Escribir "2.- Kingston";
+			Escribir " 2.- Kingston";
 			Escribir "";
-			Escribir "3.- Tokio";
+			Escribir " 3.- Tokio";
 			Escribir "";
-			Escribir "4.- Dublin";
+			Escribir " 4.- Dublin";
 			Escribir "";
 			
 			// "res1" guardara la elecion del usuario
@@ -94,15 +110,27 @@ SubProceso saber_y_ganar ()
 			//  Con este conjunto de "SI , SINO" lo que aremos es programar si el usuario ha acertado o no, si la elcción del usuario coincide con el valor 
 			// de res en la linea de comando del SI entonces el programa dara por buena la respuesta y en el acumulador "corr" sumara el valor que tenia 
 			// corr mas 1 luego mostrara un mensaje al usuario que le dira que ha acertado. En el caso de que no coincida la elección del usuario, lo que hara el 
-			// el programa sera que en el acumulador "inc" sumara el valor que tenia mas 1.
+			// el programa sera que en el acumulador "inc" sumara el valor que tenia mas 1, en cualquiera de los dos casos esperara 2 segundos y se borrara la pantalla
+			// para que no se aglomere toda la información.
 			
 			Si (res1 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Genial, tu respuesta es correcta";
+				Escribir " Genial, tu respuesta es correcta";
+				
+				// con esta opcion de que espere 2 segundos y luego  borre la pantalla se consigue de el resultado y que salte automaticamente a la siguiente pregunta.
+				
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
@@ -110,511 +138,729 @@ SubProceso saber_y_ganar ()
 		// el mismo proceso hata completar las 5 rondas de preguntas.
 		
 		Si (resp = 2)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------";
-			Escribir "¿Cuál es el nombre del desierto de México?";
-			Escribir "------------------------------------------";
+			Escribir " @--------------------------------------------@";
+			Escribir " | ¿Cuál es el nombre del desierto de México? |";
+			Escribir " @--------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Sahara";
+			Escribir " 1.- Sahara";
 			Escribir "";
-			Escribir "2.- Gobi";
+			Escribir " 2.- Gobi";
 			Escribir "";
-			Escribir "3.- Ankara";
+			Escribir " 3.- Ankara";
 			Escribir "";
-			Escribir "4.- Sonora";
+			Escribir " 4.- Sonora";
 			Escribir "";
+			
 			leer res2;
+			
 			Si (res2 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 3)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------------";
-			Escribir "¿En qué isla italiana está Palermo?";
-			Escribir "-----------------------------------";
+			Escribir " @-------------------------------------@";
+			Escribir " | ¿En qué isla italiana está Palermo? |";
+			Escribir " @-------------------------------------@";
 			Escribir "";
-			Escribir "1.- G.Canarias";
+			Escribir " 1.- G.Canarias";
 			Escribir "";
-			Escribir "2.- Sicilia";
+			Escribir " 2.- Sicilia";
 			Escribir "";
-			Escribir "3.- Bora Bora";
+			Escribir " 3.- Bora Bora";
 			Escribir "";
-			Escribir "4.- Mauricio";
+			Escribir " 4.- Mauricio";
 			Escribir "";
+			
 			leer res3;
+			
 			Si (res3 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 4)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------------------";
-			Escribir "¿Cuál es el estado más grande de los Estados Unidos?";
-			Escribir "----------------------------------------------------";
+			Escribir " @------------------------------------------------------@";
+			Escribir " | ¿Cuál es el estado más grande de los Estados Unidos? |";
+			Escribir " @------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Montana";
+			Escribir " 1.- Montana";
 			Escribir "";
-			Escribir "2.- Oclahoma";
+			Escribir " 2.- Oclahoma";
 			Escribir "";
-			Escribir "3.- Alaska";
+			Escribir " 3.- Alaska";
 			Escribir "";
-			Escribir "4.- New York";
+			Escribir " 4.- New York";
 			Escribir "";
+			
 			leer res4;
+			
 			Si (res4 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 5)Entonces
+			
 			Escribir "";
-			Escribir "--------------------------------------------------------";
-			Escribir "¿Qué río europeo fluye a través de 10 países diferentes?";
-			Escribir "--------------------------------------------------------";
+			Escribir " @----------------------------------------------------------@";
+			Escribir " | ¿Qué río europeo fluye a través de 10 países diferentes? |";
+			Escribir " @----------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Rin";
+			Escribir " 1.- Rin";
 			Escribir "";
-			Escribir "2.- Amazonas";
+			Escribir " 2.- Amazonas";
 			Escribir "";
-			Escribir "3.- Danobio";
+			Escribir " 3.- Danobio";
 			Escribir "";
-			Escribir "4.- Nilo";
+			Escribir " 4.- Nilo";
 			Escribir "";
+			
 			leer res5;
+			
 			Si (res5 = 3) Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 6)Entonces
+			
 			Escribir "";
-			Escribir "--------------------------------------------------------";
-			Escribir "¿Qué río europeo fluye a través de 10 países diferentes?";
-			Escribir "--------------------------------------------------------";
+			Escribir " @----------------------------------------------------------@";
+			Escribir " | ¿Qué río europeo fluye a través de 10 países diferentes? |";
+			Escribir " @----------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Rin";
+			Escribir " 1.- Rin";
 			Escribir "";
-			Escribir "2.- Amazonas";
+			Escribir " 2.- Amazonas";
 			Escribir "";
-			Escribir "3.- Danobio";
+			Escribir " 3.- Danobio";
 			Escribir "";
-			Escribir "4.- Nilo";
+			Escribir " 4.- Nilo";
 			Escribir "";
+			
 			leer res6;
+			
 			Si (res6 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 7)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------------";
-			Escribir "¿Cuál es el continente más poblado de la tierra?";
-			Escribir "------------------------------------------------";
+			Escribir " @--------------------------------------------------@";
+			Escribir " | ¿Cuál es el continente más poblado de la tierra? |";
+			Escribir " @--------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Europa";
+			Escribir " 1.- Europa";
 			Escribir "";
-			Escribir "2.- Asia";
+			Escribir " 2.- Asia";
 			Escribir "";
-			Escribir "3.- Oceania";
+			Escribir " 3.- Oceania";
 			Escribir "";
-			Escribir "4.- Africa";
+			Escribir " 4.- Africa";
 			Escribir "";
 			leer res7;
+			
 			Si (res7 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
 			FinSi
 		FinSi
 		
 		Si (resp = 8)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------------";
-			Escribir "¿Qué país tiene el mayor número de habitantes?";
-			Escribir "----------------------------------------------";
+			Escribir " @------------------------------------------------@";
+			Escribir " | ¿Qué país tiene el mayor número de habitantes? |";
+			Escribir " @------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- EE.UU";
+			Escribir " 1.- EE.UU";
 			Escribir "";
-			Escribir "2.- Canada";
+			Escribir " 2.- Canada";
 			Escribir "";
-			Escribir "3.- Rusia";
+			Escribir " 3.- Rusia";
 			Escribir "";
-			Escribir "4.- China";
+			Escribir " 4.- China";
 			Escribir "";
+			
 			leer res8;
+			
 			Si (res8 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 9)Entonces
+			
 			Escribir "";
-			Escribir "--------------------------------------------";
-			Escribir "¿En qué país se encuentra la Torre de Belém?";
-			Escribir "--------------------------------------------";
+			Escribir " @----------------------------------------------@";
+			Escribir " | ¿En qué país se encuentra la Torre de Belém? |";
+			Escribir " @----------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Alemania";
+			Escribir " 1.- Alemania";
 			Escribir "";
-			Escribir "2.- Francia";
+			Escribir " 2.- Francia";
 			Escribir "";
-			Escribir "3.- Portugal";
+			Escribir " 3.- Portugal";
 			Escribir "";
-			Escribir "4.- España";
+			Escribir " 4.- España";
 			Escribir "";
+			
 			leer res9;
+			
 			Si (res9 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 10)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------------------";
-			Escribir "¿Cuál es la ciudad más antigua del mundo?";
-			Escribir "-----------------------------------------";
+			Escribir " @-------------------------------------------@";
+			Escribir " | ¿Cuál es la ciudad más antigua del mundo? |";
+			Escribir " @-------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Damasco";
+			Escribir " 1.- Damasco";
 			Escribir "";
-			Escribir "2.- Sodoma";
+			Escribir " 2.- Sodoma";
 			Escribir "";
-			Escribir "3.- Gomorra";
+			Escribir " 3.- Gomorra";
 			Escribir "";
-			Escribir "4.- Jerusalem";
+			Escribir " 4.- Jerusalem";
 			Escribir "";
+			
 			leer res10;
+			
 			Si (res10 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lo siento tu respuesta es incorrecta";
+				Escribir " Lo siento tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
-		Escribir "";
-		Escribir "Presiona ENTER para continuar";
+		// Aqui hacemos un intermedio entre preguntas apartir de aqui no comentare mas hasta que halla novedades en el codigo.
+		
+		Escribir "  __^__                                      __^__";
+		Escribir " ( ___ )------------------------------------( ___ )";
+		Escribir "  | / |                                      | \ |";
+		Escribir "  | / |    Presiona ENTER para continuar     | \ |";
+		Escribir "  |___|                                      |___|";
+		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
 		Borrar Pantalla;
 		
-		Escribir "********************************";
-		Escribir "*   Segunda Pregunta           *";
-		Escribir "*      - Categoria Historia    *";
-		Escribir "********************************";
+		Escribir " ********************************";
+		Escribir " *   Segunda Pregunta           *";
+		Escribir " *      - Categoria Historia    *";
+		Escribir " ********************************";
 		
 		resp<-azar(10)+1;
 		
 		
 		Si (resp = 1)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------------------";
-			Escribir "¿Qué civilización se asento en las orillas del Nilo?";
-			Escribir "----------------------------------------------------";
+			Escribir " @------------------------------------------------------@";
+			Escribir " | ¿Qué civilización se asento en las orillas del Nilo? |";
+			Escribir " @------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Egipcia";
+			Escribir " 1.- Egipcia";
 			Escribir "";
-			Escribir "2.- Mesopotamica";
+			Escribir " 2.- Mesopotamica";
 			Escribir "";
-			Escribir "3.- Griega";
+			Escribir " 3.- Griega";
 			Escribir "";
-			Escribir "4.- Romana";
+			Escribir " 4.- Romana";
 			Escribir "";
+			
 			leer res1;
+			
 			Si (res1 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 2)Entonces
+			
 			Escribir "";
-			Escribir "--------------------------------------------------------------------";
-			Escribir "¿Dónde se han encontrado los primeros documentos escritos del mundo?";
-			Escribir "--------------------------------------------------------------------";
+			Escribir " @----------------------------------------------------------------------@";
+			Escribir " | ¿Dónde se han encontrado los primeros documentos escritos del mundo? |";
+			Escribir " @----------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Egipto";
+			Escribir " 1.- Egipto";
 			Escribir "";
-			Escribir "2.- Oriente Proximo";
+			Escribir " 2.- Oriente Proximo";
 			Escribir "";
-			Escribir "3.- Gricia";
+			Escribir " 3.- Gricia";
 			Escribir "";
-			Escribir "4.- Roma";
+			Escribir " 4.- Roma";
 			Escribir "";
+			
 			leer res2;
+			
 			Si (res2 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir " Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 3)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------";
-			Escribir "¿Dónde se localizaba el Imperio inca?";
-			Escribir "-------------------------------------";
+			Escribir "@---------------------------------------@";
+			Escribir "| ¿Dónde se localizaba el Imperio inca? |";
+			Escribir "@---------------------------------------@";
 			Escribir "";
-			Escribir "1.- Mexico";
+			Escribir " 1.- Mexico";
 			Escribir "";
-			Escribir "2.- Onduras";
+			Escribir " 2.- Onduras";
 			Escribir "";
-			Escribir "3.- Peru";
+			Escribir " 3.- Peru";
 			Escribir "";
-			Escribir "4.- Venezuela";
+			Escribir " 4.- Venezuela";
 			Escribir "";
+			
 			leer res3;
+			
 			Si (res3 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 4)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------------------------------------";
-			Escribir "¿Qué civilización se centró alrededor de la ciudad de Tenochtitlan?";
-			Escribir "-------------------------------------------------------------------";
+			Escribir " @---------------------------------------------------------------------@";
+			Escribir " | ¿Qué civilización se centró alrededor de la ciudad de Tenochtitlan? |";
+			Escribir " @---------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Maya";
+			Escribir " 1.- Maya";
 			Escribir "";
-			Escribir "2.- Tabajara";
+			Escribir " 2.- Tabajara";
 			Escribir "";
-			Escribir "3.- Inca";
+			Escribir " 3.- Inca";
 			Escribir "";
-			Escribir "4.- Azteca";
+			Escribir " 4.- Azteca";
 			Escribir "";
+			
 			leer res4;
+			
 			Si (res4 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir " Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 5)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------------";
-			Escribir "¿Cuál fue la primera capital del Antiguo Egipto?";
-			Escribir "------------------------------------------------";
+			Escribir " @--------------------------------------------------@";
+			Escribir " | ¿Cuál fue la primera capital del Antiguo Egipto? |";
+			Escribir " @--------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Memfis";
+			Escribir " 1.- Memfis";
 			Escribir "";
-			Escribir "2.- Luxor";
+			Escribir " 2.- Luxor";
 			Escribir "";
-			Escribir "3.- Cairo";
+			Escribir " 3.- Cairo";
 			Escribir "";
-			Escribir "4.- Hamunaftra";
+			Escribir " 4.- Hamunaftra";
 			Escribir "";
+			
 			leer res5;
+			
 			Si (res5 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir " Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 6)Entonces
+			
 			Escribir "";
-			Escribir "--------------------------------------------------------------------------------------------------";
-			Escribir "¿Cuál es el periodo en el que se divide la historia más extenso en el que ha vivido el ser humano?";
-			Escribir "--------------------------------------------------------------------------------------------------";
+			Escribir " @----------------------------------------------------------------------------------------------------@";
+			Escribir " | ¿Cuál es el periodo en el que se divide la historia más extenso en el que ha vivido el ser humano? |";
+			Escribir " @----------------------------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- El Mesozoico";
+			Escribir " 1.- El Mesozoico";
 			Escribir "";
-			Escribir "2.- El paleolitico";
+			Escribir " 2.- El paleolitico";
 			Escribir "";
-			Escribir "3.- El jurasico";
+			Escribir " 3.- El jurasico";
 			Escribir "";
-			Escribir "4.- El cretacico";
+			Escribir " 4.- El cretacico";
 			Escribir "";
-			leer res6;
+			
+			Leer res6;
+			
 			Si (res6 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 7)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------------------";
-			Escribir "¿Cuándo se considera que termina la Edad Antigua?";
-			Escribir "-------------------------------------------------";
+			Escribir "@---------------------------------------------------@";
+			Escribir "| ¿Cuándo se considera que termina la Edad Antigua? |";
+			Escribir "@---------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Con la invención de la maquina a vapor";
+			Escribir " 1.- Con la invención de la maquina a vapor";
 			Escribir "";
-			Escribir "2.- Con la finalización de la I Guerra Mundial";
+			Escribir " 2.- Con la finalización de la I Guerra Mundial";
 			Escribir "";
-			Escribir "3.- Con la caída del Imperio romano de Occidente";
+			Escribir " 3.- Con la caída del Imperio romano de Occidente";
 			Escribir "";
-			Escribir "4.- Con la coronación de los reyes catolicos";
+			Escribir " 4.- Con la coronación de los reyes catolicos";
 			Escribir "";
-			leer res7;
+			
+			Leer res7;
+			
 			Si (res7 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir " Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 8)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------------------------------------------";
-			Escribir "¿Qué emperador romano es conocido por haber tenido un amor con Cleopatra?";
-			Escribir "-------------------------------------------------------------------------";
+			Escribir " @---------------------------------------------------------------------------@";
+			Escribir " | ¿Qué emperador romano es conocido por haber tenido un amor con Cleopatra? |";
+			Escribir " @---------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Marco Antoni";
+			Escribir " 1.- Marco Antoni";
 			Escribir "";
-			Escribir "2.- Marco Aurelio";
+			Escribir " 2.- Marco Aurelio";
 			Escribir "";
-			Escribir "3.- Neron";
+			Escribir " 3.- Neron";
 			Escribir "";
-			Escribir "4.- Jilio Cesar";
+			Escribir " 4.- Jilio Cesar";
 			Escribir "";
-			leer res8;
+			
+			Leer res8;
+			
 			Si (res8 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir " Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir " Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 9)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------------------------------------------------------";
-			Escribir "¿Qué conquitador asiático fundó el primer Imperio mongol y conquistó gran parte de China? ";
-			Escribir "------------------------------------------------------------------------------------------";
+			Escribir " @-------------------------------------------------------------------------------------------@";
+			Escribir " | ¿Qué conquitador asiático fundó el primer Imperio mongol y conquistó gran parte de China? |";
+			Escribir " @-------------------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Gengis Kan";
+			Escribir " 1.- Gengis Kan";
 			Escribir "";
-			Escribir "2.- Atila";
+			Escribir " 2.- Atila";
 			Escribir "";
-			Escribir "3.- Liu Kang";
+			Escribir " 3.- Liu Kang";
 			Escribir "";
-			Escribir "4.- Confucio";
+			Escribir " 4.- Confucio";
 			Escribir "";
-			leer res9;
+			
+			Leer res9;
+			
 			Si (res9 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 10)Entonces
+			
 			Escribir "";
-			Escribir "---------------------------------------------------------------------------------------------------";
-			Escribir "¿Cómo se llama la enfermedad que mató en la Edad Media a casi la mitad de los habitantes de Europa?";
-			Escribir "---------------------------------------------------------------------------------------------------";
+			Escribir " @-----------------------------------------------------------------------------------------------------@";
+			Escribir " | ¿Cómo se llama la enfermedad que mató en la Edad Media a casi la mitad de los habitantes de Europa? |";
+			Escribir " @-----------------------------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- La fiebre española";
+			Escribir " 1.- La fiebre española";
 			Escribir "";
-			Escribir "2.- La Peste Negra";
+			Escribir " 2.- La Peste Negra";
 			Escribir "";
-			Escribir "3.- Covid-19";
+			Escribir " 3.- Covid-19";
 			Escribir "";
-			Escribir "4.- Tuberculosis";
+			Escribir " 4.- Tuberculosis";
 			Escribir "";
-			leer res10;
+			
+			Leer res10;
+			
 			Si (res10 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Eureca!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Lastima tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
-		Escribir "";
-		Escribir "Presiona ENTER para continuar";
+		Escribir "  __^__                                      __^__";
+		Escribir " ( ___ )------------------------------------( ___ )";
+		Escribir "  | / |                                      | \ |";
+		Escribir "  | / |    Presiona ENTER para continuar     | \ |";
+		Escribir "  |___|                                      |___|";
+		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
 		Borrar Pantalla;
 		
-		Escribir "********************************";
-		Escribir "*   Tercera Pregunta           *";
-		Escribir "*      - Categoria Naturaleza  *";
-		Escribir "********************************";
+		Escribir " ********************************";
+		Escribir " *   Tercera Pregunta           *";
+		Escribir " *      - Categoria Naturaleza  *";
+		Escribir " ********************************";
 		
 		resp<-azar(10)+1;
 		
 		
 		Si (resp = 1)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------------------------------";
-			Escribir "¿Según su forma de alimentarse, consideramos a los cerdos...?";
-			Escribir "-------------------------------------------------------------";
+			Escribir "@---------------------------------------------------------------@";
+			Escribir "| ¿Según su forma de alimentarse, consideramos a los cerdos...? |";
+			Escribir "@---------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Omnívoros";
 			Escribir "";
@@ -624,22 +870,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Veganos";
 			Escribir "";
+			
 			leer res1;
+			
 			Si (res1 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 2)Entonces
 			Escribir "";
-			Escribir "------------------------------------------------------------------------------";
-			Escribir "¿Según su forma de reproducirse, consideramos a las tortugas como animales...?";
-			Escribir "------------------------------------------------------------------------------";
+			Escribir "@--------------------------------------------------------------------------------@";
+			Escribir "| ¿Según su forma de reproducirse, consideramos a las tortugas como animales...? |";
+			Escribir "@--------------------------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Oviparos";
 			Escribir "";
@@ -649,22 +905,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Clonativos";
 			Escribir "";
+			
 			leer res2;
+			
 			Si (res2 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 3)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------";
-			Escribir "¿Qué tipo de animales son los murciélagos?";
-			Escribir "------------------------------------------";
+			Escribir "@--------------------------------------------@";
+			Escribir "| ¿Qué tipo de animales son los murciélagos? |";
+			Escribir "@--------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Anfivios";
 			Escribir "";
@@ -674,22 +941,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Aves";
 			Escribir "";
-			leer res3;
+			
+			Leer res3;
+			
 			Si (res3 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 4)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------------";
-			Escribir "¿Los equinodermos son animales ...?";
-			Escribir "-----------------------------------";
+			Escribir "@-------------------------------------@";
+			Escribir "| ¿Los equinodermos son animales ...? |";
+			Escribir "@-------------------------------------@";
 			Escribir "";
 			Escribir "1.- Vertebrados";
 			Escribir "";
@@ -699,22 +977,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Invertebrados";
 			Escribir "";
+			
 			leer res4;
+			
 			Si (res4 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 5)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------------------";
-			Escribir "¿Cuántas patas tienen todos los arácnidos?";
-			Escribir "------------------------------------------";
+			Escribir "@--------------------------------------------@";
+			Escribir "| ¿Cuántas patas tienen todos los arácnidos? |";
+			Escribir "@--------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Tiene 4 patas";
 			Escribir "";
@@ -724,22 +1013,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Tiene 10 patas";
 			Escribir "";
-			leer res5;
+			
+			Leer res5;
+			
 			Si (res5 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 6)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------------------------------------------------------";
-			Escribir "¿Cómo se llama el proceso por el que las plantas fabrican su propio alimento?";
-			Escribir "-----------------------------------------------------------------------------";
+			Escribir "@-------------------------------------------------------------------------------@";
+			Escribir "| ¿Cómo se llama el proceso por el que las plantas fabrican su propio alimento? |";
+			Escribir "@-------------------------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Fotosintesis";
 			Escribir "";
@@ -749,22 +1049,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Sintesis";
 			Escribir "";
-			leer res6;
+			
+			Leer res6;
+		
 			Si (res6 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 7)Entonces
 			Escribir "";
-			Escribir "----------------------------------";
-			Escribir "¿Qué parte no pertenece a la flor?";
-			Escribir "----------------------------------";
+			Escribir "@------------------------------------@";
+			Escribir "| ¿Qué parte no pertenece a la flor? |";
+			Escribir "@------------------------------------@";
 			Escribir "";
 			Escribir "1.- Estambre";
 			Escribir "";
@@ -774,22 +1084,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Pistilo";
 			Escribir "";
-			leer res7;
+			
+			Leer res7;
+			
 			Si (res7 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 8)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------";
-			Escribir "¿Dónde se encuentra corazón?";
-			Escribir "----------------------------";
+			Escribir "@------------------------------@";
+			Escribir "| ¿Dónde se encuentra corazón? |";
+			Escribir "@------------------------------@";
 			Escribir "";
 			Escribir "1.- En el lado derecho del tórax";
 			Escribir "";
@@ -799,22 +1120,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- En el torax delante de los pulmones";
 			Escribir "";
-			leer res8;
+			
+			Leer res8;
+			
 			Si (res8 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 9)Entonces
 			Escribir "";
-			Escribir "-----------------------------------";
-			Escribir "¿Cómo se mide la masa de un cuerpo?";
-			Escribir "-----------------------------------";
+			Escribir "@-------------------------------------@";
+			Escribir "| ¿Cómo se mide la masa de un cuerpo? |";
+			Escribir "@-------------------------------------@";
 			Escribir "";
 			Escribir "1.- Con una probeta";
 			Escribir "";
@@ -824,22 +1155,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Con una bascula";
 			Escribir "";
-			leer res9;
+			
+			Leer res9;
+			
 			Si (res9 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 10)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------------";
-			Escribir "¿Cuál de las siguientes máquinas no es simple?";
-			Escribir "----------------------------------------------";
+			Escribir "@------------------------------------------------@";
+			Escribir "| ¿Cuál de las siguientes máquinas no es simple? |";
+			Escribir "@------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- La grua";
 			Escribir "";
@@ -849,19 +1191,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- La palanca";
 			Escribir "";
-			leer res10;
+			
+			Leer res10;
+			
 			Si (res10 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
-		Escribir "";
-		Escribir "Presiona ENTER para continuar";
+		Escribir "  __^__                                      __^__";
+		Escribir " ( ___ )------------------------------------( ___ )";
+		Escribir "  | / |                                      | \ |";
+		Escribir "  | / |    Presiona ENTER para continuar     | \ |";
+		Escribir "  |___|                                      |___|";
+		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
 		Borrar Pantalla;
 		
@@ -874,10 +1229,11 @@ SubProceso saber_y_ganar ()
 		
 		
 		Si (resp = 1)Entonces
+			
 			Escribir "";
-			Escribir "------------------------------";
-			Escribir "¿En que siglo nació Velázquez?";
-			Escribir "------------------------------";
+			Escribir "@--------------------------------@";
+			Escribir "| ¿En que siglo nació Velázquez? |";
+			Escribir "@--------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XVII";
 			Escribir "";
@@ -887,22 +1243,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Siglo XVI";
 			Escribir "";
-			leer res1;
+			
+			Leer res1;
+			
 			Si (res1 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 2)Entonces
 			Escribir "";
-			Escribir "--------------------------------";
-			Escribir "¿En que museo está la Mona Lisa?";
-			Escribir "--------------------------------";
+			Escribir "@----------------------------------@";
+			Escribir "| ¿En que museo está la Mona Lisa? |";
+			Escribir "@----------------------------------@";
 			Escribir "";
 			Escribir "1.- EL Prado";
 			Escribir "";
@@ -912,22 +1278,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Britihs Museum";
 			Escribir "";
-			leer res2;
+			
+			Leer res2;
+			
 			Si (res2 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 3)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------";
-			Escribir "¿En que siglo nació Van Gogh?";
-			Escribir "-----------------------------";
+			Escribir "@-------------------------------@";
+			Escribir "| ¿En que siglo nació Van Gogh? |";
+			Escribir "@-------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XX";
 			Escribir "";
@@ -937,22 +1314,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Siglo XVIII";
 			Escribir "";
-			leer res3;
+			
+			Leer res3;
+			
 			Si (res3 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 4)Entonces
 			Escribir "";
-			Escribir "----------------------------------------------------------";
-			Escribir "¿De que estilo es la catedral Nuestra señora de Notredame?";
-			Escribir "----------------------------------------------------------";
+			Escribir "@------------------------------------------------------------@";
+			Escribir "| ¿De que estilo es la catedral Nuestra señora de Notredame? |";
+			Escribir "@------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Romanico";
 			Escribir "";
@@ -962,22 +1349,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Gotico";
 			Escribir "";
-			leer res4;
+			
+			Leer res4;
+			
 			Si (res4 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 5)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------";
-			Escribir "¿En que siglo se inició el Renacimiento?";
-			Escribir "----------------------------------------";
+			Escribir "@------------------------------------------@";
+			Escribir "| ¿En que siglo se inició el Renacimiento? |";
+			Escribir "@------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XV";
 			Escribir "";
@@ -987,22 +1385,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Siglo XIII";
 			Escribir "";
-			leer res5;
+			
+			Leer res5;
+			
 			Si (res5 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 6)Entonces
+			
 			Escribir "";
-			Escribir "----------------------------------------------------";
-			Escribir "¿A que estilo pertenece < El David > de Miguelangel?";
-			Escribir "----------------------------------------------------";
+			Escribir "@------------------------------------------------------@";
+			Escribir "| ¿A que estilo pertenece < El David > de Miguelangel? |";
+			Escribir "@------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Barroco";
 			Escribir "";
@@ -1012,22 +1421,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Romanico";
 			Escribir "";
-			leer res6;
+			
+			Leer res6;
+			
 			Si (res6 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 7)Entonces
+			
 			Escribir "";
-			Escribir "-------------------------------------------------------------------------------";
-			Escribir "¿Quien dibujo el cuadro que lleva por nombre < La persistencia de la memoria >?";
-			Escribir "-------------------------------------------------------------------------------";
+			Escribir "@--------------------------------------------------------------------------------@";
+			Escribir "| ¿Quien dibujo el cuadro que lleva por nombre < La persistencia de la memoria > |?";
+			Escribir "@--------------------------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Velazquez";
 			Escribir "";
@@ -1037,22 +1457,32 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Picaso";
 			Escribir "";
-			leer res7;
+			
+			Leer res7;
+			
 			Si (res7 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 8)Entonces
+			
 			Escribir "";
-			Escribir "-------------------";
-			Escribir "¿Cuándo nació Goya?";
-			Escribir "-------------------";
+			Escribir "@---------------------@";
+			Escribir "| ¿Cuándo nació Goya? |";
+			Escribir "@---------------------@";
 			Escribir "";
 			Escribir "1.- 1700";
 			Escribir "";
@@ -1062,22 +1492,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- 1746";
 			Escribir "";
-			leer res8;
+			
+			Leer res8;
+			
 			Si (res8 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 9)Entonces
+			
 			Escribir "";
-			Escribir "-------------------";
-			Escribir "¿La piedad es una escultura de?";
-			Escribir "-------------------";
+			Escribir "@---------------------------------@";
+			Escribir "| ¿La piedad es una escultura de? |";
+			Escribir "@---------------------------------@";
 			Escribir "";
 			Escribir "1.- Miguel Angel";
 			Escribir "";
@@ -1087,22 +1528,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Bernini";
 			Escribir "";
-			leer res9;
+			
+			Leer res9;
+			
 			Si (res9 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 10)Entonces
+			
 			Escribir "";
-			Escribir "-----------------------------------------------------------------------------------------";
-			Escribir "¿Qué nombre recibe el estilo arquitectónico de las construcciones árabes en la península?";
-			Escribir "-----------------------------------------------------------------------------------------";
+			Escribir "@-------------------------------------------------------------------------------------------@";
+			Escribir "| ¿Qué nombre recibe el estilo arquitectónico de las construcciones árabes en la península? |";
+			Escribir "@-------------------------------------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Mozárabe";
 			Escribir "";
@@ -1112,19 +1564,33 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Arabesco";
 			Escribir "";
-			leer res10;
+			
+			Leer res10;
+			
 			Si (res10 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
+				Esperar 2 Segundos;
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
-		Escribir "";
-		Escribir "Presiona ENTER para continuar";
+		Escribir "  __^__                                      __^__";
+		Escribir " ( ___ )------------------------------------( ___ )";
+		Escribir "  | / |                                      | \ |";
+		Escribir "  | / |    Presiona ENTER para continuar     | \ |";
+		Escribir "  |___|                                      |___|";
+		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
 		Borrar Pantalla;
 		
@@ -1384,7 +1850,16 @@ SubProceso saber_y_ganar ()
 				Escribir "Opss, tu respuesta es incorrecta";
 			FinSi
 		FinSi 
-		Escribir " Presiona ENTER para conocer tus resultados finales";
+		
+		Escribir "  __^__                                      __^__";
+		Escribir " ( ___ )------------------------------------( ___ )";
+		Escribir "  | / |                                      | \ |";
+		Escribir "  | / |   Presiona ENTER para conocer tus    | \ |";
+		Escribir "  | / |       tus resultados finales         | \ |";
+		Escribir "  |___|                                      |___|";
+		Escribir " (_____)------------------------------------(_____) ";
+		Esperar Tecla;
+		
 		Leer cont;
 		
 		// En la variable "porc" guardaremos el valor de la operacion de allar el tanto porciento de aciertos
@@ -1412,7 +1887,7 @@ SubProceso saber_y_ganar ()
 		
 		Esperar Tecla;
 		
-		// Ahora lo que aremos sera volver a llamar al SubProceso para que reinicie el juego y asi volvamos al menu de inicio del juego
+		// Ahora lo que haremos sera volver a llamar al SubProceso para que reinicie el juego y asi volvamos al menu de inicio del juego
 		
 		saber_y_ganar;
 		
@@ -1479,157 +1954,625 @@ SubProceso saber_y_ganar ()
 	
 FinSubProceso
 
+// Y hast aqui llega el primer juego de la colección 
+
 SubProceso simon_dice
 	
-		Definir numdado Como Entero;
-		Definir resusuario Como Entero;
-		Definir score Como Entero;
-		Definir opcionsimon Como Entero;
-		Definir opcion Como Caracter;
+	// Aqui definimos las variables
+	
+	Definir numdado Como Entero;
+	Definir dicho Como Real;
+	Definir dichotexto Como Caracter;
+	Definir num1 Como Real;
+	Definir num2 Como Real;
+	definir nu1 Como Caracter;
+	Definir nu2 Como Caracter;
+	definir nu3 Como Caracter;
+	Definir num3 Como Real;
+	Definir num4 Como Real;
+	Definir resusuario Como Entero;
+	Definir score Como Entero;
+	Definir opcionsimon Como Entero;
+	Definir opcion Como Caracter;
+	
+	// Creamos la pantalla de inicio
+	
+	Borrar Pantalla;
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |          ¡¡¡ SIMON DICE !!!          | \ |";
+	Escribir " | / |                                      | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Esperar 2 Segundos;
+	Borrar Pantalla;
+	
+	// Creamos la pantalla menú
+	
+	Escribir " __^__                                      __^__";
+	Escribir "( ___ )------------------------------------( ___ )";
+	Escribir " | / |                                      | \ |";
+	Escribir " | / |               1) Jugar               | \ |";
+	Escribir " | / |               2) Ayuda               | \ |";
+	Escribir " | / |               3) Salir               | \ |";
+	Escribir " |___|                                      |___|";
+	Escribir "(_____)------------------------------------(_____) ";
+	Escribir "";
+	Escribir "        -- Elige la opción que prefieras --  ";
+	Leer opcionsimon;
+	
+	// despues de leer la variable "opcionsimon" según sea su valor ira a una parte de la esctructura "segun"
+	
+	Segun opcionsimon Hacer
 		
-		Borrar Pantalla;
-		
-		Escribir " __^__                                      __^__";
-		Escribir "( ___ )------------------------------------( ___ )";
-		Escribir " | / |                                      | \ |";
-		Escribir " | / |                                      | \ |";
-		Escribir " | / |          ¡¡¡ SIMON DICE !!!          | \ |";
-		Escribir " | / |                                      | \ |";
-		Escribir " |___|                                      |___|";
-		Escribir "(_____)------------------------------------(_____) ";
-		Esperar 2 Segundos;
-		Borrar Pantalla;
-		
-		
-		Escribir " __^__                                      __^__";
-		Escribir "( ___ )------------------------------------( ___ )";
-		Escribir " | / |                                      | \ |";
-		Escribir " | / |               1) Jugar               | \ |";
-		Escribir " | / |               2) Ayuda               | \ |";
-		Escribir " | / |               3) Salir               | \ |";
-		Escribir " |___|                                      |___|";
-		Escribir "(_____)------------------------------------(_____) ";
-		Escribir "";
-		Escribir "        -- Elige la opción que prefieras --  ";
-		Leer opcionsimon;
-		
-		
-		Segun opcionsimon Hacer
-			1:
-				Repetir
-					
-					Esperar 1 Segundos;
-					Borrar Pantalla;
-					
-					numdado<-numdado+Aleatorio(1,25);
-					Escribir " __^__                                      __^__";
-					Escribir "( ___ )------------------------------------( ___ )";
-					Escribir " | / |                                      | \ |";
-					Escribir " | / |                                      | \ |";
-					Escribir "             Simon dice:", numdado;
-					Escribir " | / |                                      | \ |";
-					Escribir " |___|                                      |___|";
-					Escribir "(_____)------------------------------------(_____) ";
-					Esperar 1 Segundos;
-					Borrar Pantalla;
-					
-					Escribir " __^__                                      __^__";
-					Escribir "( ___ )------------------------------------( ___ )";
-					Escribir " | / |                                      | \ |";
-					Escribir " | / |                                      | \ |";
-					Escribir " | / |       Repite la secuencia dada       | \ |";
-					Escribir " | / |                                      | \ |";
-					Escribir " |___|                                      |___|";
-					Escribir "(_____)------------------------------------(_____) ";
-					Leer resusuario;
-					
-					Si resusuario=numdado Entonces
+		1:
+			Escribir " __^__                                      __^__";
+			Escribir "( ___ )------------------------------------( ___ )";
+			Escribir " | / |                                      | \ |";
+			Escribir " | / |          1) Facil                    | \ |";
+			Escribir " | / |          2) Dificil                  | \ |";
+			Escribir " | / |          3) Pesadilla                | \ |";
+			Escribir " | / |          4) No apto para -18         | \ |";
+			Escribir " |___|                                      |___|";
+			Escribir "(_____)------------------------------------(_____) ";
+			Escribir "";
+			Escribir "        -- Elige la opción que prefieras --  ";
+			Leer opcionsimon;
+			
+			Segun opcionsimon Hacer
+				
+				1:
+					// como en el juego anterior en la posicion 1 tenemos el programa completo 
+					// lo primero que hacemos es habir un repetir para que aya un bucle y siempre el programa nos este dando el reto de memorizar
+					Repetir
 						
+						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						
+						Esperar 1 Segundos;
 						Borrar Pantalla;
+						
+						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
+						// vale "numdado"
+						
+						numdado<-numdado+Aleatorio(1,25);
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
 						Escribir " | / |                                      | \ |";
-						Escribir " | / |    As acertado simon esta contento   | \ |";
-						score<-score + 4;
-						Escribir " | / |         Tu puntuacion es de:         | \ |";
-						Escribir "                ", score, " PUNTOS";
+						Escribir " | / |                                      | \ |";
+						Escribir "             Simon dice:", numdado;
+						Escribir " | / |                                      | \ |";
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						Esperar 2 Segundos;
+						Si (num1 > 0) o (num1 >= 100) Entonces
+							Esperar 2 Segundos;
+							
+							Si (num1 > 101) o (num1 >= 1000) Entonces
+								Esperar 3 Segundos;
+								
+								Si (num1 > 1001) o (num1 >= 100000) Entonces
+									Esperar 4 Segundos;
+									
+									Si (num1 > 100001) o (num1 >= 100000) Entonces
+										Esperar 5 Segundos;
+										
+										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+											Esperar 6 Segundos;
+											
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
 						
-					SiNo
+						Borrar Pantalla;
 						
-						Escribir "@---------------------------------------------------------@";
-						Escribir "|                                                         |";
-						Escribir "|                  Lo siento as perdido                   |";
-						Escribir "|                      ¡ GAME OVER !                      |";
-						Escribir "|                                                         |";
-						Escribir "      - Tu puntuación Final a sido de; ", score, " PUNTOS  ";
-						Escribir "|                                                         |";
-						Escribir "|            *Presione un tecla para continuar*           |";
-						Escribir "|                                                         |";
-						Escribir "@---------------------------------------------------------@";
+						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
 						
-						Esperar Tecla;
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |       Repite la secuencia dada       | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
 						
-						simon_dice;
+						// la contestación del usuario la guardaremos en la variable "resusuario"
 						
-					FinSi
+						Leer resusuario;
+						
+						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						
+						Si resusuario=numdado Entonces
+							
+							Borrar Pantalla;
+							Escribir " __^__                                      __^__";
+							Escribir "( ___ )------------------------------------( ___ )";
+							Escribir " | / |                                      | \ |";
+							Escribir " | / |    As acertado simon esta contento   | \ |";
+							
+							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
+							//nos sumara 4 
+							
+							score<-score + 4;
+							Escribir " | / |         Tu puntuacion es de:         | \ |";
+							
+							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
+							
+							Escribir "                ", score, " PUNTOS";
+							Escribir " |___|                                      |___|";
+							Escribir "(_____)------------------------------------(_____) ";
+							
+							// el mensaje que muestra solo estara visible durante 2 segundos.
+							
+							Esperar 2 Segundos;
+							
+						SiNo
+							
+							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
+							// de la variable "score" que son los puntos acumulados.
+							
+							Escribir "@---------------------------------------------------------@";
+							Escribir "|                                                         |";
+							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                      ¡ GAME OVER !                      |";
+							Escribir "|                                                         |";
+							Escribir "      - Tu puntuación Final a sido de; ", score, " PUNTOS  ";
+							Escribir "|                                                         |";
+							Escribir "|            *Presione un tecla para continuar*           |";
+							Escribir "|                                                         |";
+							Escribir "@---------------------------------------------------------@";
+							
+							Esperar Tecla;
+							
+							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
+							
+							simon_dice;
+							
+						FinSi
+						
+						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
+						// la comparatiba de variables, en este caso seran "resusuario y numdado"
+						
+					Hasta Que resusuario <> numdado
 					
 					
-				Hasta Que resusuario <> numdado
-				
-			2:
-				Borrar Pantalla;
-				Escribir  "***********************************************************************";
-				Escribir  "*                                                                     *";
-				Escribir  "*                          << Simon Dice >>                           *";
-				Escribir  "*                                                                     *";
-				Escribir  "*     Este juego consites en que el ordenador te ira dando una        *";
-				Escribir  "*     serie de números los cuales iran en orden creciente y todo      *";
-				Escribir  "*     trata de ir memorizando el numero que sale y darlo en           *";
-				Escribir  "*     contestación a Simon, si haciertas sigues jugando pero si       *";
-				Escribir  "*     fallas se acaba la partida por cada acierto sumaras puntos      *";
-				Escribir  "*                                                                     *";
-				Escribir  "*     ¿A cuantos puntos llegaras?                                     *";
-				Escribir  "*                                                                     *";
-				Escribir  "*                                                       DIVIERTETE    *";
-				Escribir  "*                                                                     *";
-				Escribir  "***********************************************************************";
-				
-				Escribir "Presione cualquier tecla para volver al menu";
-				Esperar Tecla;
-				
-				simon_dice;
-				
-			3:
-				Borrar Pantalla;
-				
-				Escribir "¿De verdad quiere salir del juego?";
-				Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
-				Leer opcion;
-				
-				Si (opcion="s" O opcion ="S") Entonces
+				2:
 					
-					Escribir "Gracias por jugar a Saimon Dice.";
-					Escribir "Para continuar presione cualquier tecla";
-					Esperar Tecla;
-				FinSi
-				
-				Si (opcion = "n" o opcion = "N") Entonces
+					Repetir
+						
+						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						
+						Esperar 1 Segundos;
+						Borrar Pantalla;
+						
+						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
+						// vale "numdado"
+						
+						num2<-num2+(num2+Aleatorio(1,50));
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir "             Simon dice:", num2;
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						Esperar 1 Segundos;
+						Borrar Pantalla;
+						
+						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
+						
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |       Repite la secuencia dada       | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						// la contestación del usuario la guardaremos en la variable "resusuario"
+						
+						Leer resusuario;
+						
+						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						
+						Si resusuario=num2 Entonces
+							
+							Borrar Pantalla;
+							Escribir " __^__                                      __^__";
+							Escribir "( ___ )------------------------------------( ___ )";
+							Escribir " | / |                                      | \ |";
+							Escribir " | / |    As acertado simon esta contento   | \ |";
+							
+							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
+							//nos sumara 4 
+							
+							score<-score + 4;
+							Escribir " | / |         Tu puntuacion es de:         | \ |";
+							
+							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
+							
+							Escribir "                ", score, " PUNTOS";
+							Escribir " |___|                                      |___|";
+							Escribir "(_____)------------------------------------(_____) ";
+							
+							// el mensaje que muestra solo estara visible durante 2 segundos.
+							
+							Esperar 2 Segundos;
+							
+						SiNo
+							
+							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
+							// de la variable "score" que son los puntos acumulados.
+							
+							Escribir "@---------------------------------------------------------@";
+							Escribir "|                                                         |";
+							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                      ¡ GAME OVER !                      |";
+							Escribir "|                                                         |";
+							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "|                                                         |";
+							Escribir "         - La respuesta correcta es: ", num2;
+							Escribir "|                                                         |";
+							Escribir "|            *Presione un tecla para continuar*           |";
+							Escribir "|                                                         |";
+							Escribir "@---------------------------------------------------------@";
+							
+							Esperar Tecla;
+							
+							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
+							
+							simon_dice;
+							
+						FinSi
+						
+						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
+						// la comparatiba de variables, en este caso seran "resusuario y numdado"
+						
+						
+					Hasta Que resusuario <> num2
 					
-					simon_dice;
 					
-				FinSi
-				
-			De Otro Modo:
-				
-				Escribir "La opcion marcada no es valida seleccione de nuevo";
-				simon_dice;
+				3:
+					
+					Repetir
+						
+						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						
+						Esperar 1 Segundos;
+						Borrar Pantalla;
+						
+						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
+						// vale "numdado"
+						
+						//dicho por simon en la tirada anterior
+						dicho<-num1;
+						
+						// numero aleatorio en la tirada					
+						num2<-Aleatorio(1,75);
+						
+						// guardamos en nu2 el numero aleatorio echo texto
+						nu2<-ConvertirATexto(num2);
+						
+						//guardamos el valor de la jugada anterior en forma de texto
+						dichotexto<-ConvertirATexto(dicho);
+						
+						// unimos los dos valore echos texto en nu1
+						nu1<-Concatenar(dichotexto,nu2);
+						
+						// guardamos en num1 el valor de nu1 echo numero que es el que dira simon en esta ronda
+						num1<-ConvertirANumero(nu1);
+						
+						
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir "             Simon dice:", num1;
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						Si (num1 > 0) o (num1 >= 100) Entonces
+							Esperar 2 Segundos;
+							
+							Si (num1 > 101) o (num1 >= 1000) Entonces
+								Esperar 3 Segundos;
+								
+								Si (num1 > 1001) o (num1 >= 100000) Entonces
+									Esperar 4 Segundos;
+									
+									Si (num1 > 100001) o (num1 >= 100000) Entonces
+										Esperar 5 Segundos;
+										
+										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+											Esperar 6 Segundos;
+											
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+						
+						Borrar Pantalla;
+						
+						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
+						
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |       Repite la secuencia dada       | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						// la contestación del usuario la guardaremos en la variable "resusuario"
+						
+						Leer resusuario;
+						
+						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						
+						Si resusuario=num1 Entonces
+							
+							Borrar Pantalla;
+							Escribir " __^__                                      __^__";
+							Escribir "( ___ )------------------------------------( ___ )";
+							Escribir " | / |                                      | \ |";
+							Escribir " | / |    As acertado simon esta contento   | \ |";
+							
+							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
+							//nos sumara 4 
+							
+							score<-score + 4;
+							Escribir " | / |         Tu puntuacion es de:         | \ |";
+							
+							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
+							
+							Escribir "                ", score, " PUNTOS";
+							Escribir " |___|                                      |___|";
+							Escribir "(_____)------------------------------------(_____) ";
+							
+							// el mensaje que muestra solo estara visible durante 2 segundos.
+							
+							Esperar 2 Segundos;
+							
+						SiNo
+							
+							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
+							// de la variable "score" que son los puntos acumulados.
+							
+							Escribir "@---------------------------------------------------------@";
+							Escribir "|                                                         |";
+							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                      ¡ GAME OVER !                      |";
+							Escribir "|                                                         |";
+							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "|                                                         |";
+							Escribir "         - La respuesta correcta es: ", num1;
+							Escribir "|                                                         |";
+							Escribir "|            *Presione un tecla para continuar*           |";
+							Escribir "|                                                         |";
+							Escribir "@---------------------------------------------------------@";
+							
+							Esperar Tecla;
+							
+							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
+							
+							simon_dice;
+							
+						FinSi
+						
+						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
+						// la comparatiba de variables, en este caso seran "resusuario y numdado"
+						
+						
+					Hasta Que resusuario <> num1
+					
+					
+				4:
+					Repetir
+						
+						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						
+						Esperar 1 Segundos;
+						Borrar Pantalla;
+						
+						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
+						// vale "numdado"
+						
+						//dicho por simon en la tirada anterior
+						dicho<-num1;
+						
+						// numero aleatorio en la tirada					
+						num2<-Aleatorio(1,200);
+						
+						// guardamos en nu2 el numero aleatorio echo texto
+						nu2<-ConvertirATexto(num2);
+						
+						//guardamos el valor de la jugada anterior en forma de texto
+						dichotexto<-ConvertirATexto(dicho);
+						
+						// unimos los dos valore echos texto en nu1
+						nu1<-Concatenar(dichotexto,nu2);
+						
+						// guardamos en num1 el valor de nu1 echo numero que es el que dira simon en esta ronda
+						num1<-ConvertirANumero(nu1);
+						
+						
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir "             Simon dice:", num1;
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						Si (num1 > 0) o (num1 >= 100) Entonces
+							Esperar 2 Segundos;
+							
+							Si (num1 > 101) o (num1 >= 1000) Entonces
+								Esperar 3 Segundos;
+								
+								Si (num1 > 1001) o (num1 >= 100000) Entonces
+									Esperar 4 Segundos;
+									
+									Si (num1 > 100001) o (num1 >= 100000) Entonces
+										Esperar 5 Segundos;
+										
+										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+											Esperar 6 Segundos;
+											
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+						
+						Borrar Pantalla;
+						
+						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
+						
+						Escribir " __^__                                      __^__";
+						Escribir "( ___ )------------------------------------( ___ )";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " | / |       Repite la secuencia dada       | \ |";
+						Escribir " | / |                                      | \ |";
+						Escribir " |___|                                      |___|";
+						Escribir "(_____)------------------------------------(_____) ";
+						
+						// la contestación del usuario la guardaremos en la variable "resusuario"
+						
+						Leer resusuario;
+						
+						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						
+						Si resusuario=num1 Entonces
+							
+							Borrar Pantalla;
+							Escribir " __^__                                      __^__";
+							Escribir "( ___ )------------------------------------( ___ )";
+							Escribir " | / |                                      | \ |";
+							Escribir " | / |    As acertado simon esta contento   | \ |";
+							
+							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
+							//nos sumara 4 
+							
+							score<-score + 4;
+							Escribir " | / |         Tu puntuacion es de:         | \ |";
+							
+							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
+							
+							Escribir "                ", score, " PUNTOS";
+							Escribir " |___|                                      |___|";
+							Escribir "(_____)------------------------------------(_____) ";
+							
+							// el mensaje que muestra solo estara visible durante 2 segundos.
+							
+							Esperar 2 Segundos;
+							
+						SiNo
+							
+							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
+							// de la variable "score" que son los puntos acumulados.
+							
+							Escribir "@---------------------------------------------------------@";
+							Escribir "|                                                         |";
+							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                      ¡ GAME OVER !                      |";
+							Escribir "|                                                         |";
+							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "|                                                         |";
+							Escribir "         - La respuesta correcta es: ", num1;
+							Escribir "|                                                         |";
+							Escribir "|            *Presione un tecla para continuar*           |";
+							Escribir "|                                                         |";
+							Escribir "@---------------------------------------------------------@";
+							
+							Esperar Tecla;
+							
+							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
+							
+							simon_dice;
+							
+						FinSi
+						
+						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
+						// la comparatiba de variables, en este caso seran "resusuario y numdado"
+						
+						
+					Hasta Que resusuario <> num1
+					
+			FinSegun
 			
-		FinSegun
-		
+			
+			
+			
+			
+			
+			
+		2:	
+			
+			// en la Opcion 2 del programa se encuentra la ayuda es solo una pantalla de información como en el programa anterior donde 
+			// nos da un pequeño resumen de lo que es el juego.
+			
+			Borrar Pantalla;
+			Escribir  "***********************************************************************";
+			Escribir  "*                                                                     *";
+			Escribir  "*                          << Simon Dice >>                           *";
+			Escribir  "*                                                                     *";
+			Escribir  "*     Este juego consites en que el ordenador te ira dando una        *";
+			Escribir  "*     serie de números los cuales iran en orden creciente y todo      *";
+			Escribir  "*     trata de ir memorizando el numero que sale y darlo en           *";
+			Escribir  "*     contestación a Simon, si haciertas sigues jugando pero si       *";
+			Escribir  "*     fallas se acaba la partida por cada acierto sumaras puntos      *";
+			Escribir  "*                                                                     *";
+			Escribir  "*     ¿A cuantos puntos llegaras?                                     *";
+			Escribir  "*                                                                     *";
+			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                                     *";
+			Escribir  "***********************************************************************";
+			
+			Escribir "Presione cualquier tecla para volver al menu";
+			Esperar Tecla;
+			
+			simon_dice;
+			
+		3:
+			Borrar Pantalla;
+			
+			Escribir "¿De verdad quiere salir del juego?";
+			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Leer opcion;
+			
+			Si (opcion="s" O opcion ="S") Entonces
+				
+				Escribir "Gracias por jugar a Saimon Dice.";
+				Escribir "Para continuar presione cualquier tecla";
+				Esperar Tecla;
+			FinSi
+			
+			Si (opcion = "n" o opcion = "N") Entonces
+				
+				simon_dice;
+				
+			FinSi
+			
+		De Otro Modo:
+			
+			Escribir "La opcion marcada no es valida seleccione de nuevo";
+			simon_dice;
+			
+	FinSegun
+	
 FinSubProceso
 
 SubProceso piedra_papel_tijeras
