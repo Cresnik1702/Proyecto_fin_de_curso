@@ -1,5 +1,5 @@
-// Aqui vamos a crear un SubProceso  que contendra el primer juego de la colección del programa para ello usaremos la instrucción 
-// SubProceso y FinSubProceso
+// Aqui vamos a crear un SubProceso  que contendrá el primer juego de la colección del programa para ello usaremos la instrucción 
+// SubProceso y FinSubProceso.
 
 
 SubProceso saber_y_ganar () 
@@ -26,9 +26,11 @@ SubProceso saber_y_ganar ()
 	Definir nom Como Caracter;
 	Definir porc Como Real;
 	
-	Borrar Pantalla;  // con Borrar Pantalla lo que vamos a conseguir es dejar la pantalla en blanco para que tolo lo que tiene que ver con el menú no apradca dentro del juego.
+	Borrar Pantalla;  // Con "Borrar Pantalla" lo que vamos a conseguir es dejar la pantalla en blanco para que tolo lo que tiene que ver con el menú no aparezca
+					// dentro del juego.
 	
-	// aquí vamos a poner la pantalla de inicio del juego que hara de intro.
+	// Aquí vamos a poner la pantalla de inicio del juego que hará de intro.
+	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
 	Escribir " | / |                                      | \ |";
@@ -38,15 +40,15 @@ SubProceso saber_y_ganar ()
 	Escribir " |___|                                      |___|";
 	Escribir "(_____)------------------------------------(_____) ";
 	
-	// con el comando Esperar lo que hacemos es que el codigo se detenga durante el tiempo asignado en este caso 2 segundos.
+	// Con el comando "Esperar" lo que hacemos es que el código se detenga durante el tiempo asignado en este caso 2 segundos.
 	
 	Esperar 2 Segundos;
 	
-	// de nuevo borramos la pantalla para que simule una nueva pantalla
+	// De nuevo utilizamos el comando "borrar" para que simule una nueva pantalla.
 	
 	Borrar Pantalla;
 	
-	// Ahora lo que aremos sera el menu de inicio del jugo Saber y ganar el cual constara de 3 indices de los cuales el usuario eligira uno por teclado
+	// Ahora lo que haremos será el menú de inicio del juego "Saber y Ganar" el cual constará de 3 índices de los cuales el usuario eligirá uno por teclado.
 	
 	Escribir "  __^__                                      __^__";
 	Escribir " ( ___ )------------------------------------( ___ )";
@@ -59,35 +61,35 @@ SubProceso saber_y_ganar ()
 	Escribir "";
 	Escribir "         -- Elige la opción que prefieras --  ";
 	
-	// Este leer lo que hara sera guardar el número que marco el usuario, y el programa por medio de comparaciones sabra a que parte del codigo tiene que ir.
+	// Este "Leer" lo que hará será guardar el número que marcó el usuario, y el programa por medio de comparaciones sabrá a qué parte del código tiene que ir.
 	
 	Leer op;
 	
-	// Si el usuario eligio la opcion 1 el programa comparara la variable con los requisitos del "SI" y al ser iguales entrara en el juego propiamente dicho
+	// Si el usuario eligi la opción 1 el programa comparará la variable con los requisitos del "SI" y al ser iguales entrará en el juego propiamente dicho.
 	
 	Si (op = 1) Entonces
 		
-		// Ahora lo que aremos sera iniciar los acumuladores "corr" y "inc" que son los que se ocuparan para de contavilizar las respuestas correctas e incorrectas
+		// Ahora lo que haremos será iniciar los acumuladores "corr" y "inc" que son los que se ocuparán de contabilizar las respuestas correctas e incorrectas.
 		
 		corr<-0;
 		inc<-0;
 		
-		Borrar Pantalla; // Borramos la pantalla para que se vea limpia la pantalla y ara el efecto de cambio de pantalla, y pondremos el titulo de la sección
+		Borrar Pantalla; // Borramos la pantalla para que se limpie y haga el efecto de cambio de pantalla, y pondremos el título de la sección.
 		
 		Escribir " ********************************";
 		Escribir " *   Primera Pregunta           *";
 		Escribir " *      - Categoria Geografía   *";
 		Escribir " ********************************";
 		
-		// Con la variable "resp" lo que aremos sera conseguir un número al azar para ver cuales de las 10 preguntas de la primera tanda tocara.
+		// Con la variable "resp" lo que haremos será conseguir un número al azar para ver cuales de las 10 preguntas de la primera tanda tocará.
 		
 		resp<-azar(10)+1;
 		
-		// Mostraremos las preguntas mediante "SI"  y con el numero al azar que tenemos en la variable "resp" podemos ver cual es la pregunta que a tocado
+		// Mostraremos las preguntas mediante "SI"  y con el número al azar que tenemos en la variable "resp" podemos ver cual es la pregunta que ha tocado.
 		
 		Si (resp = 1)Entonces
 			
-			// Ahora le mostramos por pantalla al usuario la pregunta con las posibles soluciones 
+			// Ahora le mostramos por pantalla al usuario la pregunta con las posibles soluciones. 
 			
 			Escribir "";
 			Escribir " @---------------------------------@";
@@ -103,14 +105,14 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Dublin";
 			Escribir "";
 			
-			// "res1" guardara la elecion del usuario
+			// "res1" guardará la elección del usuario.
 			
-			leer res1;
+			Leer res1;
 			
-			//  Con este conjunto de "SI , SINO" lo que aremos es programar si el usuario ha acertado o no, si la elcción del usuario coincide con el valor 
-			// de res en la linea de comando del SI entonces el programa dara por buena la respuesta y en el acumulador "corr" sumara el valor que tenia 
-			// corr mas 1 luego mostrara un mensaje al usuario que le dira que ha acertado. En el caso de que no coincida la elección del usuario, lo que hara el 
-			// el programa sera que en el acumulador "inc" sumara el valor que tenia mas 1, en cualquiera de los dos casos esperara 2 segundos y se borrara la pantalla
+			//  Con este conjunto de "SI , SINO" lo que haremos es programar si el usuario ha acertado o no, si la elección del usuario coincide con el valor 
+			// de res en la línea de comando del SI entonces el programa dará por buena la respuesta y en el acumulador "corr" sumará el valor que tenía 
+			// "corr" más 1 luego mostrará un mensaje al usuario que le dirá que ha acertado. En el caso de que no coincida la elección del usuario, lo que hará el 
+			// programa será que en el acumulador "inc" sumará el valor que tenía más 1, en cualquiera de los dos casos esperará 2 segundos y se borrará la pantalla
 			// para que no se aglomere toda la información.
 			
 			Si (res1 = 1)Entonces
@@ -119,9 +121,11 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				
-				// con esta opcion de que espere 2 segundos y luego  borre la pantalla se consigue de el resultado y que salte automaticamente a la siguiente pregunta.
+				// Con esta opción de que espere 2 segundos y luego borre la pantalla se consigue dé el resultado y que salte automaticamente a la 
+				// siguiente pregunta.
 				
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -129,13 +133,14 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
 		FinSi
 		
-		// De esta manera concluiria la primera tanda de preguntas y saltaria el programa a la segunda tanda donde volveria a sacar un número por defecto  y a repetir 
-		// el mismo proceso hata completar las 5 rondas de preguntas.
+		// De esta manera concluiría la primera tanda de preguntas y saltaría el programa a la segunda tanda donde volvería a sacar un número por defecto  y a repetir 
+		// el mismo proceso hasta completar las 5 rondas de preguntas.
 		
 		Si (resp = 2)Entonces
 			
@@ -153,7 +158,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Sonora";
 			Escribir "";
 			
-			leer res2;
+			Leer res2;
 			
 			Si (res2 = 4)Entonces
 				
@@ -161,6 +166,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -168,6 +174,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -189,7 +196,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Mauricio";
 			Escribir "";
 			
-			leer res3;
+			Leer res3;
 			
 			Si (res3 = 2)Entonces
 				
@@ -197,6 +204,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -204,6 +212,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -225,7 +234,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- New York";
 			Escribir "";
 			
-			leer res4;
+			Leer res4;
 			
 			Si (res4 = 3)Entonces
 				
@@ -233,6 +242,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -240,6 +250,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -261,7 +272,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Nilo";
 			Escribir "";
 			
-			leer res5;
+			Leer res5;
 			
 			Si (res5 = 3) Entonces
 				
@@ -269,6 +280,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -276,6 +288,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -284,20 +297,20 @@ SubProceso saber_y_ganar ()
 		Si (resp = 6)Entonces
 			
 			Escribir "";
-			Escribir " @----------------------------------------------------------@";
-			Escribir " | ¿Qué río europeo fluye a través de 10 países diferentes? |";
-			Escribir " @----------------------------------------------------------@";
+			Escribir " @-------------------------------@";
+			Escribir " | ¿Cuántos países tiene África? |";
+			Escribir " @-------------------------------@";
 			Escribir "";
-			Escribir " 1.- Rin";
+			Escribir " 1.- 64 países";
 			Escribir "";
-			Escribir " 2.- Amazonas";
+			Escribir " 2.- 48 países";
 			Escribir "";
-			Escribir " 3.- Danobio";
+			Escribir " 3.- 54 países";
 			Escribir "";
-			Escribir " 4.- Nilo";
+			Escribir " 4.- 36 países";
 			Escribir "";
 			
-			leer res6;
+			Leer res6;
 			
 			Si (res6 = 3)Entonces
 				
@@ -305,6 +318,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -312,6 +326,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -321,7 +336,7 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir " @--------------------------------------------------@";
-			Escribir " | ¿Cuál es el continente más poblado de la tierra? |";
+			Escribir " | ¿Cuál es el continente más poblado de la Tierra? |";
 			Escribir " @--------------------------------------------------@";
 			Escribir "";
 			Escribir " 1.- Europa";
@@ -332,7 +347,8 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir " 4.- Africa";
 			Escribir "";
-			leer res7;
+			
+			Leer res7;
 			
 			Si (res7 = 2)Entonces
 				
@@ -340,6 +356,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -347,7 +364,9 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
@@ -360,14 +379,14 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir " 1.- EE.UU";
 			Escribir "";
-			Escribir " 2.- Canada";
+			Escribir " 2.- Canadá";
 			Escribir "";
 			Escribir " 3.- Rusia";
 			Escribir "";
 			Escribir " 4.- China";
 			Escribir "";
 			
-			leer res8;
+			Leer res8;
 			
 			Si (res8 = 4)Entonces
 				
@@ -375,6 +394,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -382,6 +402,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -403,7 +424,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- España";
 			Escribir "";
 			
-			leer res9;
+			Leer res9;
 			
 			Si (res9 = 3)Entonces
 				
@@ -411,6 +432,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -418,6 +440,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -439,7 +462,7 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Jerusalem";
 			Escribir "";
 			
-			leer res10;
+			Leer res10;
 			
 			Si (res10 = 1)Entonces
 				
@@ -447,6 +470,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Genial, tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -454,12 +478,13 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir " Lo siento tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
 		FinSi
 		
-		// Aqui hacemos un intermedio entre preguntas apartir de aqui no comentare mas hasta que halla novedades en el codigo.
+		// Aquí hacemos un intermedio entre preguntas, a partir de aquí no comentaré más hasta que haya novedades en el código.
 		
 		Escribir "  __^__                                      __^__";
 		Escribir " ( ___ )------------------------------------( ___ )";
@@ -468,11 +493,12 @@ SubProceso saber_y_ganar ()
 		Escribir "  |___|                                      |___|";
 		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
+		
 		Borrar Pantalla;
 		
 		Escribir " ********************************";
 		Escribir " *   Segunda Pregunta           *";
-		Escribir " *      - Categoria Historia    *";
+		Escribir " *      - Categoría Historia    *";
 		Escribir " ********************************";
 		
 		resp<-azar(10)+1;
@@ -482,33 +508,35 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir " @------------------------------------------------------@";
-			Escribir " | ¿Qué civilización se asento en las orillas del Nilo? |";
+			Escribir " | ¿Qué civilización se asentó en las orillas del Nilo? |";
 			Escribir " @------------------------------------------------------@";
 			Escribir "";
 			Escribir " 1.- Egipcia";
 			Escribir "";
-			Escribir " 2.- Mesopotamica";
+			Escribir " 2.- Mesopotámica";
 			Escribir "";
 			Escribir " 3.- Griega";
 			Escribir "";
 			Escribir " 4.- Romana";
 			Escribir "";
 			
-			leer res1;
+			Leer res1;
 			
 			Si (res1 = 1)Entonces
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir "Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir "Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -525,26 +553,28 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir " 2.- Oriente Proximo";
 			Escribir "";
-			Escribir " 3.- Gricia";
+			Escribir " 3.- Grecia";
 			Escribir "";
 			Escribir " 4.- Roma";
 			Escribir "";
 			
-			leer res2;
+			Leer res2;
 			
 			Si (res2 = 2)Entonces
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir " Lastima tu respuesta es incorrecta";
+				Escribir " Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -554,33 +584,35 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@---------------------------------------@";
-			Escribir "| ¿Dónde se localizaba el Imperio inca? |";
+			Escribir "| ¿Dónde se localizaba el Imperio Inca? |";
 			Escribir "@---------------------------------------@";
 			Escribir "";
-			Escribir " 1.- Mexico";
+			Escribir " 1.- México";
 			Escribir "";
-			Escribir " 2.- Onduras";
+			Escribir " 2.- Honduras";
 			Escribir "";
-			Escribir " 3.- Peru";
+			Escribir " 3.- Perú";
 			Escribir "";
 			Escribir " 4.- Venezuela";
 			Escribir "";
 			
-			leer res3;
+			Leer res3;
 			
 			Si (res3 = 3)Entonces
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir "Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -602,21 +634,23 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Azteca";
 			Escribir "";
 			
-			leer res4;
+			Leer res4;
 			
 			Si (res4 = 4)Entonces
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " EureKa!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir " Lastima tu respuesta es incorrecta";
+				Escribir " Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -638,21 +672,23 @@ SubProceso saber_y_ganar ()
 			Escribir " 4.- Hamunaftra";
 			Escribir "";
 			
-			leer res5;
+			Leer res5;
 			
 			Si (res5 = 1)Entonces
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir " Lastima tu respuesta es incorrecta";
+				Escribir " Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -667,11 +703,11 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir " 1.- El Mesozoico";
 			Escribir "";
-			Escribir " 2.- El paleolitico";
+			Escribir " 2.- El Paleolitico";
 			Escribir "";
-			Escribir " 3.- El jurasico";
+			Escribir " 3.- El Jurásico";
 			Escribir "";
-			Escribir " 4.- El cretacico";
+			Escribir " 4.- El Cretácico";
 			Escribir "";
 			
 			Leer res6;
@@ -680,15 +716,17 @@ SubProceso saber_y_ganar ()
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir "EureKa!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir "Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -701,11 +739,11 @@ SubProceso saber_y_ganar ()
 			Escribir "| ¿Cuándo se considera que termina la Edad Antigua? |";
 			Escribir "@---------------------------------------------------@";
 			Escribir "";
-			Escribir " 1.- Con la invención de la maquina a vapor";
+			Escribir " 1.- Con la invención de la máquina a vapor";
 			Escribir "";
 			Escribir " 2.- Con la finalización de la I Guerra Mundial";
 			Escribir "";
-			Escribir " 3.- Con la caída del Imperio romano de Occidente";
+			Escribir " 3.- Con la caída del Imperio Romano de Occidente";
 			Escribir "";
 			Escribir " 4.- Con la coronación de los reyes catolicos";
 			Escribir "";
@@ -716,15 +754,17 @@ SubProceso saber_y_ganar ()
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir " Lastima tu respuesta es incorrecta";
+				Escribir " Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -737,13 +777,13 @@ SubProceso saber_y_ganar ()
 			Escribir " | ¿Qué emperador romano es conocido por haber tenido un amor con Cleopatra? |";
 			Escribir " @---------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir " 1.- Marco Antoni";
+			Escribir " 1.- Marco Antonio";
 			Escribir "";
 			Escribir " 2.- Marco Aurelio";
 			Escribir "";
-			Escribir " 3.- Neron";
+			Escribir " 3.- Nerón";
 			Escribir "";
-			Escribir " 4.- Jilio Cesar";
+			Escribir " 4.- Julio Cesar";
 			Escribir "";
 			
 			Leer res8;
@@ -752,15 +792,17 @@ SubProceso saber_y_ganar ()
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir " Eureca!!! tu respuesta es correcta";
+				Escribir " Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir " Lastima tu respuesta es incorrecta";
+				Escribir " Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -788,15 +830,17 @@ SubProceso saber_y_ganar ()
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir "Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir "Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -809,7 +853,7 @@ SubProceso saber_y_ganar ()
 			Escribir " | ¿Cómo se llama la enfermedad que mató en la Edad Media a casi la mitad de los habitantes de Europa? |";
 			Escribir " @-----------------------------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir " 1.- La fiebre española";
+			Escribir " 1.- La Fiebre Española";
 			Escribir "";
 			Escribir " 2.- La Peste Negra";
 			Escribir "";
@@ -824,15 +868,17 @@ SubProceso saber_y_ganar ()
 				
 				corr<-corr +1;
 				Escribir "";
-				Escribir "Eureca!!! tu respuesta es correcta";
+				Escribir "Eureka!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
 				
 				Escribir "";
-				Escribir "Lastima tu respuesta es incorrecta";
+				Escribir "Lástima tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -845,11 +891,12 @@ SubProceso saber_y_ganar ()
 		Escribir "  |___|                                      |___|";
 		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
+		
 		Borrar Pantalla;
 		
 		Escribir " ********************************";
 		Escribir " *   Tercera Pregunta           *";
-		Escribir " *      - Categoria Naturaleza  *";
+		Escribir " *      - Categoría Naturaleza  *";
 		Escribir " ********************************";
 		
 		resp<-azar(10)+1;
@@ -864,14 +911,14 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "1.- Omnívoros";
 			Escribir "";
-			Escribir "2.- Hervibors";
+			Escribir "2.- Herbivoros";
 			Escribir "";
-			Escribir "3.- Carniboros";
+			Escribir "3.- Carnívoros";
 			Escribir "";
 			Escribir "4.- Veganos";
 			Escribir "";
 			
-			leer res1;
+			Leer res1;
 			
 			Si (res1 = 1)Entonces
 				
@@ -879,6 +926,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -886,6 +934,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -897,16 +946,16 @@ SubProceso saber_y_ganar ()
 			Escribir "| ¿Según su forma de reproducirse, consideramos a las tortugas como animales...? |";
 			Escribir "@--------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Oviparos";
+			Escribir "1.- Ovíparos";
 			Escribir "";
-			Escribir "2.- Viviparos";
+			Escribir "2.- Vivíparos";
 			Escribir "";
-			Escribir "3.- Metastaticos";
+			Escribir "3.- Metastáticos";
 			Escribir "";
 			Escribir "4.- Clonativos";
 			Escribir "";
 			
-			leer res2;
+			Leer res2;
 			
 			Si (res2 = 1)Entonces
 				
@@ -914,6 +963,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -921,6 +971,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -933,11 +984,11 @@ SubProceso saber_y_ganar ()
 			Escribir "| ¿Qué tipo de animales son los murciélagos? |";
 			Escribir "@--------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Anfivios";
+			Escribir "1.- Anfibios";
 			Escribir "";
 			Escribir "2.- Reptiles";
 			Escribir "";
-			Escribir "3.- Mamiferos";
+			Escribir "3.- Mamíferos";
 			Escribir "";
 			Escribir "4.- Aves";
 			Escribir "";
@@ -950,6 +1001,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -957,6 +1009,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -978,7 +1031,7 @@ SubProceso saber_y_ganar ()
 			Escribir "4.- Invertebrados";
 			Escribir "";
 			
-			leer res4;
+			Leer res4;
 			
 			Si (res4 = 4)Entonces
 				
@@ -986,6 +1039,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -993,6 +1047,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1022,6 +1077,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1029,6 +1085,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1041,13 +1098,13 @@ SubProceso saber_y_ganar ()
 			Escribir "| ¿Cómo se llama el proceso por el que las plantas fabrican su propio alimento? |";
 			Escribir "@-------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Fotosintesis";
+			Escribir "1.- Fotosíntesis";
 			Escribir "";
 			Escribir "2.- Nutrición";
 			Escribir "";
-			Escribir "3.- Digestion";
+			Escribir "3.- Digestión";
 			Escribir "";
-			Escribir "4.- Sintesis";
+			Escribir "4.- Síntesis";
 			Escribir "";
 			
 			Leer res6;
@@ -1058,6 +1115,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1065,6 +1123,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1093,6 +1152,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1100,6 +1160,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1108,9 +1169,9 @@ SubProceso saber_y_ganar ()
 		Si (resp = 8)Entonces
 			
 			Escribir "";
-			Escribir "@------------------------------@";
-			Escribir "| ¿Dónde se encuentra corazón? |";
-			Escribir "@------------------------------@";
+			Escribir "@---------------------------------@";
+			Escribir "| ¿Dónde se encuentra el corazón? |";
+			Escribir "@---------------------------------@";
 			Escribir "";
 			Escribir "1.- En el lado derecho del tórax";
 			Escribir "";
@@ -1129,6 +1190,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1136,6 +1198,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1151,7 +1214,7 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "2.- Con un osciloscopio";
 			Escribir "";
-			Escribir "3.- Con un amperimetro";
+			Escribir "3.- Con un amperímetro";
 			Escribir "";
 			Escribir "4.- Con una bascula";
 			Escribir "";
@@ -1164,6 +1227,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1171,6 +1235,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1200,12 +1265,15 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Estupendo!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
 				
 				Escribir "";
 				Escribir "Por los pelos, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1218,11 +1286,12 @@ SubProceso saber_y_ganar ()
 		Escribir "  |___|                                      |___|";
 		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
+		
 		Borrar Pantalla;
 		
 		Escribir "********************************";
 		Escribir "*   Cuarta Pregunta            *";
-		Escribir "*      - Categoria Arte        *";
+		Escribir "*      - Categoría Arte        *";
 		Escribir "********************************";
 		
 		resp<-azar(10)+1;
@@ -1232,7 +1301,7 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@--------------------------------@";
-			Escribir "| ¿En que siglo nació Velázquez? |";
+			Escribir "| ¿En qué siglo nació Velázquez? |";
 			Escribir "@--------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XVII";
@@ -1252,6 +1321,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1259,6 +1329,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1267,7 +1338,7 @@ SubProceso saber_y_ganar ()
 		Si (resp = 2)Entonces
 			Escribir "";
 			Escribir "@----------------------------------@";
-			Escribir "| ¿En que museo está la Mona Lisa? |";
+			Escribir "| ¿En qué museo está La Mona Lisa? |";
 			Escribir "@----------------------------------@";
 			Escribir "";
 			Escribir "1.- EL Prado";
@@ -1287,6 +1358,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1294,6 +1366,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1303,7 +1376,7 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@-------------------------------@";
-			Escribir "| ¿En que siglo nació Van Gogh? |";
+			Escribir "| ¿En qué siglo nació Van Gogh? |";
 			Escribir "@-------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XX";
@@ -1323,6 +1396,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1330,6 +1404,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1338,7 +1413,7 @@ SubProceso saber_y_ganar ()
 		Si (resp = 4)Entonces
 			Escribir "";
 			Escribir "@------------------------------------------------------------@";
-			Escribir "| ¿De que estilo es la catedral Nuestra señora de Notredame? |";
+			Escribir "| ¿De qué estilo es la catedral Nuestra señora de Notredame? |";
 			Escribir "@------------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Romanico";
@@ -1358,6 +1433,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1365,6 +1441,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1374,7 +1451,7 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@------------------------------------------@";
-			Escribir "| ¿En que siglo se inició el Renacimiento? |";
+			Escribir "| ¿En qué siglo se inició el Renacimiento? |";
 			Escribir "@------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Siglo XV";
@@ -1394,6 +1471,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1401,6 +1479,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1409,9 +1488,9 @@ SubProceso saber_y_ganar ()
 		Si (resp = 6)Entonces
 			
 			Escribir "";
-			Escribir "@------------------------------------------------------@";
-			Escribir "| ¿A que estilo pertenece < El David > de Miguelangel? |";
-			Escribir "@------------------------------------------------------@";
+			Escribir "@-------------------------------------------------------@";
+			Escribir "| ¿A qué estilo pertenece < El David > de Miguel Ángel? |";
+			Escribir "@-------------------------------------------------------@";
 			Escribir "";
 			Escribir "1.- Barroco";
 			Escribir "";
@@ -1430,6 +1509,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1437,6 +1517,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1446,16 +1527,16 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@--------------------------------------------------------------------------------@";
-			Escribir "| ¿Quien dibujo el cuadro que lleva por nombre < La persistencia de la memoria > |?";
+			Escribir "| ¿Quién dibujó el cuadro que lleva por nombre < La persistencia de la memoria > |?";
 			Escribir "@--------------------------------------------------------------------------------@";
 			Escribir "";
-			Escribir "1.- Velazquez";
+			Escribir "1.- Velázquez";
 			Escribir "";
 			Escribir "2.- Goya";
 			Escribir "";
 			Escribir "3.- Salvador Dalí";
 			Escribir "";
-			Escribir "4.- Picaso";
+			Escribir "4.- Picasso";
 			Escribir "";
 			
 			Leer res7;
@@ -1466,12 +1547,15 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
 				
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1501,6 +1585,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1508,6 +1593,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1517,7 +1603,7 @@ SubProceso saber_y_ganar ()
 			
 			Escribir "";
 			Escribir "@---------------------------------@";
-			Escribir "| ¿La piedad es una escultura de? |";
+			Escribir "| ¿La Piedad es una escultura de? |";
 			Escribir "@---------------------------------@";
 			Escribir "";
 			Escribir "1.- Miguel Angel";
@@ -1537,6 +1623,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1544,6 +1631,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1573,6 +1661,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Asombroso!!! tu respuesta es correcta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			Sino inc<-inc +1;
@@ -1580,6 +1669,7 @@ SubProceso saber_y_ganar ()
 				Escribir "";
 				Escribir "Cachis, tu respuesta es incorrecta";
 				Esperar 2 Segundos;
+				
 				Borrar Pantalla;
 				
 			FinSi
@@ -1592,22 +1682,24 @@ SubProceso saber_y_ganar ()
 		Escribir "  |___|                                      |___|";
 		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
+		
 		Borrar Pantalla;
 		
 		Escribir "********************************";
 		Escribir "*   Quinta Pregunta            *";
-		Escribir "*      - Categoria Videojuegos *";
+		Escribir "*      - Categoría Videojuegos *";
 		Escribir "********************************";
 		
 		resp<-azar(10)+1;
 		
 		Si (resp = 1)Entonces
+			
 			Escribir "";
 			Escribir "----------------------------------------------";
-			Escribir "¿Que juego fue el primero en salir al mercado?";
+			Escribir "¿Qué juego fue el primero en salir al mercado?";
 			Escribir "----------------------------------------------";
 			Escribir "";
-			Escribir "1.- Pac-man";
+			Escribir "1.- Tetris";
 			Escribir "";
 			Escribir "2.- Pong";
 			Escribir "";
@@ -1615,18 +1707,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Donkey Kong";
 			Escribir "";
-			leer res1;
-			Si (res1 = 1)Entonces
+			
+			Leer res1;
+			
+			Si (res1 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 2)Entonces
+			
 			Escribir "";
 			Escribir "------------------------------------------------";
 			Escribir "¿Qué edad tiene Leon Kennedy en Resident Evil 2?";
@@ -1640,18 +1745,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- 22";
 			Escribir "";
-			leer res2;
+			
+			Leer res2;
+			
 			Si (res2 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 3)Entonces
+			
 			Escribir "";
 			Escribir "-------------------------------------------------";
 			Escribir "¿Cómo se llama el primer nivel de Super Mario 64?";
@@ -1665,18 +1783,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Snowman,s Land";
 			Escribir "";
-			leer res3;
+			
+			Leer res3;
+			
 			Si (res3 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 4)Entonces
+			
 			Escribir "";
 			Escribir "------------------------------------------------------------------";
 			Escribir "¿Qué capacidad tenían las Memory Card oficiales de PlayStation 2? ";
@@ -1690,18 +1821,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- 8MB";
 			Escribir "";
-			leer res4;
+			
+			Leer res4;
+			
 			Si (res4 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi
 		
 		Si (resp = 5)Entonces
+			
 			Escribir "";
 			Escribir "-------------------------------------------------------------------";
 			Escribir "¿Dónde podíamos jugar a The Legend of Zelda: Oracle of Ages/Seasons";
@@ -1715,18 +1859,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Nintendo DSI";
 			Escribir "";
-			leer res5;
+			
+			Leer res5;
+			
 			Si (res5 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
 		Si (resp = 6)Entonces
+			
 			Escribir "";
 			Escribir "---------------------------------------------------------------------";
 			Escribir "¿Cuál de estos juegos ha desarrollado Rockstar, autores de GTA y RDR?";
@@ -1740,18 +1897,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Earthworm Jim 3D";
 			Escribir "";
-			leer res6;
+			
+			Leer res6;
+			
 			Si (res6 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
 		Si (resp = 7)Entonces
+			
 			Escribir "";
 			Escribir "-------------------------------------------------------------";
 			Escribir "¿Quién compuso la BSO de Metal Gear Solid 2: Sons of Liberty?";
@@ -1765,18 +1935,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Jeremy Soule";
 			Escribir "";
-			leer res7;
+			
+			Leer res7;
+			
 			Si (res7 = 3)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
 		Si (resp = 8)Entonces
+			
 			Escribir "";
 			Escribir "------------------------------------------------------------------------";
 			Escribir "¿Cuál fue el primer juego de Sonic en llegar a una consola de Nintendo? ";
@@ -1790,18 +1973,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Sonic Advance";
 			Escribir "";
-			leer res8;
+			
+			Leer res8;
+			
 			Si (res8 = 4)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
 		Si (resp = 9)Entonces
+			
 			Escribir "";
 			Escribir "-----------------------------------------------------------------------------------------------------";
 			Escribir "No hay opciones. Nada salvo una línea recta. ¿Adivinarías en qué juego se dice esta categórica frase?";
@@ -1815,18 +2011,31 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Killer Instinct";
 			Escribir "";
-			leer res9;
+			
+			Leer res9;
+			
 			Si (res9 = 1)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
 		Si (resp = 10)Entonces
+			
 			Escribir "";
 			Escribir "-------------------------------------------------";
 			Escribir "¿En qué juego situarías al personaje de Broxigar?";
@@ -1840,14 +2049,26 @@ SubProceso saber_y_ganar ()
 			Escribir "";
 			Escribir "4.- Star Craft";
 			Escribir "";
-			leer res10;
+			
+			Leer res10;
+			
 			Si (res10 = 2)Entonces
+				
 				corr<-corr +1;
 				Escribir "";
 				Escribir "En el clavo!!! tu respuesta es correcta";
+				Esperar 2 Segundos;
+				
+				Borrar Pantalla;
+				
 			Sino inc<-inc +1;
+				
 				Escribir "";
-				Escribir "Opss, tu respuesta es incorrecta";
+				Escribir "Upss, tu respuesta es incorrecta";
+				Esperar Tecla;
+				
+				Borrar Pantalla;
+				
 			FinSi
 		FinSi 
 		
@@ -1855,21 +2076,21 @@ SubProceso saber_y_ganar ()
 		Escribir " ( ___ )------------------------------------( ___ )";
 		Escribir "  | / |                                      | \ |";
 		Escribir "  | / |   Presiona ENTER para conocer tus    | \ |";
-		Escribir "  | / |       tus resultados finales         | \ |";
+		Escribir "  | / |         resultados finales           | \ |";
 		Escribir "  |___|                                      |___|";
 		Escribir " (_____)------------------------------------(_____) ";
 		Esperar Tecla;
 		
 		Leer cont;
 		
-		// En la variable "porc" guardaremos el valor de la operacion de allar el tanto porciento de aciertos
+		// En la variable "porc" guardaremos el valor de la operación de hayar el tanto porciento de aciertos.
 		
 		porc<-(corr/5) *100;
 		
 		Borrar Pantalla;
 		
-		// Aqui mostraremos los valores de las variables "corr, inc y porc" que represntanlos resultados de respuestas correctas, respuestas incorrectas, 
-		// y el porcentaje de aciertos
+		// Aqui mostraremos los valores de las variables "corr, inc y porc" que representan los resultados de las respuestas correctas, respuestas incorrectas, 
+		// y el porcentaje de aciertos.
 		
 		Escribir "*****************************************************************";
 		Escribir "*************************** RESULTADOS **************************";
@@ -1877,7 +2098,7 @@ SubProceso saber_y_ganar ()
 		Escribir "*                                                               *";
 		Escribir "*  - Respuestas correctas: ",corr,".                                   *";
 		Escribir "*  - Respuestas incorrectas: ",inc, ".                                 *";
-		Escribir "*  - Respondiste correctamente el ", porc, "% de las preguntas.         *";
+		Escribir "*  - Respondiste correctamente, el ", porc, "% de las preguntas.         *";
 		Escribir "*                                                               *";
 		Escribir "*****************************************************************";
 		
@@ -1887,34 +2108,36 @@ SubProceso saber_y_ganar ()
 		
 		Esperar Tecla;
 		
-		// Ahora lo que haremos sera volver a llamar al SubProceso para que reinicie el juego y asi volvamos al menu de inicio del juego
+		// Ahora lo que haremos será volver a llamar al SubProceso "saber_y_ganar" para que reinicie el juego y así volvamos al menú de inicio del juego.
 		
 		saber_y_ganar;
 		
 	FinSi
 	
-	// Si la opcion elegida en el menu del juego es "2" nos mandara a la sección de ayuda la cual nos dara una breve descripción de que es y lo que hace el juego
+	// Si la opción elegida en el menú del juego es "2" nos mandará a la sección de ayuda la cual nos dará una breve descripción del juego.
 	
 	Si (op = 2) Entonces
 		
 		Borrar Pantalla;
+		
 		Escribir  "***********************************************************************";
 		Escribir  "*                                                                     *";
 		Escribir  "*                     << Preguntas y Respuestas >>                    *";
 		Escribir  "*                                                                     *";
-		Escribir  "*     Este juego consites en que el ordenador te hara un grupo de     *";
-		Escribir  "*     cinco preguntas y las valorara en correctas e incorrectas,      *";
-		Escribir  "*     una ved ayas contestado a todas las preguntas te dara tu        *";
-		Escribir  "*     resultado que consistira en número de aciertos, número de       *";
+		Escribir  "*     Este juego consiste en que el ordenador te hará un grupo de     *";
+		Escribir  "*     cinco preguntas y las valorará en correctas e incorrectas,      *";
+		Escribir  "*     una vez hayas contestado a todas las preguntas te dará tu       *";
+		Escribir  "*     resultado que consistirá en número de aciertos, número de       *";
 		Escribir  "*     fallos y el tanto porciento de tus aciertos.                    *";
 		Escribir  "*                                                                     *";
-		Escribir  "*                                                       DIVIERTETE    *";
+		Escribir  "*                                                       DIVIÉRTETE    *";
 		Escribir  "*                                                                     *";
 		Escribir  "***********************************************************************";
+		Escribir "";
+		Escribir "              Presione cualquier tecla para volver al menú";
 		
-		Escribir "Presione cualquier tecla para volver al menu";
-		
-		// El comando "Esperar Tecla" lo que hace es detener la ejecución del codigo hasta que el usuario presiona cualquier tecla.
+		// El comando "Esperar Tecla" lo que hace es detener la ejecución del código hasta que el usuario presiona cualquier tecla, una vez presionada volveremos a
+		// llamar al subproceso "saber_y_ganar para volver al menú".
 		
 		Esperar Tecla;
 		
@@ -1922,18 +2145,19 @@ SubProceso saber_y_ganar ()
 		
 	FinSi
 	
-	// Si la opcion elegida en el menu del juego es "3" nos mandara a la sección Salir la cual nos dara la opción de salir del juego o de seguir jugando
+	// Si la opcion elegida en el menu del juego es "3" nos mandará a la sección Salir, la cual nos dará la opción de salir del juego o de seguir jugando.
 	
 	Si (op = 3) Entonces
 		
-		// Lo que vamos ha hacer es asegurarnos de que el usuario quiere de verdad salir del programa 
+		// Lo que vamos ha hacer es asegurarnos de que el usuario quiere de verdad salir del programa. 
 		
 		Escribir "¿De verdad quiere salir del juego?";
 		Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
 		Leer opcion;
 		
-		// En este "SI" le asisgnamos dos posibles solucuines en si y es que o el usuario presione "S" mayuscula o s minuscula y cualquiera de las dos seria correcta
-		// para que la condicion se cumpla con lo cual una vez se ejecute saldra del SubProceso 
+		// En este "SI" le asisgnamos dos posibles soluciones, "S" mayúscula o "s" minúscula y cualquiera de las dos sería correcta
+		// para que la condición se cumpla con lo cual una vez se ejecute saldrá del SubProceso.
+		
 		Si (opcion="s" O opcion ="S") Entonces
 			
 			Escribir "Gracias por jugar a Saber y Ganar.";
@@ -1941,7 +2165,7 @@ SubProceso saber_y_ganar ()
 			Esperar Tecla;
 		FinSi
 		
-		// Aqui es igual que en el caso anterior pero con N o n, cuando se ejecute el codigo llamara al SubProceso Saber_y_Ganar 
+		// Aquí es igual que en el caso anterior pero con "N" o "n", cuando se ejecute el código llamará al SubProceso Saber_y_Ganar 
 		
 		Si (opcion = "n" o opcion = "N") Entonces
 			
@@ -1954,11 +2178,11 @@ SubProceso saber_y_ganar ()
 	
 FinSubProceso
 
-// Y hast aqui llega el primer juego de la colección 
+// Y hasta aqui llega el primer juego de la colección.
 
 SubProceso simon_dice
 	
-	// Aqui definimos las variables
+	// Aqui definimos las variables.
 	
 	Definir numdado Como Entero;
 	Definir dicho Como Real;
@@ -2004,16 +2228,19 @@ SubProceso simon_dice
 	Escribir "        -- Elige la opción que prefieras --  ";
 	Leer opcionsimon;
 	
-	// despues de leer la variable "opcionsimon" según sea su valor ira a una parte de la esctructura "segun"
+	// Después de leer la variable "opcionsimon" según sea su valor irá a una parte de la esctructura "segun".
 	
 	Segun opcionsimon Hacer
+		
+			// Esta estructura "segun" lo que va ha hacer es dar la dificultad al programa, dado a que cada apartado del "segun" el algoritmo que dá el número 
+			// aleatorio y la suma de éste con el número de la jugada anterior cambia, como también cambia el tiempo que muestra el número a memorizar.
 		
 		1:
 			Escribir " __^__                                      __^__";
 			Escribir "( ___ )------------------------------------( ___ )";
 			Escribir " | / |                                      | \ |";
-			Escribir " | / |          1) Facil                    | \ |";
-			Escribir " | / |          2) Dificil                  | \ |";
+			Escribir " | / |          1) Fácil                    | \ |";
+			Escribir " | / |          2) Difícil                  | \ |";
 			Escribir " | / |          3) Pesadilla                | \ |";
 			Escribir " | / |          4) No apto para -18         | \ |";
 			Escribir " |___|                                      |___|";
@@ -2025,19 +2252,23 @@ SubProceso simon_dice
 			Segun opcionsimon Hacer
 				
 				1:
-					// como en el juego anterior en la posicion 1 tenemos el programa completo 
-					// lo primero que hacemos es habir un repetir para que aya un bucle y siempre el programa nos este dando el reto de memorizar
+					// Como en el juego anterior en la posición 1 tenemos el programa completo, 
+					// lo primero que hacemos es abrir un "repetir" para que haya un bucle y siempre el programa nos esté dando el reto de memorizar.
+					
 					Repetir
 						
-						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						// Ahora esperará un segundo para borrar la pantalla y comenzará el algoritmo.
 						
 						Esperar 1 Segundos;
 						Borrar Pantalla;
 						
-						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
-						// vale "numdado"
+						// Ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un número aleatorio entre 1 y 25 ambos 
+						// inclusibe al número que vale "numdado".
 						
 						numdado<-numdado+Aleatorio(1,25);
+						
+						// Ahora mostraremos por pantalla el número de la variable "numdado" para que vea el usuario el número que luego tendrá que marcar.
+						
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
 						Escribir " | / |                                      | \ |";
@@ -2047,19 +2278,25 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
+						// Ahora le daremos parte de la dificultad al juego y es que según vayan aumentando el número de dígitos el tiempo será más ajustado
+						// para poder memorizarlo.
+						
+						// Con esta ristra de "si" encadenados lo que hacemos es que se mida el número de dígitos que muestra el programa y dependiendo 
+						// de la cantidad de dígitos mostrados dará un tiempo en concreto para memorizar.
+						
 						Si (num1 > 0) o (num1 >= 100) Entonces
 							Esperar 2 Segundos;
 							
-							Si (num1 > 101) o (num1 >= 1000) Entonces
+							Si (num1 >= 101) o (num1 >= 1000) Entonces
 								Esperar 3 Segundos;
 								
-								Si (num1 > 1001) o (num1 >= 100000) Entonces
+								Si (num1 >= 1001) o (num1 >= 100000) Entonces
 									Esperar 4 Segundos;
 									
-									Si (num1 > 100001) o (num1 >= 100000) Entonces
+									Si (num1 >= 100001) o (num1 >= 100000) Entonces
 										Esperar 5 Segundos;
 										
-										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+										Si (num1 >= 100001) o (num1 >= 10000000) Entonces
 											Esperar 6 Segundos;
 											
 										FinSi
@@ -2070,7 +2307,7 @@ SubProceso simon_dice
 						
 						Borrar Pantalla;
 						
-						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
+						// Ahora le pediremos por pantalla al usuario que nos marque el número que ha facilitado el ordenador con la variable "numdado".
 						
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
@@ -2081,11 +2318,12 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						// la contestación del usuario la guardaremos en la variable "resusuario"
+						// La contestación del usuario la guardaremos en la variable "resusuario".
 						
 						Leer resusuario;
 						
-						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						// Si la respuesta de usuario es igual al número que nos da el ordenador nos dará el mensaje de que hemos acertado y de los 
+						// puntos acumulados.
 						
 						Si resusuario=numdado Entonces
 							
@@ -2093,35 +2331,35 @@ SubProceso simon_dice
 							Escribir " __^__                                      __^__";
 							Escribir "( ___ )------------------------------------( ___ )";
 							Escribir " | / |                                      | \ |";
-							Escribir " | / |    As acertado simon esta contento   | \ |";
+							Escribir " | / |   Has acertado simon está contento   | \ |";
 							
-							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
-							//nos sumara 4 
+							// Dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" y por cada vez que pasemos por el 
+							// bucle y acertemos nos sumará 4 puntos. 
 							
 							score<-score + 4;
-							Escribir " | / |         Tu puntuacion es de:         | \ |";
+							Escribir " | / |         Tu puntuación es de:         | \ |";
 							
-							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
+							// Una vez iniciado el contador mostraremos el valor para decirle al usuario los puntos que lleva acumulados.
 							
 							Escribir "                ", score, " PUNTOS";
 							Escribir " |___|                                      |___|";
 							Escribir "(_____)------------------------------------(_____) ";
 							
-							// el mensaje que muestra solo estara visible durante 2 segundos.
+							// El mensaje que muestra sólo estará visible durante 2 segundos.
 							
 							Esperar 2 Segundos;
 							
 						SiNo
 							
-							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
+							// En el caso de que falle el usuario nos saldrá el siguiente cuadro que nos dice que hemos perdido y nos mostrará el valor 
 							// de la variable "score" que son los puntos acumulados.
 							
 							Escribir "@---------------------------------------------------------@";
 							Escribir "|                                                         |";
-							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                  Lo siento has perdido                  |";
 							Escribir "|                      ¡ GAME OVER !                      |";
 							Escribir "|                                                         |";
-							Escribir "      - Tu puntuación Final a sido de; ", score, " PUNTOS  ";
+							Escribir "      - Tu puntuación Final ha sido de; ", score, " PUNTOS  ";
 							Escribir "|                                                         |";
 							Escribir "|            *Presione un tecla para continuar*           |";
 							Escribir "|                                                         |";
@@ -2129,14 +2367,14 @@ SubProceso simon_dice
 							
 							Esperar Tecla;
 							
-							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
+							// Después de pulsar una tecla el programa nos redirigirá al inicio llamando de nuevo al SubProceso mediante su nombre.
 							
 							simon_dice;
 							
 						FinSi
 						
-						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
-						// la comparatiba de variables, en este caso seran "resusuario y numdado"
+						// Todo este Proceso seguirá en funcionamiento hasta que el usuario se equivoque en dar el resultado que el ordenador dice mediante 
+						// la comparativa de variables, en este caso serán "resusuario y numdado"
 						
 					Hasta Que resusuario <> numdado
 					
@@ -2145,13 +2383,14 @@ SubProceso simon_dice
 					
 					Repetir
 						
-						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
+						//Ahora esperará un segundo para borrar la pantalla comenzará el algoritmo.
 						
 						Esperar 1 Segundos;
 						Borrar Pantalla;
 						
-						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
-						// vale "numdado"
+						// Ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un número aleatorio entre 1 y 50, ambos incluidos
+						// al número que vale "numdado", en este caso, el número aleatorio tendrá 25 números más para que así la cadena de números aumente 
+						// más rapi doy sea más difícil de memorizar.
 						
 						num2<-num2+(num2+Aleatorio(1,50));
 						Escribir " __^__                                      __^__";
@@ -2165,7 +2404,7 @@ SubProceso simon_dice
 						Esperar 1 Segundos;
 						Borrar Pantalla;
 						
-						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
+						// Ahora le pediremos por pantalla al usuario que nos marque el número que ha facilitado el ordenador con la variable "numdado"
 						
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
@@ -2176,11 +2415,12 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						// la contestación del usuario la guardaremos en la variable "resusuario"
+						// La contestación del usuario la guardaremos en la variable "resusuario".
 						
 						Leer resusuario;
 						
-						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
+						// Si la respuesta de usuario es igual al número que nos da el ordenador nos dará el mensaje de que hemos acertado y que 
+						// los puntos acumulados.
 						
 						Si resusuario=num2 Entonces
 							
@@ -2188,35 +2428,26 @@ SubProceso simon_dice
 							Escribir " __^__                                      __^__";
 							Escribir "( ___ )------------------------------------( ___ )";
 							Escribir " | / |                                      | \ |";
-							Escribir " | / |    As acertado simon esta contento   | \ |";
-							
-							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
-							//nos sumara 4 
+							Escribir " | / |   Has acertado simon está contento   | \ |";
 							
 							score<-score + 4;
-							Escribir " | / |         Tu puntuacion es de:         | \ |";
 							
-							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
-							
+							Escribir " | / |         Tu puntuación es de:         | \ |";
 							Escribir "                ", score, " PUNTOS";
 							Escribir " |___|                                      |___|";
 							Escribir "(_____)------------------------------------(_____) ";
 							
-							// el mensaje que muestra solo estara visible durante 2 segundos.
 							
 							Esperar 2 Segundos;
 							
 						SiNo
 							
-							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
-							// de la variable "score" que son los puntos acumulados.
-							
 							Escribir "@---------------------------------------------------------@";
 							Escribir "|                                                         |";
-							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                  Lo siento has perdido                  |";
 							Escribir "|                      ¡ GAME OVER !                      |";
 							Escribir "|                                                         |";
-							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "      - Tu puntuación Final ha sido de: ", score, " PUNTOS  ";
 							Escribir "|                                                         |";
 							Escribir "         - La respuesta correcta es: ", num2;
 							Escribir "|                                                         |";
@@ -2226,15 +2457,9 @@ SubProceso simon_dice
 							
 							Esperar Tecla;
 							
-							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
-							
 							simon_dice;
 							
 						FinSi
-						
-						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
-						// la comparatiba de variables, en este caso seran "resusuario y numdado"
-						
 						
 					Hasta Que resusuario <> num2
 					
@@ -2243,30 +2468,39 @@ SubProceso simon_dice
 					
 					Repetir
 						
-						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
-						
 						Esperar 1 Segundos;
 						Borrar Pantalla;
 						
-						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
-						// vale "numdado"
+						// Ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un número aleatorio entre 1 y 75 ambos incluidos
+						// al número que vale "numdado", en este caso el numero aleatorio tendrá 50 números más para que así la cadena de números aumente 
+						// más rápido y sea más difícil de memorizar.
 						
-						//dicho por simon en la tirada anterior
+						// Ahora comentaré el algoritmo paso a paso para que sea más entendible, en sí lo que hacemos es que en vez de sumar los números de 
+						// la jugada anterior, lo que vamos a hacer es que una cadenas de caracteres, es decir, si en la jugada anterior teníamos el número
+						// 28 y en la nueva ronda tenemos 56 el programa lo que nos mostrará es el número 2856.
+						
+						// Dicho por simon en la tirada anterior.
+						
 						dicho<-num1;
 						
-						// numero aleatorio en la tirada					
+						// Número aleatorio en la tirada.
+						
 						num2<-Aleatorio(1,75);
 						
-						// guardamos en nu2 el numero aleatorio echo texto
+						// Guardamos en "nu2" el número aleatorio hecho texto.
+						
 						nu2<-ConvertirATexto(num2);
 						
-						//guardamos el valor de la jugada anterior en forma de texto
+						// Guardamos el valor de la jugada anterior en forma de texto.
+						
 						dichotexto<-ConvertirATexto(dicho);
 						
-						// unimos los dos valore echos texto en nu1
+						// Unimos los dos valores hechos texto en "nu1".
+						
 						nu1<-Concatenar(dichotexto,nu2);
 						
-						// guardamos en num1 el valor de nu1 echo numero que es el que dira simon en esta ronda
+						// Guardamos en "num1" el valor de "nu1" hecho número que es el que dirá simon en esta ronda.
+						
 						num1<-ConvertirANumero(nu1);
 						
 						
@@ -2279,19 +2513,19 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						Si (num1 > 0) o (num1 >= 100) Entonces
+						Si (num1 >= 0) o (num1 >= 100) Entonces
 							Esperar 2 Segundos;
 							
-							Si (num1 > 101) o (num1 >= 1000) Entonces
+							Si (num1 >= 101) o (num1 >= 1000) Entonces
 								Esperar 3 Segundos;
 								
-								Si (num1 > 1001) o (num1 >= 100000) Entonces
+								Si (num1 >= 1001) o (num1 >= 100000) Entonces
 									Esperar 4 Segundos;
 									
-									Si (num1 > 100001) o (num1 >= 100000) Entonces
+									Si (num1 >= 100001) o (num1 >= 100000) Entonces
 										Esperar 5 Segundos;
 										
-										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+										Si (num1 >= 100001) o (num1 >= 10000000) Entonces
 											Esperar 6 Segundos;
 											
 										FinSi
@@ -2302,8 +2536,6 @@ SubProceso simon_dice
 						
 						Borrar Pantalla;
 						
-						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
-						
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
 						Escribir " | / |                                      | \ |";
@@ -2313,11 +2545,7 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						// la contestación del usuario la guardaremos en la variable "resusuario"
-						
 						Leer resusuario;
-						
-						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
 						
 						Si resusuario=num1 Entonces
 							
@@ -2325,35 +2553,23 @@ SubProceso simon_dice
 							Escribir " __^__                                      __^__";
 							Escribir "( ___ )------------------------------------( ___ )";
 							Escribir " | / |                                      | \ |";
-							Escribir " | / |    As acertado simon esta contento   | \ |";
-							
-							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
-							//nos sumara 4 
-							
+							Escribir " | / |   Has acertado simon está contento   | \ |";
 							score<-score + 4;
-							Escribir " | / |         Tu puntuacion es de:         | \ |";
-							
-							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
-							
+							Escribir " | / |         Tu puntuación es de:         | \ |";
 							Escribir "                ", score, " PUNTOS";
 							Escribir " |___|                                      |___|";
 							Escribir "(_____)------------------------------------(_____) ";
-							
-							// el mensaje que muestra solo estara visible durante 2 segundos.
 							
 							Esperar 2 Segundos;
 							
 						SiNo
 							
-							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
-							// de la variable "score" que son los puntos acumulados.
-							
 							Escribir "@---------------------------------------------------------@";
 							Escribir "|                                                         |";
-							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                  Lo siento has perdido                  |";
 							Escribir "|                      ¡ GAME OVER !                      |";
 							Escribir "|                                                         |";
-							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "      - Tu puntuación Final ha sido de: ", score, " PUNTOS  ";
 							Escribir "|                                                         |";
 							Escribir "         - La respuesta correcta es: ", num1;
 							Escribir "|                                                         |";
@@ -2363,15 +2579,9 @@ SubProceso simon_dice
 							
 							Esperar Tecla;
 							
-							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
-							
 							simon_dice;
 							
 						FinSi
-						
-						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
-						// la comparatiba de variables, en este caso seran "resusuario y numdado"
-						
 						
 					Hasta Que resusuario <> num1
 					
@@ -2379,30 +2589,19 @@ SubProceso simon_dice
 				4:
 					Repetir
 						
-						//ahora esperara un segundo para borrar la pantalla comenzara el algoritmo.
-						
 						Esperar 1 Segundos;
 						Borrar Pantalla;
 						
-						// ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un numero aleatorio entre 1 y 25 ambos inclisibe al numero que
-						// vale "numdado"
+						// Ahora al acumulador "numdado" le vamos ha hacer que cada vez que pase el bucle sume un número aleatorio entre 1 y 200 ambos 
+						// inclusibe al número que vale "numdado", en este caso el número aleatorio tendrá 150 números más para que asi la cadena de números
+						// aumente más rapido y sea más difícil de memorizar.
 						
-						//dicho por simon en la tirada anterior
+						
 						dicho<-num1;
-						
-						// numero aleatorio en la tirada					
 						num2<-Aleatorio(1,200);
-						
-						// guardamos en nu2 el numero aleatorio echo texto
 						nu2<-ConvertirATexto(num2);
-						
-						//guardamos el valor de la jugada anterior en forma de texto
 						dichotexto<-ConvertirATexto(dicho);
-						
-						// unimos los dos valore echos texto en nu1
 						nu1<-Concatenar(dichotexto,nu2);
-						
-						// guardamos en num1 el valor de nu1 echo numero que es el que dira simon en esta ronda
 						num1<-ConvertirANumero(nu1);
 						
 						
@@ -2415,19 +2614,19 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						Si (num1 > 0) o (num1 >= 100) Entonces
+						Si (num1 >= 0) o (num1 >= 100) Entonces
 							Esperar 2 Segundos;
 							
-							Si (num1 > 101) o (num1 >= 1000) Entonces
+							Si (num1 >= 101) o (num1 >= 1000) Entonces
 								Esperar 3 Segundos;
 								
-								Si (num1 > 1001) o (num1 >= 100000) Entonces
+								Si (num1 >= 1001) o (num1 >= 100000) Entonces
 									Esperar 4 Segundos;
 									
-									Si (num1 > 100001) o (num1 >= 100000) Entonces
+									Si (num1 >= 100001) o (num1 >= 100000) Entonces
 										Esperar 5 Segundos;
 										
-										Si (num1 > 100001) o (num1 >= 10000000) Entonces
+										Si (num1 >= 100001) o (num1 >= 10000000) Entonces
 											Esperar 6 Segundos;
 											
 										FinSi
@@ -2438,8 +2637,6 @@ SubProceso simon_dice
 						
 						Borrar Pantalla;
 						
-						// Ahora le pediremos por pantalla al usuario que nos marque el nímero que ha facilitado el ordenador con la variable "numdado"
-						
 						Escribir " __^__                                      __^__";
 						Escribir "( ___ )------------------------------------( ___ )";
 						Escribir " | / |                                      | \ |";
@@ -2449,11 +2646,7 @@ SubProceso simon_dice
 						Escribir " |___|                                      |___|";
 						Escribir "(_____)------------------------------------(_____) ";
 						
-						// la contestación del usuario la guardaremos en la variable "resusuario"
-						
 						Leer resusuario;
-						
-						// si la respuesta de usuario es igual al numero que nos da el ordenador nos dara el mensaje de que hemos acertado y que los puntos acumulados.
 						
 						Si resusuario=num1 Entonces
 							
@@ -2461,35 +2654,23 @@ SubProceso simon_dice
 							Escribir " __^__                                      __^__";
 							Escribir "( ___ )------------------------------------( ___ )";
 							Escribir " | / |                                      | \ |";
-							Escribir " | / |    As acertado simon esta contento   | \ |";
-							
-							// dentro del mensaje de que hemos acertado creamos otro acumulador que llamaremos "score" por cada vez que pasemos por el bucle y acertemos
-							//nos sumara 4 
-							
+							Escribir " | / |   Has acertado simon está contento   | \ |";
 							score<-score + 4;
-							Escribir " | / |         Tu puntuacion es de:         | \ |";
-							
-							// una vez iniciado el contador mostraremos el valor para mostrar que hemos acertado y los puntos que hemos acumulado.
-							
+							Escribir " | / |         Tu puntuación es de:         | \ |";
 							Escribir "                ", score, " PUNTOS";
 							Escribir " |___|                                      |___|";
 							Escribir "(_____)------------------------------------(_____) ";
-							
-							// el mensaje que muestra solo estara visible durante 2 segundos.
 							
 							Esperar 2 Segundos;
 							
 						SiNo
 							
-							// En el caso de que falles nos saldra el siguiente cuadro que nos dice que hemos perdido y nos mostrara el valor 
-							// de la variable "score" que son los puntos acumulados.
-							
 							Escribir "@---------------------------------------------------------@";
 							Escribir "|                                                         |";
-							Escribir "|                  Lo siento as perdido                   |";
+							Escribir "|                  Lo siento has perdido                  |";
 							Escribir "|                      ¡ GAME OVER !                      |";
 							Escribir "|                                                         |";
-							Escribir "      - Tu puntuación Final a sido de: ", score, " PUNTOS  ";
+							Escribir "      - Tu puntuación Final ha sido de: ", score, " PUNTOS  ";
 							Escribir "|                                                         |";
 							Escribir "         - La respuesta correcta es: ", num1;
 							Escribir "|                                                         |";
@@ -2499,49 +2680,43 @@ SubProceso simon_dice
 							
 							Esperar Tecla;
 							
-							// despues de pulsar una tecla el programa nos redirigira al inicio llamando de nuevo al SubProceso mediante su nombre.
-							
 							simon_dice;
 							
 						FinSi
-						
-						// todo este Proceso seguira en funcionamiento hasta que te equiboques en dar el resultado que el ordenador dice mediante la 
-						// la comparatiba de variables, en este caso seran "resusuario y numdado"
-						
 						
 					Hasta Que resusuario <> num1
 					
 			FinSegun
 			
-			
-			
-			
-			
-			
-			
 		2:	
 			
-			// en la Opcion 2 del programa se encuentra la ayuda es solo una pantalla de información como en el programa anterior donde 
+			// En la Opcion 2 del programa se encuentra la ayuda es sólo una pantalla de información como en el programa anterior donde 
 			// nos da un pequeño resumen de lo que es el juego.
 			
 			Borrar Pantalla;
+			
 			Escribir  "***********************************************************************";
 			Escribir  "*                                                                     *";
 			Escribir  "*                          << Simon Dice >>                           *";
 			Escribir  "*                                                                     *";
-			Escribir  "*     Este juego consites en que el ordenador te ira dando una        *";
-			Escribir  "*     serie de números los cuales iran en orden creciente y todo      *";
-			Escribir  "*     trata de ir memorizando el numero que sale y darlo en           *";
-			Escribir  "*     contestación a Simon, si haciertas sigues jugando pero si       *";
-			Escribir  "*     fallas se acaba la partida por cada acierto sumaras puntos      *";
+			Escribir  "*     Este juego consiste en que el ordenador te irá dando una        *";
+			Escribir  "*     serie de números, los cuales irán en orden creciente. Todo      *";
+			Escribir  "*     trata de ir memorizando el número que sale por pantalla y       *";
+			Escribir  "*     darlo en contestación a Simon, si haciertas sigues jugando,     *";
+			Escribir  "*     pero si fallas se acaba la partida. Por cada acierto sumarás    *";
+			Escribir  "*     puntos.                                                         *";
 			Escribir  "*                                                                     *";
-			Escribir  "*     ¿A cuantos puntos llegaras?                                     *";
+			Escribir  "*     ¿A cuántos puntos llegarás?                                     *";
 			Escribir  "*                                                                     *";
-			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                       DIVIÉRTETE    *";
 			Escribir  "*                                                                     *";
 			Escribir  "***********************************************************************";
 			
-			Escribir "Presione cualquier tecla para volver al menu";
+			// Para poder leer las instrucciones le ponemos un mensaje al usuario, para que cuando termine y quiera, pulsando cualquier tecla pueda seguir.
+			// y con "esperar tecla" el código se para hasta que el usuario pulse cualquier tecla.
+			
+			Escribir "";
+			Escribir "           Presione cualquier tecla para volver al menú";
 			Esperar Tecla;
 			
 			simon_dice;
@@ -2558,6 +2733,7 @@ SubProceso simon_dice
 				Escribir "Gracias por jugar a Saimon Dice.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
+				
 			FinSi
 			
 			Si (opcion = "n" o opcion = "N") Entonces
@@ -2568,7 +2744,11 @@ SubProceso simon_dice
 			
 		De Otro Modo:
 			
-			Escribir "La opcion marcada no es valida seleccione de nuevo";
+			// Este opción está destinada para que si lo que teclea el usuario no coincide con ninguna de las opciones anteriores muestre 
+			// un mensaje por pantalla y redireccione al inicio del juego.
+			
+			Escribir "La opción marcada no es válida seleccione de nuevo";
+			
 			simon_dice;
 			
 	FinSegun
@@ -2578,6 +2758,8 @@ FinSubProceso
 SubProceso piedra_papel_tijeras
 	
 	Borrar Pantalla;
+	
+	// Aqui definimos las variables.
 	
 	Definir jugador1 Como Entero;
 	Definir jugador2 Como Entero;
@@ -2590,9 +2772,12 @@ SubProceso piedra_papel_tijeras
 	Definir opcionppt Como Entero;
 	Definir opcion Como Caracter;
 	
+	// Ahora lo que hacemos es iniciar los contadores que utilizaremos durante el juego.
+	
 	puntos1<-0;
 	puntos2<-0;
 	
+	// Creamos una pantalla de inicio que estara visble durante 2 segundos.
 	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
@@ -2602,15 +2787,12 @@ SubProceso piedra_papel_tijeras
 	Escribir " | / |         Piedra, Papel o Tijera       | \ |";
 	Escribir " |___|                                      |___|";
 	Escribir "(_____)------------------------------------(_____) ";
+	
 	Esperar 2 Segundos;
-	Borrar Pantalla;
-	
-	
-	Escribir "¿Que nómbre usaras para jugar?";
-	Leer nombre;
 	
 	Borrar Pantalla;
 	
+	// Ahora creamos el menú del juego.
 	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
@@ -2622,12 +2804,25 @@ SubProceso piedra_papel_tijeras
 	Escribir "(_____)------------------------------------(_____) ";
 	Escribir "";
 	Escribir "        -- Elige la opción que prefieras --  ";
+	
 	Leer opcionppt;
 	
+	// Dependiendo lo ingresado por el usuario creamos un "segun" para dirigirnos a las distinatas opciones del programa
 	
 	Segun opcionppt Hacer
 		1:
+			// Si la opcion ingresada es un 1 ira directamente al juego y lo primeroque aremos sera crear una variable para que el usuario ingrese el nombre
+			// con el que desa jugar.
+			
+			Escribir "¿Qué nómbre usarás para jugar?";
+			
+			Leer nombre;
+			
 			Repetir
+				
+				// Lo siguiente que se mostrara es el marcador con todo puesto a 0 para que apartir de aqui empiece a contavilizar la partida.
+				
+				Borrar Pantalla;
 				
 				Escribir "";
 				Escribir "";
@@ -2646,97 +2841,166 @@ SubProceso piedra_papel_tijeras
 				Escribir "                           |__| |__|"; 
 				Escribir "                             || ||";
 				Escribir "                            ooO Ooo"; 
+				
 				Esperar Tecla;
+				
 				Borrar Pantalla;
 				
+				// Una vez empieza el juego nos dara a elegir entre 3 opciones: piedra, papel o tigera y esta la guardaremos en la variable " jugador1".
 				
 				Escribir " __^__                                      __^__";
 				Escribir "( ___ )------------------------------------( ___ )";
 				Escribir " | / |                                      | \ |";
 				Escribir " | / |               1) Piedra              | \ |";
 				Escribir " | / |               2) Papel               | \ |";
-				Escribir " | / |               3) Tijeras             | \ |";
+				Escribir " | / |               3) Tijera              | \ |";
 				Escribir " |___|                                      |___|";
 				Escribir "(_____)------------------------------------(_____) ";
 				Escribir "";
 				Escribir "        -- Elige la opción que prefieras --  ";
+				
 				Leer jugador1;
 				
+				// Ahora trasformamos la instruccion en una palabra por medio de "SI" y lo guardamos en la variable "letra1".
+				
 				Si jugador1=1 Entonces
-					letra1<-"Piedra";
 					
-					Si jugador1=2 Entonces
-						letra1<-"Papel";
-						
-					FinSi
-				SiNo
-					letra1<-"Tijeras";
+					letra1<-"Piedra";
 					
 				FinSi
 				
-				Si jugador2=1 Entonces
-					letra2<-"Piedra";
+				Si jugador1=2 Entonces
 					
-					Si jugador2=2 Entonces
-						letra2<-"Papel";
-						
-					FinSi
-				SiNo
-					letra2<-"Tijeras";
+					letra1<-"Papel";
 					
 				FinSi
+				
+				Si jugador1=3 Entonces
+					
+					letra1<-"Tijera";
+					
+				FinSi
+				
+				// Por otro lado tenemos la elección de la maquina que la aremos eligiendo un numero aleatorio comprendido entre 1 y 3 y lo guardaremos en
+				// la variable "jugador2".
 				
 				jugador2<-Aleatorio(1,3);
 				
-				Si (jugador1<>jugador2) Entonces
-					Si ( jugador1==1 y jugador2==3 ) o ( jugador1==2 y jugador2==1 ) o ( jugador1==3 y jugador2==2 ) Entonces
-						Escribir " __^__                                      __^__";
-						Escribir "( ___ )------------------------------------( ___ )";
-						Escribir " | / |       El Ganador de la ronda es:     | \ |";
-						Escribir " | / |                                      | \ |";
-						Escribir "                     ",nombre;
-						Escribir " | / |                                      | \ |";
-						Escribir "        Porque ",letra1," gana a ",letra2;
-						Escribir " |___|                                      |___|";
-						Escribir "(_____)------------------------------------(_____) ";
-						Escribir "";
-						
-						puntos1<-puntos1+1;
-					SiNo
-						Si ( jugador2==1 y jugador1==3 ) o ( jugador2==2 y jugador1==1 ) o ( jugador2==3 y jugador1==2 ) Entonces
-							Escribir " __^__                                      __^__";
-							Escribir "( ___ )------------------------------------( ___ )";
-							Escribir " | / |       El Ganador de la ronda es:     | \ |";
-							Escribir " | / |                                      | \ |";
-							Escribir "                     La CPU";
-							Escribir " | / |                                      | \ |";
-							Escribir "        Porque ",letra2," gana a ",letra1;
-							Escribir " |___|                                      |___|";
-							Escribir "(_____)------------------------------------(_____) ";
-							Escribir "";
-							
-							puntos2<-puntos2+1; 
-						FinSi
-					FinSi
-				SiNo
+				// Como en el jugador 1 pasamos su elección a una palabras mediante "Si" y lo guardaremos en la variable "letra2".
+				
+				Si jugador2=1 Entonces
+					
+					letra2<-"Piedra";
+					
+				FinSi
+				
+				Si jugador2=2 Entonces
+					
+					letra2<-"Papel";
+					
+				FinSi
+				
+				Si jugador2=3 Entonces
+					
+					letra2<-"Tijera";
+					
+				FinSi
+				
+				// Una vez que las dos partes ha elegido su opcion a mostrar compararemos los resultados para ver quien es el que ha ganado la ronda, esto
+				// lo aremos con "Si" y una seri de condiciones, si se dan las condiciones del primer si entonces el jugador 1 gana.
+				
+				Si ( jugador1=1 y jugador2=3 ) o ( jugador1=2 y jugador2=1 ) o ( jugador1=3 y jugador2=2 ) Entonces
+					
+					// Entonces se mostrara el siguiente mensaje donde aprace el nombre del jugador ganador al ser el usuario mostrara el nombre ingresado
+					// al principio mediante la variable "nombre" y luego dira por que gana, es decir por medio de las variables "letra1 y letra2" se vera
+					// la elección que cada jugador hizo y añadiendo el comentaraio a mostrar "Porque "letra1" gana a "letra2"".
+					
+					Escribir " __^__                                      __^__";
+					Escribir "( ___ )------------------------------------( ___ )";
+					Escribir " | / |       El Ganador de la ronda es:     | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir "                     ",nombre;
+					Escribir " | / |                                      | \ |";
+					Escribir "        Porque ",letra1," gana a ",letra2;
+					Escribir " |___|                                      |___|";
+					Escribir "(_____)------------------------------------(_____) ";
+					Escribir "";
+					Escribir "        *Presione un tecla para continuar*";
+					
+					Esperar Tecla;
+					
+					// Una vez pase la ronda se sumara un punto al marcador del usuario.
+					
+					puntos1<-puntos1+1;
+					
+				FinSi
+				
+				Si (( jugador2=1 y jugador1=3 ) o ( jugador2=2 y jugador1=1 ) o ( jugador2=3 y jugador1=2 )) Entonces
+					
+					// En el caso de gane la CPU el proceso es el mismo que cuando gana el usuario.
+					
+					Escribir " __^__                                      __^__";
+					Escribir "( ___ )------------------------------------( ___ )";
+					Escribir " | / |       El Ganador de la ronda es:     | \ |";
+					Escribir " | / |                                      | \ |";
+					Escribir "                     La CPU";
+					Escribir " | / |                                      | \ |";
+					Escribir "        Porque ",letra2," gana a ",letra1;
+					Escribir " |___|                                      |___|";
+					Escribir "(_____)------------------------------------(_____) ";
+					Escribir "";
+					Escribir "        *Presione un tecla para continuar*";
+					
+					Esperar Tecla;
+					
+					// En este caso al ganar la CPU los puntos los sumaremos en la variable de puntos de la CPU "puntos2".
+					
+					puntos2<-puntos2+1;
+					
+				FinSi
+				
+				// Por ultimo tenemos el caso de empate que solo se mostrara que se ha empatado y cual fue la eleccion que hicieron tanto el usuario como la CPU
+				// para mostrar lo que sacaron los jugadores usaremos la variable "letra1" ya que da igual usar la del jugador como la de la CPU, en este caso al
+				// quedar empate no se sumara puntos a ninguno de los dos jugadores.
+				
+				Si (( jugador1=1 y jugador2=1 ) o ( jugador1=2 y jugador2=2 ) o ( jugador1=3 y jugador2=3 )) Entonces
+					
 					Escribir " __^__                                      __^__";
 					Escribir "( ___ )------------------------------------( ___ )";
 					Escribir " | / |                                      | \ |";
 					Escribir " | / |                                      | \ |";
 					Escribir " | / |            ¡¡¡ Empate !!!            | \ |";
 					Escribir " | / |                                      | \ |";
+					Escribir "            Los dos sacasteis ",letra1;
 					Escribir " |___|                                      |___|";
 					Escribir "(_____)------------------------------------(_____) ";
 					Escribir "";
+					Escribir "        *Presione un tecla para continuar*";
+					
+					Esperar Tecla;
 					
 				FinSi
+				
+				// Este bucle seguira reiniciando hatas que la partida acabe y eso sera cuando se cumpla que cualquiera de los dos marcadores de los jugadores llegen
+				// a la puntuación de 10.
+				
 			Hasta Que (puntos1==10 o puntos2==10)
 			
+			// Para terminar la partida haremos un "Si , Sino" para mostrar la pantalla de ganador y lo que ara este si es que si la puntuación del "jugador1"
+			// es igual a 10 el jugador 1 gana la partida y lo guardaremos en la variable "ganador", si no, quiere decir que el que gana la partida es la CPU
+			// y de igual manera se guardara en la variable "ganador". 
+			
 			Si (puntos1==10) Entonces
+				
 				ganador<-nombre;
+				
 			SiNo
+				
 				ganador<-"La CPU";
+				
 			FinSi
+			
+			// Por ultimo lo que mostraremos en un mensaje diciendo quien es el ganador del juego.
 			
 			Borrar Pantalla;
 			Escribir "";
@@ -2755,7 +3019,10 @@ SubProceso piedra_papel_tijeras
 			
 		2:
 			
+			// Si la eleccion es el número 2 lo que hara es traernos hasta la ayuda que como en juegos anteriores es una descripción del juego y de que trata.
+			
 			Borrar Pantalla;
+			
 			Escribir  "***********************************************************************";
 			Escribir  "*                                                                     *";
 			Escribir  "*                    << Piedra, Papel, Tijeras >>                     *";
@@ -2769,11 +3036,14 @@ SubProceso piedra_papel_tijeras
 			Escribir  "***********************************************************************";
 			
 			Escribir "Presione cualquier tecla para volver al menu";
+			
 			Esperar Tecla;
 			
 			piedra_papel_tijeras;
 			
 		3:
+			
+			// Como en los anteriores juegos si marcamos 3 nos manda a la salida del juego por lo que no comentare mas esta sección
 			
 			Borrar Pantalla;
 			
@@ -2786,6 +3056,7 @@ SubProceso piedra_papel_tijeras
 				Escribir "Gracias por jugar a Piedra, Papel, Tijeras.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
+				
 			FinSi
 			
 			Si (opcion = "n" o opcion = "N") Entonces
@@ -2796,21 +3067,31 @@ SubProceso piedra_papel_tijeras
 			
 		De Otro Modo:
 			
+			// De otro modo es lo mismo que en los juegos anteriores, si nos equibocamos en digitar la opción que queremos nos mostrara en pantalla el mensaje de que
+			// nos hemos equibocado.
+			
 			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
 			Esperar 1 Segundos;
+			
 			piedra_papel_tijeras;
 			
 	FinSegun
 	
+	// Aqui termina el codigo del juego de piedra, papel o tijera.
+	
 FinSubProceso
 
 SubProceso convinacion_perdida
+	
+	// Aqui definimos las variable de los menus que vamos ha usar en el juego.
 	
 	Definir opcioncp Como Entero;	
 	Definir dificultad Como Entero;
 	Definir opdificultad Como Entero;
 	
 	Borrar Pantalla;
+	
+	// Creamos la pantalla de inicio del juego.
 	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
@@ -2821,7 +3102,10 @@ SubProceso convinacion_perdida
 	Escribir " |___|                                      |___|";
 	Escribir "(_____)------------------------------------(_____) ";
 	Esperar 2 Segundos;
+	
 	Borrar Pantalla;
+	
+	// Creamos el menú del juego como en los juegos anteriores.
 	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
@@ -2837,6 +3121,8 @@ SubProceso convinacion_perdida
 	
 	Borrar Pantalla;
 	
+	// En este juego creamos una novedad y es la opción de dificultad del juego, dependiendo la opcion el juego sera mas o menos dificil.
+	
 	Escribir " __^__                                       __^__";
 	Escribir "( ___ )-------------------------------------( ___ )";
 	Escribir " | / |   ¿En que dificultad quieres jugar?   | \ |";
@@ -2850,11 +3136,19 @@ SubProceso convinacion_perdida
 	Escribir "(_____)-------------------------------------(_____) ";
 	Escribir "";
 	Escribir "        -- Elige la opción que prefieras --  ";
+	
+	// Guardamos la elección del jugador en la variable "dificultad".
+	
 	Leer dificultad;
 	
 	Segun dificultad Hacer
+		
+			// La dificultad de este juego reside en que dependiendo de la opción que escojamos tendremos mas o menos intentos para poder descifrar la combinación de
+			// colores, la primera opción da 10000 intentos lo cual creo que es suficiente como para considerarlo de intentos infinitos, la siguiente dificultad nos 
+			// dara 50 opportunidades, la siguiente solo 25 oportunidades, la siguiente 10 oportunidades y por ultimo la forma mas dificil solo nos dara 5 oportunidades.
+		
 		1:
-			opdificultad<-1000;
+			opdificultad<-10000;
 			
 		2:
 			opdificultad<-50;
@@ -2870,16 +3164,21 @@ SubProceso convinacion_perdida
 			
 		De Otro Modo:
 			
-			Escribir "La opcion es incorrecta";
+			// Aqui aprovechamos la opción "de otro modo" para que si nos equibocamos en elegir nos dejara volver a elegir.
 			
-			convinacion_perdida;
+			Escribir "La opcion es incorrecta, elija de nuevo.";
+			
+			Leer dificultad;
 			
 	FinSegun
 	
 	
 	
 	Segun opcioncp Hacer
+		
 		1:
+			// Aqui definiremos las variables del juego
+			
 				Definir p0 Como Entero;
 				Definir CO Como Caracter;
 				Definir contador Como Entero;
@@ -2906,7 +3205,11 @@ SubProceso convinacion_perdida
 				Definir confirmacioncolor Como Caracter;
 				Definir cvueltas Como Entero;
 				
+				// Iniciamos el contador para las vueltas del bucle y programar la dificultad
+				
 				cvueltas<-0;
+				
+				// Creamos un "para" para que genere aleatoriamente la convinación de colores que posteriormente tendra que descifrar el usuario. 
 				
 				Para contador<-1 Hasta 4 Con Paso 1 Hacer
 				
@@ -2932,6 +3235,8 @@ SubProceso convinacion_perdida
 							CO<-"bl";
 					FinSegun
 					
+					// Ahora dependiendo de la elección al azar que se alla echo se rellena las posiciondes de la combinación.
+					
 					Segun contador Hacer
 						
 						1:
@@ -2947,15 +3252,23 @@ SubProceso convinacion_perdida
 							p4<-CO;
 						
 					FinSegun
+					
 				FinPara
 					
+					// Generamos un repetir para los intentos de adibinar la combinación.
+					
 					Repetir
+						
+						// colocamos el contador de veces que se repite el bucle con lo que cada vez que se repita a la variable "cvueltas" se le sumara 1 al valor que
+						// tenia la variable de la vuelta anterior.
 						
 						cvueltas<- cvueltas + 1;
 						
 						Borrar Pantalla;
 						
 						Repetir
+							
+							// Generamos el mennú con las opciones con sus equibalencias.
 							
 							Escribir " __^__                                         __^__";
 							Escribir "( ___ )---------------------------------------( ___ )";
@@ -2971,6 +3284,8 @@ SubProceso convinacion_perdida
 							Escribir " |___|                                         |___|";
 							Escribir "(_____)---------------------------------------(_____) ";
 							Escribir "";
+							
+							// Creamos un para rellenaremos la combinación del usuario para luego compararla con la de la CPU .
 							
 							Para contador<- 1 Hasta 4 Con Paso 1 Hacer
 								
@@ -2991,8 +3306,12 @@ SubProceso convinacion_perdida
 										
 									FinSegun
 									
+									// En este leer es donde se guardara el color seleccionado si con la cadena de "SI"  determina que esta bien escrito.
+									
 									Leer CO;
 									Error<-Falso;
+									
+									// Con los "Si" de acontinuación comprovaremos si lo que hemos digitado esta bien escrito o no 
 									
 								Si CO <> "am" Entonces
 									Si CO <> "ro" Entonces
@@ -3009,7 +3328,10 @@ SubProceso convinacion_perdida
 										FinSi
 									FinSi
 								Hasta Que error== Falso
-									
+								
+								// Si se determina que esta bien lo que que hay en la variable "CO" lo guardaremos en su variable definitiva que es la posicion que
+								// toque en la variables "c1, c2, c3, c4".
+								
 								Segun contador Hacer
 									
 									1:
@@ -3030,6 +3352,9 @@ SubProceso convinacion_perdida
 								
 						Borrar Pantalla;	
 						
+						// Una vez terminado de seleccionar la configurar creamos una pantalla donde nos muestre la combinación establecida y decidir si es la que
+						//  queremos o deseamos cambiarla.
+						
 						Escribir " __^__                                        __^__";
 						Escribir "( ___ )--------------------------------------( ___ )";
 						Escribir " | / |                                        | \ |";
@@ -3043,10 +3368,18 @@ SubProceso convinacion_perdida
 						Escribir "(_____)--------------------------------------(_____) ";
 						Escribir "";
 						
+						// Mostramos el mensaje para definir si la elección que se ha echo es la correcta y respuesta la guardaremos en la variable "confirmacioncolor"
+						
 						Escribir "Esta bien la convinacion de colores (Si / No)";
+						
 						Leer confirmacioncolor;
 						
+						//  Para salir del bucle compararemos la variable "confirmacioncolor" con las posibles posivilidades.
+						
 					Hasta Que (confirmacioncolor = "si") o (confirmacioncolor = "SI") o (confirmacioncolor = "Si") o (confirmacioncolor = "sI") o (confirmacioncolor = "s") o (confirmacioncolor = "S") o (confirmacioncolor = "n") o (confirmacioncolor = "N")
+					
+						// Iniciamos los contadores para indicar los aciertos completos o parciales, los completos son los que aciertas posición y color y los casiaciertos 
+						// son los que o has acertsado el color o la posición.
 						
 						aciertos<-0;
 						casiaciertos<-0;
@@ -3057,58 +3390,77 @@ SubProceso convinacion_perdida
 						position4<-Verdadero;
 						
 						si (posi1 = c1) Entonces
+							
 							aciertos<- aciertos + 1;
 							position1<-Falso;
+							
 						FinSi
 						
 						Si (posi2 = c2) Entonces
+							
 							aciertos<- aciertos +1;
 							position2<-Falso;
+							
 						FinSi
 						
-						si (posi3 = c3) Entonces
+						Si (posi3 = c3) Entonces
+							
 							aciertos<- aciertos + 1;
 							position3<-Falso;
+							
 						FinSi
 						
 						Si (posi4 = c4) Entonces
+							
 							aciertos<- aciertos +1;
 							position4<-Falso;
+							
 						FinSi
 						
 						Si (position1 = Verdadero) Entonces
 							
 							Si (p1 = c2) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position1<- Falso;
+								
 							FinSi
 							
 							Si (p1 = c3) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position1<- Falso;
+								
 							FinSi
 							
 							Si (p1 = c4) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position1<- Falso;
+								
 							FinSi
 						FinSi
 						
 						Si (position2 = Verdadero) Entonces
 							
 							Si (p2 = c1) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position2<- Falso;
 								
 							SiNo
 								
 								Si (p2 = c3) Entonces
+									
 									casiaciertos<-casiaciertos + 1;
 									position2<- Falso;
+									
 								SiNo
 									Si (p2 = c4) Entonces
+										
 										casiaciertos<-casiaciertos + 1;
 										position2<- Falso;
+										
 									FinSi
 								FinSi
 							FinSi
@@ -3117,16 +3469,22 @@ SubProceso convinacion_perdida
 						Si (position3 = Verdadero) Entonces
 							
 							Si (p1 = c1) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position3<- Falso;
+								
 							SiNo
 								Si (p1 = c3) Entonces
+									
 									casiaciertos<-casiaciertos + 1;
 									position3<- Falso;
+									
 								SiNo
 									Si (p1 = c4) Entonces
+										
 										casiaciertos<-casiaciertos + 1;
 										position3<- Falso;
+										
 									FinSi
 								FinSi
 							FinSi
@@ -3135,22 +3493,30 @@ SubProceso convinacion_perdida
 						Si (position4 = Verdadero) Entonces
 							
 							Si (p4 = c1) Entonces
+								
 								casiaciertos<-casiaciertos + 1;
 								position4<- Falso;
+								
 							SiNo
 								Si (p4 = c2) Entonces
+									
 									casiaciertos<-casiaciertos + 1;
 									position4<- Falso;
+									
 								SiNo
 									Si (p4 = c3) Entonces
+										
 										casiaciertos<-casiaciertos + 1;
 										position4<- Falso;
+										
 									FinSi
 								FinSi
 							FinSi
 						FinSi
 						
 						seguirjugando<-"Si";	
+						
+						// Si conseguimos acertar los cuatro colores en sus posiciones correctas nos mostrara el mensaje de que hemos ganado.
 						
 						Si aciertos = 4 Entonces
 							
@@ -3164,6 +3530,8 @@ SubProceso convinacion_perdida
 							
 						SiNo
 							
+							// Si no consigues acertar la combinación nos mostrara un cuadro informativo donde nos diga los aciertos de color y posición 
+							// de los casiaciertos y la cantidad de intentos.
 							
 							Escribir " __^__                                                __^__";
 							Escribir "( ___ )----------------------------------------------( ___ )";
@@ -3177,9 +3545,14 @@ SubProceso convinacion_perdida
 							Escribir "(_____)----------------------------------------------(_____) ";
 							Escribir "";
 							Esperar 1 Segundos;
+							
 						FinSi
 						
-						Si (opdificultad == cvueltas) Entonces
+						// Cada vez que hagamos un ciclo del juego compara las variables "opdificultad" y "cvueltas" y si no son iguales el bucle sigue, pero si las dos variables
+						// se igualan nos mostrara el mensaje de game over por que se nos habran acabado los intentos, tambien nos mostrara la combinación que tendriamos que haber
+						// puesto para poder ganar.
+						
+						Si (opdificultad = cvueltas) Entonces
 								
 								Escribir " __^__                                        __^__";
 								Escribir "( ___ )--------------------------------------( ___ )";
@@ -3202,11 +3575,14 @@ SubProceso convinacion_perdida
 								
 						FinSi
 							Escribir "             ¿Quieres seguir jugando? (S/N)";
+							
 							Leer seguirjugando;
 							
 						Hasta Que (Aciertos = 4) o (seguirjugando="no");
 			
 		2:
+			
+			// Como en los juegos anteriores la opcion 2 es la ayuda por lo que nos mostrara en que consiste el juego.
 			
 			Borrar Pantalla;
 			Escribir  "***********************************************************************";
@@ -3227,20 +3603,25 @@ SubProceso convinacion_perdida
 			convinacion_perdida;
 			
 		3:
+			// Aqui tenemos las opciones de salida
+			
+			Definir decision Como Caracter;
+			
 			Borrar Pantalla;
 			
 			Escribir "¿De verdad quiere salir del juego?";
 			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
-			Leer opcion;
+			Leer decision;
 			
-			Si (opcion="s" O opcion ="S") Entonces
+			Si (decision = "s" O decision = "S") Entonces
 				
 				Escribir "Gracias por jugar a Convinacion Perdida.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
+				
 			FinSi
 			
-			Si (opcion = "n" o opcion = "N") Entonces
+			Si (decision = "n" o decision = "N") Entonces
 				
 				convinacion_perdida;
 				
@@ -3256,15 +3637,21 @@ SubProceso convinacion_perdida
 	
 FinSubProceso
 
+// Aqui termina el el juego de combinación perdida.
+
 SubProceso semidados
+	
+	// Aqui definiremos las variables del menú del juego.
 	
 	Definir resultado Como Entero;
 	Definir puntoprincipal Como Entero;
 	Definir punto Como Entero;
 	Definir i Como Entero;
-	Definir opcion Como Entero;
+	Definir op Como Entero;
 	
 	Borrar Pantalla;
+	
+	// Aqui ponemos la pantalla de inicio del juego.
 	
 	Escribir "";
 	Escribir "                         ____";
@@ -3277,6 +3664,7 @@ SubProceso semidados
 	Escribir "";
 	Esperar 1 Segundos;
 	
+	// Aqui ponemos el menú de opciones del juego.
 	
 	Borrar Pantalla;
 	Escribir "";
@@ -3291,15 +3679,25 @@ SubProceso semidados
 	Escribir "(_____)---------------------------------------(_____) ";
 	Escribir "";
 	Escribir "        -- Elige la opción que prefieras --  ";
-	Leer opcion;
+	Leer op;
 	
-	Segun opcion Hacer
+	Segun op Hacer
+		
+		// Segun la opcion elegida y guardada en la variable "op" iremos a un punto u otro del juego.
+		
 		1:
+			// Aqui inicializamos el contador.
+			
 			i<-0;
+			
+			// El en la variable "resultado" guardaremos el resultado de la suma de los dos dados esto lo aremos con dos números elegidos aleatoriamente entre 
+			// números del 1 al 6
 			
 			resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
 			
 			Borrar Pantalla;
+			
+			// Aqui programaremos una pantalla donde nos diga que estamos tirando los dados y que la operación se está llevando a cabo.
 			
 			Escribir "                      ____";
 			Escribir "                    _(____)_";
@@ -3311,17 +3709,23 @@ SubProceso semidados
 			Escribir "|       La tirada se esta llevado a cabo        |";
 			Escribir "@-----------------------------------------------@";
 			
+			// Con este para lo que hacemos es que se ejecute un escribir sin saltar la linea de escritura que simulara la barra de prgreso de las istalaciones de Windows.
+			
 			Para i<-0 Hasta 24 Con Paso 1 Hacer
 				
 				Escribir "-","*" Sin Saltar;
 				Esperar 100 Milisegundos;
 			FinPara
 			
+			// En el siguiente recuadro nos mostrara el resultado  de los dados.
+			
 			Escribir "";
 			Escribir "@-----------------------------------------------@";
 			Escribir "|    El resultado de la tirada es; ",resultado,"            |";
 			Escribir "@-----------------------------------------------@";
 			Esperar 2 Segundos;
+			
+			// Ahora compararemos los resultados si es igual a 7 o a 11 en la primera tirada entonces el jugador gana y nos lo muestra por pantalla.
 			
 			Si (resultado = 7) o (resultado = 11) Entonces
 				
@@ -3337,9 +3741,15 @@ SubProceso semidados
 				Escribir "";
 				Escribir "          Presina una tecla para continuar";
 				Esperar Tecla;
+				
+				// En caso de ganar cuando pulsemos una tecla nos redirigira al comienzo del juego.
+				
 				semidados;
 				
 			SiNo
+				
+				// Pero si el resultado optenido es 2,3 o 12 el jugador pierde y nos lo muestra por pantalla.
+				
 				Si (resultado = 2) o (resultado = 3) o (resultado = 12) Entonces
 					
 					Borrar Pantalla;
@@ -3357,24 +3767,34 @@ SubProceso semidados
 					Escribir "";
 					Escribir "          Presina una tecla para continuar";
 					Esperar Tecla;
+					
+					// Cuando pulsemos una tecla nos redirigira al comienzo del juego.
+					
 					semidados;
 					
 				SiNo
+					
+					// En caso de que el resultado sea distinto a los otros dos casos se guardara en la variable "puntoprincipal".
+					
 					Escribir "@-----------------------------------------------@";
 					Escribir "|    Se establece el punto en: ",resultado,"                |";
 					Escribir "@-----------------------------------------------@";
 					
 					puntoprincipal<-resultado;
 					
+					// Al no ganar ni perder sigue el juego con una nueva tirada.
+					
 				FinSi
 			FinSi
 			
-			//segunda tirada
+			// En la segunda tirada se vuelve a tirar los dados y de nuevo volvemos a guardar el resultado en la variable "resultado".
 			
 			
 			resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
 			
 			Borrar Pantalla;
+			
+			// La diferencia con la primera tirada es que ahora tenemos que igualar el número que se establecio en la variable "puntoprincipal".
 			
 			Escribir "                        ____";
 			Escribir "                      _(____)_";
@@ -3390,10 +3810,13 @@ SubProceso semidados
 			Escribir "|       La tirada se esta llevado a cabo        |";
 			Escribir "@-----------------------------------------------@";
 			
+			// De nuevo se tiran los dados y guardamos el valor en "resultado".
+			
 			Para i<-0 Hasta 24 Con Paso 1 Hacer
 				
 				Escribir "-","*" Sin Saltar;
 				Esperar 100 Milisegundos;
+				
 			FinPara
 			
 			Escribir "";
@@ -3402,74 +3825,89 @@ SubProceso semidados
 			Escribir "@-----------------------------------------------@";
 			Esperar 2 Segundos;
 			
-			Segun resultado Hacer
-				punto:
-					Borrar Pantalla;
-					Escribir "                   \||/";
-					Escribir "                   (@ @)";
-					Escribir "           @----ooO-(_)-Ooo----------------@";
-					Escribir "   ________|        << Enorabuena >>       |_______";
-					Escribir "   \       |                               |       /";
-					Escribir "    \      |           Has Ganado          |      /";
-					Escribir "    /      @_______________________________@      \";
-					Escribir "   /__________)                         (__________\";
-					Escribir "";
-					Escribir "          Presina una tecla para continuar";
-					Esperar Tecla;
-					semidados;
-				7:
-					Borrar Pantalla;
-					Escribir "                                 ( ( ( ";
-					Escribir "                                  ) ) )";
-					Escribir "                                 ( ( ( ";
-					Escribir "                                : ___ :";
-					Escribir "                               : (> <) :";
-					Escribir "           @------------------ooO-(_)-Ooo--@";
-					Escribir "   ________|        << GAME OVER >>        |_______";
-					Escribir "   \       |                               |       /";
-					Escribir "    \      |          Has Perdidio         |      /";
-					Escribir "    /      @_______________________________@      \";
-					Escribir "   /__________)                         (__________\";
-					Escribir "";
-					Escribir "          Presina una tecla para continuar";
-					Esperar Tecla;
-					semidados;
+			// Y comparamos si "resultado" es igual "puntoprincipal" ganas.
+			
+			Si resultado=puntoprincipal Entonces
+				
+				Borrar Pantalla;
+				Escribir "                   \||/";
+				Escribir "                   (@ @)";
+				Escribir "           @----ooO-(_)-Ooo----------------@";
+				Escribir "   ________|        << Enorabuena >>       |_______";
+				Escribir "   \       |                               |       /";
+				Escribir "    \      |           Has Ganado          |      /";
+				Escribir "    /      @_______________________________@      \";
+				Escribir "   /__________)                         (__________\";
+				Escribir "";
+				Escribir "          Presina una tecla para continuar";
+				Esperar Tecla;
+				semidados;
+				
+			FinSi
+			
+			Borrar Pantalla;
+			
+			// Si "resultado" es igual a 7 pierdes.
+			
+			Si resultado = 7 Entonces
+				
+				Escribir "                                 ( ( ( ";
+				Escribir "                                  ) ) )";
+				Escribir "                                 ( ( ( ";
+				Escribir "                                : ___ :";
+				Escribir "                               : (> <) :";
+				Escribir "           @------------------ooO-(_)-Ooo--@";
+				Escribir "   ________|        << GAME OVER >>        |_______";
+				Escribir "   \       |                               |       /";
+				Escribir "    \      |          Has Perdidio         |      /";
+				Escribir "    /      @_______________________________@      \";
+				Escribir "   /__________)                         (__________\";
+				Escribir "";
+				Escribir "          Presina una tecla para continuar";
+				Esperar Tecla;
+				
+				semidados;
+				
+			FinSi
+			
+			// Aqui si no es igual empezara a hacer tiradas sucesivas hasta que coincida el "resultado" con "puntoprincipal" o se saque en la tirada un 7.
+			
+			Si resultado <> puntoprincipal Entonces
+				
+				Repetir
 					
-				De Otro Modo:
-					Repetir
-						resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
-						
-						Borrar Pantalla;
-						
-						Escribir "                        ____";
-						Escribir "                      _(____)_";
-						Escribir "   _______________ooO_(_o__o_)_Ooo_______________";
-						Escribir " /                                                \";
-						Escribir "|  - Pulsa cualquier tecla para tirar los dados -  |";
-						Escribir "|                                                  |";
-						Escribir "|   El punto esta establecido en: ",puntoprincipal,"                |";
-						Escribir " \________________________________________________/";
-						Esperar Tecla;
-						
-						Escribir "@-----------------------------------------------@";
-						Escribir "|       La tirada se esta llevado a cabo        |";
-						Escribir "@-----------------------------------------------@";
-						
-						Para i<-0 Hasta 24 Con Paso 1 Hacer
-							
-							Escribir "-","*" Sin Saltar;
-							Esperar 100 Milisegundos;
-						FinPara
-						
-						Escribir "";
-						Escribir "@-----------------------------------------------@";
-						Escribir "|    El resultado de la tirada es; ",resultado,"            |";
-						Escribir "@-----------------------------------------------@";
-						Esperar 2 Segundos;
-						
-					Hasta Que (resultado = puntoprincipal) o (resultado = 7);
+					resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
 					
-					Si resultado = punto Entonces
+					Borrar Pantalla;
+					
+					Escribir "                        ____";
+					Escribir "                      _(____)_";
+					Escribir "   _______________ooO_(_o__o_)_Ooo_______________";
+					Escribir " /                                                \";
+					Escribir "|  - Pulsa cualquier tecla para tirar los dados -  |";
+					Escribir "|                                                  |";
+					Escribir "|   El punto esta establecido en: ",puntoprincipal,"                |";
+					Escribir " \________________________________________________/";
+					Esperar Tecla;
+					
+					Escribir "@-----------------------------------------------@";
+					Escribir "|       La tirada se esta llevado a cabo        |";
+					Escribir "@-----------------------------------------------@";
+					
+					Para i<-0 Hasta 24 Con Paso 1 Hacer
+						
+						Escribir "-","*" Sin Saltar;
+						Esperar 100 Milisegundos;
+						
+					FinPara
+					
+					Escribir "";
+					Escribir "@-----------------------------------------------@";
+					Escribir "|    El resultado de la tirada es; ",resultado,"            |";
+					Escribir "@-----------------------------------------------@";
+					Esperar 2 Segundos;
+					
+					Si resultado = puntoprincipal Entonces
 						
 						Borrar Pantalla;
 						Escribir "                   \||/";
@@ -3483,9 +3921,12 @@ SubProceso semidados
 						Escribir "";
 						Escribir "          Presina una tecla para continuar";
 						Esperar Tecla;
+						
 						semidados;
 						
-					SiNo
+					FinSi
+					
+					Si resultado = 7 Entonces
 						
 						Borrar Pantalla;
 						Escribir "                                 ( ( ( ";
@@ -3501,12 +3942,23 @@ SubProceso semidados
 						Escribir "   /__________)                         (__________\";
 						Escribir "";
 						Escribir "          Presina una tecla para continuar";
+						
 						Esperar Tecla;
+						
 						semidados;
 						
 					FinSi
+					
+				Hasta Que (resultado = puntoprincipal) o (resultado = 7);
+				
+			FinSi
+			
 		2:
+			
+			// Como en los juegos anteriores la ayuda es la descripción y como se juega.
+			
 			Borrar Pantalla;
+			
 			Escribir  "***********************************************************************";
 			Escribir  "*                                                                     *";
 			Escribir  "*                         << Semi Dados >>                            *";
@@ -3526,26 +3978,48 @@ SubProceso semidados
 			Escribir  "*                                                                     *";
 			Escribir  "***********************************************************************";
 			
-			Escribir "Presione cualquier tecla para volver al menu";
+			Escribir "          Presione cualquier tecla para volver al menu";
 			Esperar Tecla;
 			
 			semidados;
 		3:
-			Escribir "Aqui ira salir";
-			Esperar Tecla;
+			// Aqui tenemos las opciones de salida
+			
+			Borrar Pantalla;
+			
+			Escribir "¿De verdad quiere salir del juego?";
+			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Leer opcion;
+			
+			Si (opcion="s" O opcion ="S") Entonces
+				
+				Escribir "Gracias por jugar a Semidados.";
+				Escribir "Para continuar presione cualquier tecla";
+				Esperar Tecla;
+			FinSi
+			
+			Si (opcion = "n" o opcion = "N") Entonces
+				
+				semidados;
+				
+			FinSi
+			
 		De Otro Modo:
 			
 			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
 			Esperar 1 Segundos;
+			
 			semidados;
 			
 	FinSegun
 	
-	FinSegun
-	
 FinSubProceso
 
+// Y aqui termina el ultimo juego de la colección de juegos reunidos.
+
 SubProceso creditos
+	
+	// En este subproceso lo que he querido hacer es como en todos los juegos pues poner unos creditos y agradecimientos que solo es escribir por pantalla.
 	
 	Borrar Pantalla;
 	
@@ -3578,7 +4052,11 @@ SubProceso creditos
 	
 FinSubProceso
 
+// Aqui acaba el subproceso creditos
+
 SubProceso salir
+	
+	// En este subproceso he creado un menú para hacer que el programa se termine, aun asi hay una opcion para polder volver al menú de selección de juegos.
 	
 	Definir opcion Como Caracter;
 	
@@ -3600,6 +4078,8 @@ SubProceso salir
 	FinSi
 	
 FinSubProceso
+
+// Aqui termina el subproceso salir.
 
 // Como ya hemos terminado de definir los SubProceso vamos a pasar a definir el Proceso principal que es donde se van a llamar a todos los SubProceso anteriormente programados
 
@@ -3627,18 +4107,24 @@ Proceso Juegos_Reunidos
 		Escribir  "*                       1) Saber y Ganar.                             *";
 		Escribir  "*                       2) Simon Dice.                                *";
 		Escribir  "*                       3) Piedra Papel o Tijeras                     *";
-		Escribir  "*                       4) Convinación Perdida                        *";
+		Escribir  "*                       4) Combinación Perdida                        *";
 		Escribir  "*                       5) Semidados                                  *";
 		Escribir  "*                       6) Cresditos                                  *";
 		Escribir  "*                       7) Salir                                      *";
 		Escribir  "*                                                                     *";
 		Escribir  "***********************************************************************";
 		
-		// Aqui lo que hacemos con este "leer" es que nos deje seleccionar el juego que queramos 
+		// Aqui lo que hacemos con este "leer" es que nos deje seleccionar el juego que queramos guardando lo que tecle el usuario lo guardaremos en la variable
+		// "men"
 		
 		Leer men;
 		
+		// con lo giardado en la variable "men" compararemos con las opciones que hay
+		
 		Segun men Hacer
+			
+			// Cada opción nos lleva a un juego o apartado del programa.
+			
 			1:
 				Saber_y_Ganar;
 				
@@ -3662,7 +4148,7 @@ Proceso Juegos_Reunidos
 				
 			De Otro Modo:
 				
-				Escribir "La opcion marcada no es valida";
+				Escribir "La opcion marcada no es valida, vuelva a elegir";
 				Esperar 1 Segundos;
 				
 		FinSegun
@@ -3671,6 +4157,7 @@ Proceso Juegos_Reunidos
 		
 		Escribir "¿Quiere elegir otro juego o abandonar el programa?";
 		Escribir " Teclé < s > para elegir otro juego o < n > para abandonar";
+		
 		Leer decision;
 		
 	Hasta Que decision = "n";
