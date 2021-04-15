@@ -2149,10 +2149,10 @@ SubProceso saber_y_ganar ()
 	
 	Si (op = 3) Entonces
 		
-		// Lo que vamos ha hacer es asegurarnos de que el usuario quiere de verdad salir del programa. 
+		// Lo que vamos a hacer es asegurarnos de que el usuario quiere de verdad salir del programa. 
 		
 		Escribir "¿De verdad quiere salir del juego?";
-		Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+		Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 		Leer opcion;
 		
 		// En este "SI" le asisgnamos dos posibles soluciones, "S" mayúscula o "s" minúscula y cualquiera de las dos sería correcta
@@ -2725,7 +2725,7 @@ SubProceso simon_dice
 			Borrar Pantalla;
 			
 			Escribir "¿De verdad quiere salir del juego?";
-			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 			Leer opcion;
 			
 			Si (opcion="s" O opcion ="S") Entonces
@@ -2777,7 +2777,7 @@ SubProceso piedra_papel_tijeras
 	puntos1<-0;
 	puntos2<-0;
 	
-	// Creamos una pantalla de inicio que estara visble durante 2 segundos.
+	// Creamos una pantalla de inicio que estarí visible durante 2 segundos.
 	
 	Escribir " __^__                                      __^__";
 	Escribir "( ___ )------------------------------------( ___ )";
@@ -2807,12 +2807,12 @@ SubProceso piedra_papel_tijeras
 	
 	Leer opcionppt;
 	
-	// Dependiendo lo ingresado por el usuario creamos un "segun" para dirigirnos a las distinatas opciones del programa
+	// Dependiendo de lo ingresado por el usuario creamos un "segun" para dirigirnos a las distintas opciones del programa.
 	
 	Segun opcionppt Hacer
 		1:
-			// Si la opcion ingresada es un 1 ira directamente al juego y lo primeroque aremos sera crear una variable para que el usuario ingrese el nombre
-			// con el que desa jugar.
+			// Si la opción ingresada es un 1 irá directamente al juego y lo primero que haremos será crear una variable para que el usuario ingrese el nombre
+			// con el que desea jugar.
 			
 			Escribir "¿Qué nómbre usarás para jugar?";
 			
@@ -2820,7 +2820,7 @@ SubProceso piedra_papel_tijeras
 			
 			Repetir
 				
-				// Lo siguiente que se mostrara es el marcador con todo puesto a 0 para que apartir de aqui empiece a contavilizar la partida.
+				// Lo siguiente que se mostrará es el marcador con todo puesto a 0 para que a partir de aquí empiece a contabilizar la partida.
 				
 				Borrar Pantalla;
 				
@@ -2846,7 +2846,7 @@ SubProceso piedra_papel_tijeras
 				
 				Borrar Pantalla;
 				
-				// Una vez empieza el juego nos dara a elegir entre 3 opciones: piedra, papel o tigera y esta la guardaremos en la variable " jugador1".
+				// Una vez empieza el juego nos dará a elegir entre 3 opciones: piedra, papel o tigera y ésta la guardaremos en la variable " jugador1".
 				
 				Escribir " __^__                                      __^__";
 				Escribir "( ___ )------------------------------------( ___ )";
@@ -2861,7 +2861,7 @@ SubProceso piedra_papel_tijeras
 				
 				Leer jugador1;
 				
-				// Ahora trasformamos la instruccion en una palabra por medio de "SI" y lo guardamos en la variable "letra1".
+				// Ahora trasformamos la instrucción en una palabra por medio de "SI" y lo guardamos en la variable "letra1".
 				
 				Si jugador1=1 Entonces
 					
@@ -2881,12 +2881,12 @@ SubProceso piedra_papel_tijeras
 					
 				FinSi
 				
-				// Por otro lado tenemos la elección de la maquina que la aremos eligiendo un numero aleatorio comprendido entre 1 y 3 y lo guardaremos en
+				// Por otro lado tenemos la elección de la máquina que la haremos eligiendo un número aleatorio comprendido entre 1 y 3 y lo guardaremos en
 				// la variable "jugador2".
 				
 				jugador2<-Aleatorio(1,3);
 				
-				// Como en el jugador 1 pasamos su elección a una palabras mediante "Si" y lo guardaremos en la variable "letra2".
+				// Como se hizo en el jugador 1 pasamos su elección a una palabras mediante "Si" y lo guardaremos en la variable "letra2".
 				
 				Si jugador2=1 Entonces
 					
@@ -2906,13 +2906,13 @@ SubProceso piedra_papel_tijeras
 					
 				FinSi
 				
-				// Una vez que las dos partes ha elegido su opcion a mostrar compararemos los resultados para ver quien es el que ha ganado la ronda, esto
-				// lo aremos con "Si" y una seri de condiciones, si se dan las condiciones del primer si entonces el jugador 1 gana.
+				// Una vez que las dos partes han elegido su opción, compararemos los resultados para ver quién es el que ha ganado la ronda, esto
+				// lo haremos con "Si" y una serie de condiciones, si se dan las condiciones del primer "si" entonces el jugador 1 gana.
 				
 				Si ( jugador1=1 y jugador2=3 ) o ( jugador1=2 y jugador2=1 ) o ( jugador1=3 y jugador2=2 ) Entonces
 					
-					// Entonces se mostrara el siguiente mensaje donde aprace el nombre del jugador ganador al ser el usuario mostrara el nombre ingresado
-					// al principio mediante la variable "nombre" y luego dira por que gana, es decir por medio de las variables "letra1 y letra2" se vera
+					// Entonces se mostrará el siguiente mensaje donde aparece el nombre del jugador ganador, al ser el usuario mostrará el nombre ingresado
+					// al principio mediante la variable "nombre" y luego dirá porqué gana, es decir por medio de las variables "letra1 y letra2" se verá
 					// la elección que cada jugador hizo y añadiendo el comentaraio a mostrar "Porque "letra1" gana a "letra2"".
 					
 					Escribir " __^__                                      __^__";
@@ -2929,7 +2929,7 @@ SubProceso piedra_papel_tijeras
 					
 					Esperar Tecla;
 					
-					// Una vez pase la ronda se sumara un punto al marcador del usuario.
+					// Una vez pase la ronda se sumará un punto al marcador del usuario.
 					
 					puntos1<-puntos1+1;
 					
@@ -2937,7 +2937,7 @@ SubProceso piedra_papel_tijeras
 				
 				Si (( jugador2=1 y jugador1=3 ) o ( jugador2=2 y jugador1=1 ) o ( jugador2=3 y jugador1=2 )) Entonces
 					
-					// En el caso de gane la CPU el proceso es el mismo que cuando gana el usuario.
+					// En el caso de que gane la CPU, el proceso es el mismo que cuando gana el usuario.
 					
 					Escribir " __^__                                      __^__";
 					Escribir "( ___ )------------------------------------( ___ )";
@@ -2959,9 +2959,9 @@ SubProceso piedra_papel_tijeras
 					
 				FinSi
 				
-				// Por ultimo tenemos el caso de empate que solo se mostrara que se ha empatado y cual fue la eleccion que hicieron tanto el usuario como la CPU
-				// para mostrar lo que sacaron los jugadores usaremos la variable "letra1" ya que da igual usar la del jugador como la de la CPU, en este caso al
-				// quedar empate no se sumara puntos a ninguno de los dos jugadores.
+				// Por último tenemos el caso de empate, que sólo se mostrará que se ha empatado y cual fue la elección que hicieron tanto el usuario como la CPU,
+				// para mostrar lo que sacaron los jugadores usaremos la variable "letra1", ya que da igual usar la del jugador como la de la CPU, en este caso al
+				// quedar empate no se sumarán puntos a ninguno de los dos jugadores.
 				
 				Si (( jugador1=1 y jugador2=1 ) o ( jugador1=2 y jugador2=2 ) o ( jugador1=3 y jugador2=3 )) Entonces
 					
@@ -2981,16 +2981,16 @@ SubProceso piedra_papel_tijeras
 					
 				FinSi
 				
-				// Este bucle seguira reiniciando hatas que la partida acabe y eso sera cuando se cumpla que cualquiera de los dos marcadores de los jugadores llegen
+				// Este bucle seguirá reiniciando hasta que la partida acabe, y eso será cuando se cumpla que cualquiera de los dos marcadores de los jugadores lleguen
 				// a la puntuación de 10.
 				
-			Hasta Que (puntos1==10 o puntos2==10)
+			Hasta Que (puntos1=10 o puntos2=10)
 			
-			// Para terminar la partida haremos un "Si , Sino" para mostrar la pantalla de ganador y lo que ara este si es que si la puntuación del "jugador1"
+			// Para terminar la partida haremos un "Si , Sino" para mostrar la pantalla del ganador, y lo que hará éste es que si la puntuación del "jugador1"
 			// es igual a 10 el jugador 1 gana la partida y lo guardaremos en la variable "ganador", si no, quiere decir que el que gana la partida es la CPU
-			// y de igual manera se guardara en la variable "ganador". 
+			// y de igual manera se guardará en la variable "ganador". 
 			
-			Si (puntos1==10) Entonces
+			Si (puntos1=10) Entonces
 				
 				ganador<-nombre;
 				
@@ -3000,7 +3000,7 @@ SubProceso piedra_papel_tijeras
 				
 			FinSi
 			
-			// Por ultimo lo que mostraremos en un mensaje diciendo quien es el ganador del juego.
+			// Por último lo que mostraremos en un mensaje diciendo quien es el ganador del juego.
 			
 			Borrar Pantalla;
 			Escribir "";
@@ -3019,7 +3019,7 @@ SubProceso piedra_papel_tijeras
 			
 		2:
 			
-			// Si la eleccion es el número 2 lo que hara es traernos hasta la ayuda que como en juegos anteriores es una descripción del juego y de que trata.
+			// Si la elección es el número 2 lo que hará es traernos hasta la ayuda, que como en juegos anteriores es una descripción del juego y de qué trata.
 			
 			Borrar Pantalla;
 			
@@ -3027,15 +3027,15 @@ SubProceso piedra_papel_tijeras
 			Escribir  "*                                                                     *";
 			Escribir  "*                    << Piedra, Papel, Tijeras >>                     *";
 			Escribir  "*                                                                     *";
-			Escribir  "*     Este juego consites en el clasico juego de que una opcion       *";
-			Escribir  "*     gana sobre las otras, el juego consistira en 10 rondas y        *";
+			Escribir  "*     Este juego consiste en el clásico juego de que una opción       *";
+			Escribir  "*     gana sobre las otras, el juego consistirá en 10 rondas y        *";
 			Escribir  "*     el que antes acumele 10 puntos gana la partida.                 *";
 			Escribir  "*                                                                     *";
-			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                       DIVIÉRTETE    *";
 			Escribir  "*                                                                     *";
 			Escribir  "***********************************************************************";
-			
-			Escribir "Presione cualquier tecla para volver al menu";
+			Escribir "";
+			Escribir "            Presione cualquier tecla para volver al menú";
 			
 			Esperar Tecla;
 			
@@ -3043,17 +3043,17 @@ SubProceso piedra_papel_tijeras
 			
 		3:
 			
-			// Como en los anteriores juegos si marcamos 3 nos manda a la salida del juego por lo que no comentare mas esta sección
+			// Como en los anteriores juegos si marcamos 3 nos manda a la salida del juego por lo que no comentaré más esta sección.
 			
 			Borrar Pantalla;
 			
 			Escribir "¿De verdad quiere salir del juego?";
-			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 			Leer opcion;
 			
 			Si (opcion="s" O opcion ="S") Entonces
 				
-				Escribir "Gracias por jugar a Piedra, Papel, Tijeras.";
+				Escribir "Gracias por jugar a Piedra, Papel, Tijera.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
 				
@@ -3067,23 +3067,23 @@ SubProceso piedra_papel_tijeras
 			
 		De Otro Modo:
 			
-			// De otro modo es lo mismo que en los juegos anteriores, si nos equibocamos en digitar la opción que queremos nos mostrara en pantalla el mensaje de que
-			// nos hemos equibocado.
+			// De otro modo es lo mismo que en los juegos anteriores, si nos equivocamos en digitar la opción que queremos nos mostrará en pantalla el mensaje de que
+			// nos hemos equivocado.
 			
-			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Escribir "La opción marcada no es válida, redirecionándolo al juego";
 			Esperar 1 Segundos;
 			
 			piedra_papel_tijeras;
 			
 	FinSegun
 	
-	// Aqui termina el codigo del juego de piedra, papel o tijera.
+	// Aquí termina el código del juego de piedra, papel o tijera.
 	
 FinSubProceso
 
 SubProceso convinacion_perdida
 	
-	// Aqui definimos las variable de los menus que vamos ha usar en el juego.
+	// Aquí definimos las variables de los menús que vamos a usar en el juego.
 	
 	Definir opcioncp Como Entero;	
 	Definir dificultad Como Entero;
@@ -3098,7 +3098,7 @@ SubProceso convinacion_perdida
 	Escribir " | / |                                      | \ |";
 	Escribir " | / |             Bienvenido a             | \ |";
 	Escribir " | / |                                      | \ |";
-	Escribir " | / |         Convinación Perdida          | \ |";
+	Escribir " | / |         Combinación Perdida          | \ |";
 	Escribir " |___|                                      |___|";
 	Escribir "(_____)------------------------------------(_____) ";
 	Esperar 2 Segundos;
@@ -3121,32 +3121,37 @@ SubProceso convinacion_perdida
 	
 	Borrar Pantalla;
 	
-	// En este juego creamos una novedad y es la opción de dificultad del juego, dependiendo la opcion el juego sera mas o menos dificil.
-	
-	Escribir " __^__                                       __^__";
-	Escribir "( ___ )-------------------------------------( ___ )";
-	Escribir " | / |   ¿En que dificultad quieres jugar?   | \ |";
-	Escribir " | / |                                       | \ |";
-	Escribir " | / |              1) Muy Facil             | \ |";
-	Escribir " | / |              2) Facil                 | \ |";
-	Escribir " | / |              3) Media                 | \ |";
-	Escribir " | / |              4) Dificil               | \ |";
-	Escribir " | / |              5) Pesadilla             | \ |";
-	Escribir " |___|                                       |___|";
-	Escribir "(_____)-------------------------------------(_____) ";
-	Escribir "";
-	Escribir "        -- Elige la opción que prefieras --  ";
-	
-	// Guardamos la elección del jugador en la variable "dificultad".
-	
-	Leer dificultad;
-	
-	Segun dificultad Hacer
+	Segun opcioncp Hacer
 		
-			// La dificultad de este juego reside en que dependiendo de la opción que escojamos tendremos mas o menos intentos para poder descifrar la combinación de
-			// colores, la primera opción da 10000 intentos lo cual creo que es suficiente como para considerarlo de intentos infinitos, la siguiente dificultad nos 
-			// dara 50 opportunidades, la siguiente solo 25 oportunidades, la siguiente 10 oportunidades y por ultimo la forma mas dificil solo nos dara 5 oportunidades.
+	1:
+	
+		// En este juego creamos una novedad, y es la opción de dificultad del juego, dependiendo la opción el juego será más o menos dificil.
 		
+		Escribir " __^__                                       __^__";
+		Escribir "( ___ )-------------------------------------( ___ )";
+		Escribir " | / |   ¿En qué dificultad quieres jugar?   | \ |";
+		Escribir " | / |                                       | \ |";
+		Escribir " | / |              1) Muy Fácil             | \ |";
+		Escribir " | / |              2) Fácil                 | \ |";
+		Escribir " | / |              3) Media                 | \ |";
+		Escribir " | / |              4) Difícil               | \ |";
+		Escribir " | / |              5) Pesadilla             | \ |";	
+		Escribir " |___|                                       |___|";
+		Escribir "(_____)-------------------------------------(_____) ";
+		Escribir "";
+		Escribir "        -- Elige la opción que prefieras --  ";
+		
+		// Guardamos la elección del jugador en la variable "dificultad".
+		
+		Leer dificultad;
+		
+		Segun dificultad Hacer
+			
+				// La dificultad de este juego reside en que dependiendo de la opción que escojamos tendremos más o menos intentos para poder descifrar la combinación de
+				// colores, la primera opción da 10000 intentos, lo cual creo que es suficiente como para considerarlo de intentos infinitos; La siguiente dificultad nos 
+				// dará 50 opportunidades, la siguiente sólo 25 oportunidades, la siguiente 10 oportunidades y por último la forma más difícil nos dará 
+				// tan sólo 5 oportunidades.
+			
 		1:
 			opdificultad<-10000;
 			
@@ -3164,78 +3169,74 @@ SubProceso convinacion_perdida
 			
 		De Otro Modo:
 			
-			// Aqui aprovechamos la opción "de otro modo" para que si nos equibocamos en elegir nos dejara volver a elegir.
+			// Aquí aprovechamos la opción "de otro modo" para que si nos equivocamos en elegir, podremos volver a digitar la opción.
 			
-			Escribir "La opcion es incorrecta, elija de nuevo.";
+			Escribir "La opción es incorrecta, elija de nuevo.";
 			
 			Leer dificultad;
 			
-	FinSegun
-	
-	
-	
-	Segun opcioncp Hacer
+		FinSegun
 		
-		1:
-			// Aqui definiremos las variables del juego
+		
+		// Aquí definiremos las variables del juego.
+		
+		Definir p0 Como Entero;
+		Definir CO Como Caracter;
+		Definir contador Como Entero;
+		Definir error Como Logico;
+		Definir c1 Como Caracter;
+		Definir c2 Como Caracter;
+		Definir c3 Como Caracter;
+		Definir c4 Como Caracter;
+		Definir p1 Como Caracter;
+		Definir p2 Como Caracter;
+		Definir p3 Como Caracter;
+		Definir p4 Como Caracter;
+		Definir aciertos Como Entero;
+		Definir casiaciertos Como Entero;
+		Definir posi1 Como Caracter;
+		Definir posi2 Como Caracter;
+		Definir posi3 Como Caracter;
+		Definir posi4 Como Caracter;
+		Definir position1 Como Logico;
+		Definir position2 Como Logico;
+		Definir position3 Como Logico;
+		Definir position4 Como Logico;
+		Definir seguirjugando Como Caracter;
+		Definir confirmacioncolor Como Caracter;
+		Definir cvueltas Como Entero;
+		
+		// Iniciamos el contador para las vueltas del bucle y programar la dificultad.
+		
+		cvueltas<-0;
+		
+		// Creamos un "para", para que genere aleatoriamente la combinación de colores que posteriormente tendrá que descifrar el usuario. 
+		
+		Para contador<-1 Hasta 4 Con Paso 1 Hacer
+		
+			p0<-Aleatorio(1,6);
 			
-				Definir p0 Como Entero;
-				Definir CO Como Caracter;
-				Definir contador Como Entero;
-				Definir error Como Logico;
-				Definir c1 Como Caracter;
-				Definir c2 Como Caracter;
-				Definir c3 Como Caracter;
-				Definir c4 Como Caracter;
-				Definir p1 Como Caracter;
-				Definir p2 Como Caracter;
-				Definir p3 Como Caracter;
-				Definir p4 Como Caracter;
-				Definir aciertos Como Entero;
-				Definir casiaciertos Como Entero;
-				Definir posi1 Como Caracter;
-				Definir posi2 Como Caracter;
-				Definir posi3 Como Caracter;
-				Definir posi4 Como Caracter;
-				Definir position1 Como Logico;
-				Definir position2 Como Logico;
-				Definir position3 Como Logico;
-				Definir position4 Como Logico;
-				Definir seguirjugando Como Caracter;
-				Definir confirmacioncolor Como Caracter;
-				Definir cvueltas Como Entero;
-				
-				// Iniciamos el contador para las vueltas del bucle y programar la dificultad
-				
-				cvueltas<-0;
-				
-				// Creamos un "para" para que genere aleatoriamente la convinación de colores que posteriormente tendra que descifrar el usuario. 
-				
-				Para contador<-1 Hasta 4 Con Paso 1 Hacer
-				
-				p0<-Aleatorio(1,6);
-				
-					Segun p0 hacer
-						1:
-							CO<-"am";
-							
-						2:
-							CO<-"ro";
-							
-						3:
-							CO<-"ve";
-							
-						4:
-							CO<-"az";
-							
-						5:	
-							CO<-"ne";
-							
-						6:
-							CO<-"bl";
-					FinSegun
+				Segun p0 hacer
+					1:
+						CO<-"am";
 					
-					// Ahora dependiendo de la elección al azar que se alla echo se rellena las posiciondes de la combinación.
+					2:
+						CO<-"ro";
+					
+					3:
+						CO<-"ve";
+						
+					4:
+						CO<-"az";
+						
+					5:	
+						CO<-"ne";
+					
+					6:
+						CO<-"bl";
+				FinSegun
+					
+					// Ahora dependiendo de la elección al azar que se haya hecho se rellena las posiciones de la combinación.
 					
 					Segun contador Hacer
 						
@@ -3255,12 +3256,12 @@ SubProceso convinacion_perdida
 					
 				FinPara
 					
-					// Generamos un repetir para los intentos de adibinar la combinación.
+					// Generamos un "repetir" para los intentos de adivinar la combinación.
 					
 					Repetir
 						
-						// colocamos el contador de veces que se repite el bucle con lo que cada vez que se repita a la variable "cvueltas" se le sumara 1 al valor que
-						// tenia la variable de la vuelta anterior.
+						// Colocamos el contador de veces que se repite el bucle, con lo que cada vez que se repita la variable "cvueltas", se le sumará 
+						// 1 al valor que tenía la variable en la vuelta anterior.
 						
 						cvueltas<- cvueltas + 1;
 						
@@ -3268,12 +3269,12 @@ SubProceso convinacion_perdida
 						
 						Repetir
 							
-							// Generamos el mennú con las opciones con sus equibalencias.
+							// Generamos el menú con las opciones y sus equivalencias.
 							
 							Escribir " __^__                                         __^__";
 							Escribir "( ___ )---------------------------------------( ___ )";
 							Escribir " | / |                                         | \ |";
-							Escribir " | / |   Introduce tu combinacion de colores   | \ |";
+							Escribir " | / |   Introduce tu combinación de colores   | \ |";
 							Escribir " | / |                                         | \ |";
 							Escribir " | / |              am = Amarillo              | \ |";
 							Escribir " | / |              ro = Rojo                  | \ |";
@@ -3285,7 +3286,7 @@ SubProceso convinacion_perdida
 							Escribir "(_____)---------------------------------------(_____) ";
 							Escribir "";
 							
-							// Creamos un para rellenaremos la combinación del usuario para luego compararla con la de la CPU .
+							// Creamos un "para" rellenaremos la combinación del usuario para luego compararla con la de la CPU.
 							
 							Para contador<- 1 Hasta 4 Con Paso 1 Hacer
 								
@@ -3306,12 +3307,12 @@ SubProceso convinacion_perdida
 										
 									FinSegun
 									
-									// En este leer es donde se guardara el color seleccionado si con la cadena de "SI"  determina que esta bien escrito.
+									// En este "leer" es donde se guardará el color seleccionado, y con la cadena de "SI"  determinará que esta bien escrito.
 									
 									Leer CO;
 									Error<-Falso;
 									
-									// Con los "Si" de acontinuación comprovaremos si lo que hemos digitado esta bien escrito o no 
+									// Con los "Si" que hay a continuación comprobaremos si lo que hemos digitado está bien escrito o no. 
 									
 								Si CO <> "am" Entonces
 									Si CO <> "ro" Entonces
@@ -3329,8 +3330,8 @@ SubProceso convinacion_perdida
 									FinSi
 								Hasta Que error== Falso
 								
-								// Si se determina que esta bien lo que que hay en la variable "CO" lo guardaremos en su variable definitiva que es la posicion que
-								// toque en la variables "c1, c2, c3, c4".
+								// Si se determina que está bien, lo que que hay en la variable "CO" lo guardaremos en su variable definitiva, que es la
+								// posición que toque en la variables "c1, c2, c3, c4".
 								
 								Segun contador Hacer
 									
@@ -3352,13 +3353,13 @@ SubProceso convinacion_perdida
 								
 						Borrar Pantalla;	
 						
-						// Una vez terminado de seleccionar la configurar creamos una pantalla donde nos muestre la combinación establecida y decidir si es la que
-						//  queremos o deseamos cambiarla.
+						// Una vez terminado de seleccionar la configuración, creamos una pantalla donde nos muestre la combinación establecida, y decidir si 
+						// es la que queremos o deseamos cambiarla.
 						
 						Escribir " __^__                                        __^__";
 						Escribir "( ___ )--------------------------------------( ___ )";
 						Escribir " | / |                                        | \ |";
-						Escribir " | / |   Combinacion de colores establecida   | \ |";
+						Escribir " | / |   Combinación de colores establecida   | \ |";
 						Escribir " | / |                                        | \ |";
 						Escribir " | / |            1º color = ",c1,"               | \ |";
 						Escribir " | / |            2º color = ",c2,"               | \ |";
@@ -3368,18 +3369,20 @@ SubProceso convinacion_perdida
 						Escribir "(_____)--------------------------------------(_____) ";
 						Escribir "";
 						
-						// Mostramos el mensaje para definir si la elección que se ha echo es la correcta y respuesta la guardaremos en la variable "confirmacioncolor"
+						// Mostramos el mensaje para definir si la elección que se ha hecho es la correcta y la respuesta la guardaremos en la 
+						// variable "confirmacioncolor".
 						
 						Escribir "Esta bien la convinacion de colores (Si / No)";
 						
 						Leer confirmacioncolor;
 						
-						//  Para salir del bucle compararemos la variable "confirmacioncolor" con las posibles posivilidades.
+						//  Para salir del bucle compararemos la variable "confirmacioncolor" con la combinacion que se hizo aleatoriamente al inicio del 
+						// programa.
 						
 					Hasta Que (confirmacioncolor = "si") o (confirmacioncolor = "SI") o (confirmacioncolor = "Si") o (confirmacioncolor = "sI") o (confirmacioncolor = "s") o (confirmacioncolor = "S") o (confirmacioncolor = "n") o (confirmacioncolor = "N")
 					
-						// Iniciamos los contadores para indicar los aciertos completos o parciales, los completos son los que aciertas posición y color y los casiaciertos 
-						// son los que o has acertsado el color o la posición.
+					// Iniciamos los contadores para indicar los aciertos completos o parciales, los completos son los que aciertas posición y color,
+					// y los parciales son los que o has acertado el color o la posición.
 						
 						aciertos<-0;
 						casiaciertos<-0;
@@ -3516,29 +3519,31 @@ SubProceso convinacion_perdida
 						
 						seguirjugando<-"Si";	
 						
-						// Si conseguimos acertar los cuatro colores en sus posiciones correctas nos mostrara el mensaje de que hemos ganado.
+						// Si conseguimos acertar los cuatro colores en sus posiciones correctas, nos mostrará el mensaje de que hemos ganado.
 						
 						Si aciertos = 4 Entonces
 							
 							Borrar Pantalla;
 							Escribir "           @-------------------------------@";
-							Escribir "   ________|        << Enorabuena >>       |_______";
+							Escribir "   ________|       << Enhorabuena >>       |_______";
 							Escribir "   \       |                               |       /";
-							Escribir "    \      |  Descifrastes la convinación  |      /";
+							Escribir "    \      |   Descifraste la combinación  |      /";
 							Escribir "    /      @_______________________________@      \";
 							Escribir "   /__________)                         (__________\";
 							
 						SiNo
 							
-							// Si no consigues acertar la combinación nos mostrara un cuadro informativo donde nos diga los aciertos de color y posición 
-							// de los casiaciertos y la cantidad de intentos.
+							// Si no consigues acertar la combinación nos mostrará un cuadro informativo, donde nos diga los aciertos de color y posición 
+							// y los casi aciertos y la cantidad de intentos.
 							
 							Escribir " __^__                                                __^__";
 							Escribir "( ___ )----------------------------------------------( ___ )";
 							Escribir " | / |                                                | \ |";
-							Escribir " | / |  Has tenido ",aciertos, " En color y posicion.             | \ |";
+							Escribir " | / |  Has tenido ",aciertos, " En color y posición.             | \ |";
 							Escribir " | / |                                                | \ |";
-							Escribir " | / |  Has tenido ",casiaciertos," Solo color                       | \ |";
+							Escribir " | / |  Has tenido ",casiaciertos," Solo color                      | \ |";
+							Escribir " | / |                                                | \ |";
+							Escribir " | / |  o posición.                                   | \ |";
 							Escribir " | / |                                                | \ |";
 							Escribir " | / |  LLevas ",cvueltas," intentos.                            | \ |";
 							Escribir " |___|                                                |___|";
@@ -3548,9 +3553,9 @@ SubProceso convinacion_perdida
 							
 						FinSi
 						
-						// Cada vez que hagamos un ciclo del juego compara las variables "opdificultad" y "cvueltas" y si no son iguales el bucle sigue, pero si las dos variables
-						// se igualan nos mostrara el mensaje de game over por que se nos habran acabado los intentos, tambien nos mostrara la combinación que tendriamos que haber
-						// puesto para poder ganar.
+						// Cada vez que hagamos un ciclo del juego compará las variables "opdificultad" y "cvueltas", y si no son iguales el bucle sigue, 
+						// pero si las dos variables se igualan nos mostrará el mensaje de game over porque se nos habrán acabado los intentos, también nos 
+						// mostrará la combinación que tendríamos que haber puesto para poder ganar.
 						
 						Si (opdificultad = cvueltas) Entonces
 								
@@ -3582,40 +3587,40 @@ SubProceso convinacion_perdida
 			
 		2:
 			
-			// Como en los juegos anteriores la opcion 2 es la ayuda por lo que nos mostrara en que consiste el juego.
+			// Como en los juegos anteriores la opcion 2 es la ayuda por lo que nos mostrará en qué consiste el juego.
 			
 			Borrar Pantalla;
 			Escribir  "***********************************************************************";
 			Escribir  "*                                                                     *";
-			Escribir  "*                    << Convinación Perdida >>                        *";
+			Escribir  "*                    << Combinación Perdida >>                        *";
 			Escribir  "*                                                                     *";
-			Escribir  "*     Este juego consites en que el ordenador generar una             *";
-			Escribir  "*     convinación de colores y tu deberas de intentar de descubir     *";
-			Escribir  "*     la convinación perdida.                                         *";
+			Escribir  "*     Este juego consiste en que el ordenador genera una              *";
+			Escribir  "*     combinación de colores y tú deberás intentar descubrir          *";
+			Escribir  "*     la combinación perdida.                                         *";
 			Escribir  "*                                                                     *";
-			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                       DIVIÉRTETE    *";
 			Escribir  "*                                                                     *";
 			Escribir  "***********************************************************************";
-			
-			Escribir "Presione cualquier tecla para volver al menu";
+			Escribir "";
+			Escribir "             Presione cualquier tecla para volver al menú";
 			Esperar Tecla;
 			
 			convinacion_perdida;
 			
 		3:
-			// Aqui tenemos las opciones de salida
+			// Aquí tenemos las opciones de salida.
 			
 			Definir decision Como Caracter;
 			
 			Borrar Pantalla;
 			
 			Escribir "¿De verdad quiere salir del juego?";
-			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 			Leer decision;
 			
 			Si (decision = "s" O decision = "S") Entonces
 				
-				Escribir "Gracias por jugar a Convinacion Perdida.";
+				Escribir "Gracias por jugar a Combinación Perdida.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
 				
@@ -3629,19 +3634,20 @@ SubProceso convinacion_perdida
 			
 	De Otro Modo:
 			
-			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Escribir "La opción marcada no es válida, redirecionandolo al juego";
 			Esperar 1 Segundos;
+			
 			convinacion_perdida;
 				
 	FinSegun
 	
 FinSubProceso
 
-// Aqui termina el el juego de combinación perdida.
+// Aquí termina el el juego de combinación perdida.
 
 SubProceso semidados
 	
-	// Aqui definiremos las variables del menú del juego.
+	// Aquí definiremos las variables del menú del juego.
 	
 	Definir resultado Como Entero;
 	Definir puntoprincipal Como Entero;
@@ -3651,20 +3657,20 @@ SubProceso semidados
 	
 	Borrar Pantalla;
 	
-	// Aqui ponemos la pantalla de inicio del juego.
+	// Aquí ponemos la pantalla de inicio del juego.
 	
 	Escribir "";
 	Escribir "                         ____";
 	Escribir " __^__                 _(____)_                __^__";
 	Escribir "( ___ )____________ooO_(_o__o_)_Ooo___________( ___ )";
 	Escribir " | / |                                         | \ |";
-	Escribir " | / |         Bienvenidos a Semidados         | \ |";
+	Escribir " | / |        Bienvenidos a Semi Dados         | \ |";
 	Escribir " |___|                                         |___|";
 	Escribir "(_____)---------------------------------------(_____) ";
 	Escribir "";
 	Esperar 1 Segundos;
 	
-	// Aqui ponemos el menú de opciones del juego.
+	// Aquí ponemos el menú de opciones del juego.
 	
 	Borrar Pantalla;
 	Escribir "";
@@ -3683,21 +3689,21 @@ SubProceso semidados
 	
 	Segun op Hacer
 		
-		// Segun la opcion elegida y guardada en la variable "op" iremos a un punto u otro del juego.
+		// Según la opción elegida y guardada en la variable "op" iremos a un punto u otro del juego.
 		
 		1:
-			// Aqui inicializamos el contador.
+			// Aquí iniciamos el contador.
 			
 			i<-0;
 			
-			// El en la variable "resultado" guardaremos el resultado de la suma de los dos dados esto lo aremos con dos números elegidos aleatoriamente entre 
-			// números del 1 al 6
+			// En la variable "resultado" guardaremos el resultado de la suma de los dos dados, esto lo haremos con dos números elegidos aleatoriamente entre 
+			// números del 1 al 6.
 			
 			resultado<- Aleatorio(1,6) +  Aleatorio(1,6);
 			
 			Borrar Pantalla;
 			
-			// Aqui programaremos una pantalla donde nos diga que estamos tirando los dados y que la operación se está llevando a cabo.
+			// Aquí programaremos una pantalla donde nos diga que estamos tirando los dados y que la operación se está llevando a cabo.
 			
 			Escribir "                      ____";
 			Escribir "                    _(____)_";
@@ -3706,10 +3712,11 @@ SubProceso semidados
 			Esperar Tecla;
 			
 			Escribir "@-----------------------------------------------@";
-			Escribir "|       La tirada se esta llevado a cabo        |";
+			Escribir "|       La tirada se esta llevando a cabo       |";
 			Escribir "@-----------------------------------------------@";
 			
-			// Con este para lo que hacemos es que se ejecute un escribir sin saltar la linea de escritura que simulara la barra de prgreso de las istalaciones de Windows.
+			// Con este "para" lo que hacemos es que se ejecute un "escribir" sin saltar la línea de escritura, que simulará la barra de progreso 
+			// de las instalaciones de Windows.
 			
 			Para i<-0 Hasta 24 Con Paso 1 Hacer
 				
@@ -3717,7 +3724,7 @@ SubProceso semidados
 				Esperar 100 Milisegundos;
 			FinPara
 			
-			// En el siguiente recuadro nos mostrara el resultado  de los dados.
+			// En el siguiente recuadro nos mostrará el resultado de los dados.
 			
 			Escribir "";
 			Escribir "@-----------------------------------------------@";
@@ -3725,7 +3732,7 @@ SubProceso semidados
 			Escribir "@-----------------------------------------------@";
 			Esperar 2 Segundos;
 			
-			// Ahora compararemos los resultados si es igual a 7 o a 11 en la primera tirada entonces el jugador gana y nos lo muestra por pantalla.
+			// Ahora compararemos los resultados, si es igual a 7 o a 11 en la primera tirada entonces el jugador gana y nos lo muestra por pantalla.
 			
 			Si (resultado = 7) o (resultado = 11) Entonces
 				
@@ -3733,16 +3740,16 @@ SubProceso semidados
 				Escribir "                   \||/";
 				Escribir "                   (@ @)";
 				Escribir "           @----ooO-(_)-Ooo----------------@";
-				Escribir "   ________|        << Enorabuena >>       |_______";
+				Escribir "   ________|       << Enhorabuena >>       |_______";
 				Escribir "   \       |                               |       /";
 				Escribir "    \      |           Has Ganado          |      /";
 				Escribir "    /      @_______________________________@      \";
 				Escribir "   /__________)                         (__________\";
 				Escribir "";
-				Escribir "          Presina una tecla para continuar";
+				Escribir "          Presiona una tecla para continuar";
 				Esperar Tecla;
 				
-				// En caso de ganar cuando pulsemos una tecla nos redirigira al comienzo del juego.
+				// En caso de ganar cuando pulsemos una tecla nos redirigirá al comienzo del juego.
 				
 				semidados;
 				
@@ -3761,20 +3768,20 @@ SubProceso semidados
 					Escribir "           @------------------ooO-(_)-Ooo--@";
 					Escribir "   ________|        << GAME OVER >>        |_______";
 					Escribir "   \       |                               |       /";
-					Escribir "    \      |          Has Perdidio         |      /";
+					Escribir "    \      |           Has Perdido         |      /";
 					Escribir "    /      @_______________________________@      \";
 					Escribir "   /__________)                         (__________\";
 					Escribir "";
-					Escribir "          Presina una tecla para continuar";
+					Escribir "          Presiona una tecla para continuar";
 					Esperar Tecla;
 					
-					// Cuando pulsemos una tecla nos redirigira al comienzo del juego.
+					// Cuando pulsemos una tecla nos redirigirá al comienzo del juego.
 					
 					semidados;
 					
 				SiNo
 					
-					// En caso de que el resultado sea distinto a los otros dos casos se guardara en la variable "puntoprincipal".
+					// En caso de que el resultado sea distinto a los otros dos casos se guardará en la variable "puntoprincipal".
 					
 					Escribir "@-----------------------------------------------@";
 					Escribir "|    Se establece el punto en: ",resultado,"                |";
@@ -3794,7 +3801,7 @@ SubProceso semidados
 			
 			Borrar Pantalla;
 			
-			// La diferencia con la primera tirada es que ahora tenemos que igualar el número que se establecio en la variable "puntoprincipal".
+			// La diferencia con la primera tirada es que ahora tenemos que igualar el número que se estableció en la variable "puntoprincipal".
 			
 			Escribir "                        ____";
 			Escribir "                      _(____)_";
@@ -3807,7 +3814,7 @@ SubProceso semidados
 			Esperar Tecla;
 			
 			Escribir "@-----------------------------------------------@";
-			Escribir "|       La tirada se esta llevado a cabo        |";
+			Escribir "|       La tirada se está llevando a cabo       |";
 			Escribir "@-----------------------------------------------@";
 			
 			// De nuevo se tiran los dados y guardamos el valor en "resultado".
@@ -3825,7 +3832,7 @@ SubProceso semidados
 			Escribir "@-----------------------------------------------@";
 			Esperar 2 Segundos;
 			
-			// Y comparamos si "resultado" es igual "puntoprincipal" ganas.
+			// Y comparamos, si "resultado" es igual "puntoprincipal" ganas.
 			
 			Si resultado=puntoprincipal Entonces
 				
@@ -3833,13 +3840,13 @@ SubProceso semidados
 				Escribir "                   \||/";
 				Escribir "                   (@ @)";
 				Escribir "           @----ooO-(_)-Ooo----------------@";
-				Escribir "   ________|        << Enorabuena >>       |_______";
+				Escribir "   ________|       << Enhorabuena >>       |_______";
 				Escribir "   \       |                               |       /";
 				Escribir "    \      |           Has Ganado          |      /";
 				Escribir "    /      @_______________________________@      \";
 				Escribir "   /__________)                         (__________\";
 				Escribir "";
-				Escribir "          Presina una tecla para continuar";
+				Escribir "          Presiona una tecla para continuar";
 				Esperar Tecla;
 				semidados;
 				
@@ -3859,18 +3866,18 @@ SubProceso semidados
 				Escribir "           @------------------ooO-(_)-Ooo--@";
 				Escribir "   ________|        << GAME OVER >>        |_______";
 				Escribir "   \       |                               |       /";
-				Escribir "    \      |          Has Perdidio         |      /";
+				Escribir "    \      |           Has Perdido         |      /";
 				Escribir "    /      @_______________________________@      \";
 				Escribir "   /__________)                         (__________\";
 				Escribir "";
-				Escribir "          Presina una tecla para continuar";
+				Escribir "          Presiona una tecla para continuar";
 				Esperar Tecla;
 				
 				semidados;
 				
 			FinSi
 			
-			// Aqui si no es igual empezara a hacer tiradas sucesivas hasta que coincida el "resultado" con "puntoprincipal" o se saque en la tirada un 7.
+			// Aquí si no es igual empezará a hacer tiradas sucesivas hasta que coincida el "resultado" con "puntoprincipal" o se saque en la tirada un 7.
 			
 			Si resultado <> puntoprincipal Entonces
 				
@@ -3886,12 +3893,12 @@ SubProceso semidados
 					Escribir " /                                                \";
 					Escribir "|  - Pulsa cualquier tecla para tirar los dados -  |";
 					Escribir "|                                                  |";
-					Escribir "|   El punto esta establecido en: ",puntoprincipal,"                |";
+					Escribir "|   El punto está establecido en: ",puntoprincipal,"                |";
 					Escribir " \________________________________________________/";
 					Esperar Tecla;
 					
 					Escribir "@-----------------------------------------------@";
-					Escribir "|       La tirada se esta llevado a cabo        |";
+					Escribir "|       La tirada se esta llevando a cabo       |";
 					Escribir "@-----------------------------------------------@";
 					
 					Para i<-0 Hasta 24 Con Paso 1 Hacer
@@ -3913,13 +3920,13 @@ SubProceso semidados
 						Escribir "                   \||/";
 						Escribir "                   (@ @)";
 						Escribir "           @----ooO-(_)-Ooo----------------@";
-						Escribir "   ________|        << Enorabuena >>       |_______";
+						Escribir "   ________|       << Enhorabuena >>       |_______";
 						Escribir "   \       |                               |       /";
 						Escribir "    \      |           Has Ganado          |      /";
 						Escribir "    /      @_______________________________@      \";
 						Escribir "   /__________)                         (__________\";
 						Escribir "";
-						Escribir "          Presina una tecla para continuar";
+						Escribir "          Presiona una tecla para continuar";
 						Esperar Tecla;
 						
 						semidados;
@@ -3937,11 +3944,11 @@ SubProceso semidados
 						Escribir "           @------------------ooO-(_)-Ooo--@";
 						Escribir "   ________|        << GAME OVER >>        |_______";
 						Escribir "   \       |                               |       /";
-						Escribir "    \      |          Has Perdidio         |      /";
+						Escribir "    \      |           Has Perdido         |      /";
 						Escribir "    /      @_______________________________@      \";
 						Escribir "   /__________)                         (__________\";
 						Escribir "";
-						Escribir "          Presina una tecla para continuar";
+						Escribir "          Presiona una tecla para continuar";
 						
 						Esperar Tecla;
 						
@@ -3955,7 +3962,7 @@ SubProceso semidados
 			
 		2:
 			
-			// Como en los juegos anteriores la ayuda es la descripción y como se juega.
+			// Como en los juegos anteriores la ayuda es la descripción y cómo se juega.
 			
 			Borrar Pantalla;
 			
@@ -3963,18 +3970,18 @@ SubProceso semidados
 			Escribir  "*                                                                     *";
 			Escribir  "*                         << Semi Dados >>                            *";
 			Escribir  "*                                                                     *";
-			Escribir  "*    En este juego de doados como lo de los casinos per mas           *";
-			Escribir  "*    simplificado dado a la conplegidad del juego en la realidad,     *";
-			Escribir  "*    el juego consiste en que si en la primera tirada se saca un 7    *";
-			Escribir  "*    o un 11 ganas directamente si por el contrario sacas un 2 un 3   *";
+			Escribir  "*    Este juego de dados es como el de los casinos, pero más          *";
+			Escribir  "*    simplificado, dado a la conplejidad del juego en la realidad.    *";
+			Escribir  "*    El juego consiste en que si en la primera tirada se saca un 7    *";
+			Escribir  "*    o un 11 ganas directamente, si por el contrario sacas un 2, un 3 *";
 			Escribir  "*    o un 12 pierdes, en el caso de sacar un número distinto a los    *";
-			Escribir  "*    anteriores, se guardara para las siguiente tirada y en ese       *";
-			Escribir  "*    caso solo ganaras si sacas el mismo número, en el caso de que    *";
-			Escribir  "*    se sacara un 7 se pierde, se seguiran con tiradas sucesivas      *";
-			Escribir  "*    hasta que una de las dos circustancias se de primero o sacar     *";
+			Escribir  "*    anteriores, se guardará para las siguientes tiradas y en ese     *";
+			Escribir  "*    caso, sólo ganarás si sacas el mismo número, en el caso de que   *";
+			Escribir  "*    se sacara un 7 se pierde, se seguirá con tiradas sucesivas       *";
+			Escribir  "*    hasta que una de las dos circunstancias se dé primero, o sacar   *";
 			Escribir  "*    el número acumulado o sacar un 7.                                *";
 			Escribir  "*                                                                     *";
-			Escribir  "*                                                       DIVIERTETE    *";
+			Escribir  "*                                                       DIVIÉRTETE    *";
 			Escribir  "*                                                                     *";
 			Escribir  "***********************************************************************";
 			
@@ -3983,19 +3990,20 @@ SubProceso semidados
 			
 			semidados;
 		3:
-			// Aqui tenemos las opciones de salida
+			// Aquí tenemos las opciones de salida.
 			
 			Borrar Pantalla;
 			
 			Escribir "¿De verdad quiere salir del juego?";
-			Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+			Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 			Leer opcion;
 			
 			Si (opcion="s" O opcion ="S") Entonces
 				
-				Escribir "Gracias por jugar a Semidados.";
+				Escribir "Gracias por jugar a Semi Dados.";
 				Escribir "Para continuar presione cualquier tecla";
 				Esperar Tecla;
+				
 			FinSi
 			
 			Si (opcion = "n" o opcion = "N") Entonces
@@ -4006,7 +4014,7 @@ SubProceso semidados
 			
 		De Otro Modo:
 			
-			Escribir "La opcion marcada no es valida, redirecionandolo al juego";
+			Escribir "La opción marcada no es válida, redirecionándolo al juego";
 			Esperar 1 Segundos;
 			
 			semidados;
@@ -4015,17 +4023,17 @@ SubProceso semidados
 	
 FinSubProceso
 
-// Y aqui termina el ultimo juego de la colección de juegos reunidos.
+// Y aquí termina el ultimo juego de la colección de juegos reunidos.
 
 SubProceso creditos
 	
-	// En este subproceso lo que he querido hacer es como en todos los juegos pues poner unos creditos y agradecimientos que solo es escribir por pantalla.
+	// En este subproceso lo que he querido hacer es como en todos los juegos, poner unos créditos y agradecimientos que sólo es escribir por pantalla.
 	
 	Borrar Pantalla;
 	
 	Escribir  "***********************************************************************";
 	Escribir  "*                                                                     *";
-	Escribir  "*                  ---------  Creditos  ---------                     *";
+	Escribir  "*                  ---------  Créditos  ---------                     *";
 	Escribir  "*                                                                     *";
 	Escribir  "***********************************************************************";
 	Escribir  "*                                                                     *";
@@ -4034,34 +4042,35 @@ SubProceso creditos
 	Escribir  "*        Software utilizado: PSeint.                                  *";
 	Escribir  "*                                                                     *";
 	Escribir  "*      Agradecimiento:                                                *";
-	Escribir  "*      Me gustaria expresar mi agradecimiento amis profesores:        *";
-	Escribir  "*      Alberto Núñez por dejarme meter mas codigo y con el que        *";
-	Escribir  "*      me he reido y aprendido lo genial que es programar y           *";
-	Escribir  "*      a Alejandro Moran el cual me inspiro para decidirme a llevar   *";
-	Escribir  "*      ha cavo esta gran aventura en la programación.                 *";
+	Escribir  "*      Me gustaría expresar mi agradecimiento a mis profesores:       *";
+	Escribir  "*      Alberto Núñez por dejarme meter más código y con el que        *";
+	Escribir  "*      me he reido y aprendido lo genial que es programar, y          *";
+	Escribir  "*      a Alejandro Morán el cual me inspiró para decidirme a llevar   *";
+	Escribir  "*      a cabo esta gran aventura en la programación. Como a todas las *";
+	Escribir  "*      personas que me rodean y que han creído en mi.                 *";
 	Escribir  "*                                                                     *";
-	Escribir  "*                                                                     *";
+	Escribir  "*      * Y las que ya no están también *                              *";
 	Escribir  "*                                                                     *";
 	Escribir  "*                                                   \|||/             *";
 	Escribir  "*                                                   (o o)             *";
 	Escribir "*************************************************-ooO-(_)-Ooo-**********";
 	Escribir "";
-	Escribir "Para continuar presione cualquier tecla";
+	Escribir "                 Para continuar presione cualquier tecla";
 	Esperar Tecla;
 	
 	
 FinSubProceso
 
-// Aqui acaba el subproceso creditos
+// Aquí acaba el subproceso créditos.
 
 SubProceso salir
 	
-	// En este subproceso he creado un menú para hacer que el programa se termine, aun asi hay una opcion para polder volver al menú de selección de juegos.
+	// En este subproceso he creado un menú para hacer que el programa se termine, aún así, hay una opción para poder volver al menú de selección de juegos.
 	
 	Definir opcion Como Caracter;
 	
 	Escribir "¿De verdad quiere salir del juego?";
-	Escribir " Teclé < s > para abandonar o < n > para continuar jugando";
+	Escribir " Teclée < s > para abandonar o < n > para continuar jugando";
 	Leer opcion;
 	
 	Si (opcion="s" O opcion ="S") Entonces
@@ -4079,19 +4088,20 @@ SubProceso salir
 	
 FinSubProceso
 
-// Aqui termina el subproceso salir.
+// Aquí termina el subproceso salir.
 
-// Como ya hemos terminado de definir los SubProceso vamos a pasar a definir el Proceso principal que es donde se van a llamar a todos los SubProceso anteriormente programados
+// Como ya hemos terminado de definir los SubProcesos, vamos a pasar a definir el Proceso principal, que es donde se van a llamar a todos los 
+// SubProcesos anteriormente programados.
 
 Proceso Juegos_Reunidos
 	
-	// Aqui definiremos las variables que afectan al menu del programa
+	// Aquí definiremos las variables que afectan al menú del programa.
 	
 	Definir men Como Entero;
 	Definir decision Como Caracter;
 	
 	Repetir
-		//Aqui vamos ha hacer una pequeña presentación para  la introducción del jueguo.
+		//Aquí vamos ha hacer una pequeña presentación para la introducción del juego.
 		
 		Escribir  "***********************************************************************";
 		Escribir  "*                                                                     *";
@@ -4106,20 +4116,20 @@ Proceso Juegos_Reunidos
 		Escribir  "*                                                                     *";
 		Escribir  "*                       1) Saber y Ganar.                             *";
 		Escribir  "*                       2) Simon Dice.                                *";
-		Escribir  "*                       3) Piedra Papel o Tijeras                     *";
-		Escribir  "*                       4) Combinación Perdida                        *";
-		Escribir  "*                       5) Semidados                                  *";
-		Escribir  "*                       6) Cresditos                                  *";
-		Escribir  "*                       7) Salir                                      *";
+		Escribir  "*                       3) Piedra Papel o Tijera.                     *";
+		Escribir  "*                       4) Combinación Perdida.                       *";
+		Escribir  "*                       5) Semi Dados.                                *";
+		Escribir  "*                       6) Créditos.                                  *";
+		Escribir  "*                       7) Salir.                                     *";
 		Escribir  "*                                                                     *";
 		Escribir  "***********************************************************************";
 		
-		// Aqui lo que hacemos con este "leer" es que nos deje seleccionar el juego que queramos guardando lo que tecle el usuario lo guardaremos en la variable
-		// "men"
+		// Aquí lo que hacemos con este "leer" es que nos deje seleccionar el juego que queramos, guardando lo que teclée el usuario, lo guardaremos en la variable
+		// "men".
 		
 		Leer men;
 		
-		// con lo giardado en la variable "men" compararemos con las opciones que hay
+		// Con lo guardado en la variable "men" compararemos con las opciones que hay dentro del "segun".
 		
 		Segun men Hacer
 			
@@ -4148,7 +4158,7 @@ Proceso Juegos_Reunidos
 				
 			De Otro Modo:
 				
-				Escribir "La opcion marcada no es valida, vuelva a elegir";
+				Escribir "La opción marcada no es válida, vuelva a elegir";
 				Esperar 1 Segundos;
 				
 		FinSegun
@@ -4156,7 +4166,7 @@ Proceso Juegos_Reunidos
 		Borrar Pantalla;
 		
 		Escribir "¿Quiere elegir otro juego o abandonar el programa?";
-		Escribir " Teclé < s > para elegir otro juego o < n > para abandonar";
+		Escribir " Teclée < s > para elegir otro juego o < n > para abandonar";
 		
 		Leer decision;
 		
